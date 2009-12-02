@@ -68,6 +68,7 @@ body {
 .atms-ui-portlet {
 	margin: 0 .3em .6em .3em;
 	min-width:100px;
+	position: relative;
 }
 
 .atms-ui-portlet-header {
@@ -219,6 +220,15 @@ label.atms-ui-portlet-label span.atms-ui-portlet-label-icon {
 .atms-icon {
 	width: 16px; 
 	height: 16px;	
+	display: block;
+}
+
+.atms-icon-user { 
+	background-image: url(img/user.png); 
+}
+
+.atms-icon-cog { 
+	background-image: url(img/cog.png);  
 }
 
 .atms-icon-add { 
@@ -275,4 +285,13 @@ input.atms-ui-portlet-searchbox  {
 
 .atms-ui-text-normal {
 	font-weight: normal;
+}
+
+.atms-ui-portlet-icon-status {
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	margin-left: -.4em; 
+	margin-top: -.6em; 
+	overflow: visible;
 }
