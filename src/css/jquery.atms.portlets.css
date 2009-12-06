@@ -28,7 +28,7 @@ body {
 }
 
 .atms-ui-portlet-column {
-	width: 15em;	
+	width: 16em;	
 }
 .atms-ui-portlet-column-legend {
 	font-weight: bold;	
@@ -165,7 +165,7 @@ div#switcher {
 	display: block; 
 	float: left; 
 	padding-left: 1.5em;
-	width: 10em;
+	width: 11.5em;
 	font-weight: normal;
 	
 }
