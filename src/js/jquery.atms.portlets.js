@@ -32,6 +32,8 @@
 					   portletContextMenuId: null,
 					   portletContextMenuAction: function(action, portlet){},
 					   beforeShowPortletsHeaderContextMenu: function(el, menu){},
+					   beforeShowLegendContextMenu: function(el, menu){},
+					   beforeShowPortletContextMenu: function(el, menu){},
 					   update: function(portlet, newColumn, oldColumn, row){}
 	     }
 	     if (settings) $.extend(config, settings);
@@ -337,7 +339,8 @@
 	 */
 	function handleLegendContextMenu(el, config) {
 	 	el.find(".atms-ui-portlet-column-legend").contextMenu({
-			menu: config.legendContextMenuId
+			menu: config.legendContextMenuId,
+			beforeShow: function(el, menu){ config.beforeShowLegendContextMenu(el, menu); }
 		},
 			function(action, el, pos) {
 				contextMenuAction(action, el, config);
@@ -349,7 +352,8 @@
 	 */
 	function handlePortletContextMenu(el, config) {
 	 	el.find("div.atms-ui-portlet").contextMenu({
-			menu: config.portletContextMenuId
+			menu: config.portletContextMenuId,
+			beforeShow: function(el, menu){ config.beforeShowPortletContextMenu(el, menu); }
 		},
 			function(action, el, pos) {
 				contextMenuAction(action, el, config);
