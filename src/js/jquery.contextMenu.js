@@ -23,6 +23,7 @@ if(jQuery)( function() {
 			// 0 needs to be -1 for expected results (no fade)
 			if( o.inSpeed == 0 ) o.inSpeed = -1;
 			if( o.outSpeed == 0 ) o.outSpeed = -1;
+			if( o.beforeShow == null ) o.beforeShow = function(){};
 			// Loop each context menu
 			$(this).each( function() {
 				var el = $(this);
@@ -70,6 +71,7 @@ if(jQuery)( function() {
 							
 							// Show the menu
 							$(document).unbind('click');
+							o.beforeShow(el, $('#'+o.menu));
 							$(menu).css({ top: y, left: x }).fadeIn(o.inSpeed);
 							// Hover events
 							$(menu).find('A').mouseover( function() {

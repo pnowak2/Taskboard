@@ -31,6 +31,7 @@
 					   legendContextMenuAction: function(action, legend){},
 					   portletContextMenuId: null,
 					   portletContextMenuAction: function(action, portlet){},
+					   beforeShowPortletsHeaderContextMenu: function(el, menu){},
 					   update: function(portlet, newColumn, oldColumn, row){}
 	     }
 	     if (settings) $.extend(config, settings);
@@ -323,7 +324,8 @@
 	 */
 	function handlePortletsHeaderContextMenu(el, config){
 	 	el.find(".atms-ui-portlets-header").contextMenu({
-			menu: config.portletsHeaderContextMenuId
+			menu: config.portletsHeaderContextMenuId,
+			beforeShow: function(el, menu){ config.beforeShowPortletsHeaderContextMenu(el, menu); }
 		},
 			function(action, el, pos) {
 				contextMenuAction(action, el, config);

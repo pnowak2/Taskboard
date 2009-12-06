@@ -33,7 +33,14 @@
 						legendContextMenuId: "legendMenu",
 						legendContextMenuAction: function(action, legend){alert(action);},
 						portletContextMenuId: "myMenu",
-						portletContextMenuAction: function(action, portlet){alert(action);}
+						portletContextMenuAction: function(action, portlet){alert(action);},
+						beforeShowPortletsHeaderContextMenu: function(el, menu){
+							if(el.text().indexOf("ATMS")!=-1){
+								menu.disableContextMenuItems('#new-requirement');
+							}else{
+								menu.enableContextMenuItems('#new-requirement');
+							}
+						}
 					 });
 				});
 
