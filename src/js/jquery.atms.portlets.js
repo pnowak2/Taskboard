@@ -39,20 +39,20 @@
 	     if (settings) $.extend(config, settings);
 
 	     handleJQueryExtensions();
-		 handleTags(this);
+		 //handleTags(this);
 		 handleDefaultContextMenu(this, config);
 		 handlePortletsHeaderContextMenu(this, config);
 		 handleLegendContextMenu(this, config);
 		 handlePortletContextMenu(this, config);
-		 handleStyles(this);
+		 //handleStyles(this);
 		 handleSortable(this);
 		 handleEvents(this);
-		 handleTooltips(this);
-		 handleQuickSearch(this, config);
-		 handleRefreshHeight(this);
-		 refreshWidth();
+		 //handleTooltips(this);
+		 //handleQuickSearch(this, config);
+		 //handleRefreshHeight(this);
+		 //refreshWidth();
 
-		 $( window ).wresize( refreshWidth );
+		 //$( window ).wresize( refreshWidth );
 		 $(this).css("visibility", "visible");
 		 
 		 /*
@@ -94,7 +94,7 @@
 		
 				// Sortables
 				$(this).find(".atms-ui-portlet-column").sortable({
-					connectWith: '.atms-ui-portlet-column-connect-'+i,
+					connectWith: '#atms-ui-portlet-main',
 					items: '.atms-ui-portlet:not(.ui-state-disabled)',
 					handle: 'div.atms-ui-portlet-header',
 					placeholder: 'ui-state-highlight',
