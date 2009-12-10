@@ -76,4 +76,5 @@ ul.contextMenu {
 .contextMenu LI.report-link A { background-image: url(img/report_link.png); }
 .contextMenu LI.report-picture A { background-image: url(img/report_picture.png); }
 .contextMenu LI.report-user A { background-image: url(img/report_user.png); }
+.contextMenu LI.chart-bar A { background-image: url(img/chart_bar.png); }
 
