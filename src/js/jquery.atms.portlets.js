@@ -257,7 +257,7 @@
 	 	
 	 	el.find(".atms-ui-portlet-collapsed .atms-ui-portlet-content").each(function(){
 	 		$(this).hide();
-	 		$(this).parents(".atms-ui-portlet:first").find(".ui-icon-carat-1-n").toggleClass(".ui-icon-carat-1-s");
+	 		$(this).parents(".atms-ui-portlet:first").find(".atms-ui-portlet-header .ui-icon").removeClass("ui-icon-carat-1-n").addClass("ui-icon-carat-1-s");
 	 	});
 	}
 	
@@ -267,13 +267,13 @@
 	 */
 	function handleEvents(el, config){
 		// Expand/Collapse entire portlets container headers
-		el.find('.atms-ui-portlets-header .ui-icon-carat-1-n').bind('click', function(){
+		el.find('.atms-ui-portlets-header .ui-icon').bind('click', function(){
 			$(this).toggleClass("ui-icon-carat-1-n").toggleClass("ui-icon-carat-1-s");
 			$(this).parents(".atms-ui-portlets-main:first").find('.atms-ui-portlet-rows-container').toggle();
 		});
 
 		// Expand/Collapse portlet headers
-	 	el.find(".atms-ui-portlet-header .ui-icon-carat-1-n").click(function() {
+	 	el.find(".atms-ui-portlet-header .ui-icon").click(function() {
 			$(this).toggleClass("ui-icon-carat-1-n").toggleClass("ui-icon-carat-1-s");
 			$(this).parents(".atms-ui-portlet:first").find(".atms-ui-portlet-content").toggle(0, function(){
 				refreshHeight($(this).parents(".atms-ui-portlet-row:first"));
