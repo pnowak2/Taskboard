@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rows>
+	<page>1</page>
+	<total>1</total>
+	<records>1</records>
+	<row>
+		<cell>1</cell>
+		<cell>Cash</cell>
+		<cell>100</cell>
+		<cell>400.00</cell>
+		<cell>250.00</cell>
+		<cell>150.00</cell>
+		<cell>0</cell>
+		<cell>1</cell>
+		<cell>8</cell>
+		<cell>false</cell>
+		<cell>false</cell>
+	</row>
+	<row>
+		<cell>5</cell>
+		<cell>Bank's</cell>
+		<cell>200</cell>
+		<cell>1500.00</cell>
+		<cell>1000.00</cell>
+		<cell>500.00</cell>
+		<cell>0</cell>
+		<cell>9</cell>
+		<cell>14</cell>
+		<cell>false</cell>
+		<cell>false</cell>
+	</row>
+	<row>
+		<cell>8</cell>
+		<cell>Fixed asset</cell>
+		<cell>300</cell>
+		<cell>0.00</cell>
+		<cell>1000.00</cell>
+		<cell>-1000.00</cell>
+		<cell>0</cell>
+		<cell>15</cell>
+		<cell>16</cell>
+		<cell>true</cell>
+		<cell>false</cell>
+	</row>
+</rows>
