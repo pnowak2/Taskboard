@@ -15,6 +15,30 @@
 		<script type="text/javascript">
 
 		$(function(){
+
+			jQuery("#list1").jqGrid(
+					{
+						url : 'ajax/data.json',
+						datatype : "json",
+						colNames : [ 'Inv No', 'Date', 'Client', 'Amount', 'Tax', 'Total',
+								'Notes' ],
+						colModel : [ 
+									{name : 'id',index : 'id',width : 55}, 
+									{name : 'invdate',index : 'invdate',width : 90}, 
+									{name : 'name',index : 'name asc, invdate',width : 100}, 
+									{name : 'amount',index : 'amount',width : 80,align : "right"}, 
+									{name : 'tax',index : 'tax',width : 80,align : "right"}, 
+									{name : 'total',index : 'total',width : 80,align : "right"}, 
+									{name : 'note',index : 'note',width : 150,sortable : false} 
+									],
+						rowNum : 10,
+						rowList : [ 10, 20, 30 ],
+						pager : '#pager1',
+						sortname : 'id',
+						viewrecords : true,
+						sortorder : "desc",
+						caption : "JSON Example"
+					});
 			
 			jQuery("#list2").jqGrid(
 				{
@@ -40,7 +64,12 @@
 					caption : "JSON Example"
 				});
 		
+				jQuery("#list1").jqGrid('navGrid', '#pager1', {edit : false,add : false,del : false});
 				jQuery("#list2").jqGrid('navGrid', '#pager2', {edit : false,add : false,del : false});
+
+				jQuery("#list2").jqGrid('gridDnD',{connectWith:'#list1'});
+				jQuery("#list1").jqGrid('gridDnD',{connectWith:'#list2'});  
+
 		});
 		
 		</script>
@@ -48,7 +77,10 @@
 	</head>
 	<body>
 		<div style="margin: 1em;">
-			<table id="list2"></table> 
+			<table id="list1"></table> 
+			<br/>
+			<table id="list2"></table>
+			<div id="pager1"></div>  
 			<div id="pager2"></div> 
 		</div>
 	</body>
