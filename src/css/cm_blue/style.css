@@ -1,21 +1,67 @@
-﻿body {
-	font-size: 11px;
+﻿ul.ctxMenu, ul.ctxMenu ul { /* Required settings */
+	top: -1000px;
+	left: -1000px;
+	position: absolute;
+	z-index: 99999;
+	margin: 0;
+	padding: 0;
 }
 
-body ul.cm_blue, body ul.cm_blue ul
-{
-	/* Required settings */
-	top:-1000px; left:-1000px; position:absolute; z-index:999; 
-	margin: 0; padding:0;
+ul.ctxMenu li { /* Required settings */
+	width: 200px;
+	list-style: none none outside;
+	padding: 0px;
+	margin: 0px;
 }
-body ul.cm_blue li
-{
-	/* Required settings */
-	width:200px; list-style:none none outside;
-	padding: 2px;
+
+ul.ctxMenu li span.submenu {
+	display: block;
+	width: 4px;
+	height: 20px;
+	float: right;
+	padding: 0;
+	margin: 0;
+	padding-right: 3px;
+	background: url(images/submenu.gif) no-repeat 0 8px
 }
-body ul.cm_blue li span.submenu{display:block; width:4px; height:12px; float:right; background:url(images/submenu.gif) no-repeat 0 5px}
-body ul.cm_blue li.hover{background-color:#a4c5e9}
 
+ul.ctxMenu li.hover {
+	background-color: #a4c5e9
+}
 
+.ctxMenu li.separator {
+	border-left: none;
+	border-right: none;
+	border-bottom: none;
+	background: none;
+}
 
+ul.ctxMenu a {
+	text-decoration: none;
+	display: block;
+	line-height: 20px;
+	height: 20px;
+	background-position: 6px center;
+	background-repeat: no-repeat;
+	outline: none;
+	padding: 1px 5px;
+	padding-left: 28px;
+}
+
+ul.ctxMenu LI.edit A { background-image: url(../img/page_white_edit.png); }
+ul.ctxMenu LI.user A { background-image: url(../img/user.png); }
+ul.ctxMenu LI.table-go A { background-image: url(../img/table_go.png); }
+ul.ctxMenu LI.time A { background-image: url(../img/time.png); }
+ul.ctxMenu LI.table A { background-image: url(../img/table.png); }
+ul.ctxMenu LI.arrow-divide A { background-image: url(../img/arrow_divide.png); }
+ul.ctxMenu LI.add A { background-image: url(../img/add.png); }
+ul.ctxMenu LI.group-go A { background-image: url(../img/group_go.png); }
+ul.ctxMenu LI.clock-error A { background-image: url(../img/clock_error.png); }
+ul.ctxMenu LI.arrow-out A { background-image: url(../img/arrow_out.png); }
+ul.ctxMenu LI.arrow-in A { background-image: url(../img/arrow_in.png); }
+ul.ctxMenu LI.arrow-switch A { background-image: url(../img/arrow_switch.png); }
+ul.ctxMenu LI.report A { background-image: url(../img/report.png); }
+ul.ctxMenu LI.report-link A { background-image: url(../img/report_link.png); }
+ul.ctxMenu LI.report-picture A { background-image: url(../img/report_picture.png); }
+ul.ctxMenu LI.report-user A { background-image: url(../img/report_user.png); }
+ul.ctxMenu LI.chart-bar A { background-image: url(../img/chart_bar.png); }
