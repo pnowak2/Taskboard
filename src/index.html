@@ -29,11 +29,11 @@
 						data: data,
 						update: function(portlet, newColumn, oldColumn, row){},
 						portletsHeaderContextMenuId: "portletsHeaderMenu",
-						portletsHeaderContextMenuAction: function(action, header, data){alert(data)},
+						portletsHeaderContextMenuAction: function(action, header, pos, data){alert(data)},
 						legendContextMenuId: "legendMenu",
-						legendContextMenuAction: function(action, legend, data){alert(action);},
+						legendContextMenuAction: function(action, legend, pos, data){alert(action);},
 						portletContextMenuId: "myMenu",
-						portletContextMenuAction: function(action, portlet, data){alert(action);},
+						portletContextMenuAction: function(action, portlet, pos, data){alert(action);},
 						beforeShowPortletsHeaderContextMenu: function(el, menu){
 							if(el.text().indexOf("ATMS")!=-1){
 								menu.disableContextMenuItems('#new-requirement');
