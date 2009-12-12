@@ -166,6 +166,44 @@ if(jQuery)( function() {
 			return( $(this) );
 		},
 		
+		// Disable context menu items on the fly
+		hideContextMenuItems: function(o) {
+			if( o == undefined ) {
+				// Disable all
+				$(this).find('LI').hide();
+				return( $(this) );
+			}
+			$(this).each( function() {
+				if( o != undefined ) {
+					var d = o.split(',');
+					for( var i = 0; i < d.length; i++ ) {
+						$(this).find('A[href="' + d[i] + '"]').parent().hide();
+						
+					}
+				}
+			});
+			return( $(this) );
+		},
+		
+		// Disable context menu items on the fly
+		showContextMenuItems: function(o) {
+			if( o == undefined ) {
+				// Disable all
+				$(this).find('LI').show();
+				return( $(this) );
+			}
+			$(this).each( function() {
+				if( o != undefined ) {
+					var d = o.split(',');
+					for( var i = 0; i < d.length; i++ ) {
+						$(this).find('A[href="' + d[i] + '"]').parent().show();
+						
+					}
+				}
+			});
+			return( $(this) );
+		},
+		
 		// Enable context menu items on the fly
 		enableContextMenuItems: function(o) {
 			if( o == undefined ) {
