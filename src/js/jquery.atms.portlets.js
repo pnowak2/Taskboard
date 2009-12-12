@@ -353,10 +353,7 @@
 	/*
 	 * Handles all context menu actions
 	 */
-	function contextMenuAction(action, el, pos, config, data){
-		
-		action = action.substring(action.lastIndexOf("#")+1, action.length);
-		
+	function contextMenuAction(action, el, pos, config, data){	
 		if(el.hasClass("atms-ui-portlets-header")){
 			switch(action){
 			case "collapse-all":
