@@ -29,11 +29,11 @@
 						data: data,
 						update: function(portlet, newColumn, oldColumn, row){},
 						portletsHeaderContextMenuId: "portletsHeaderMenu",
-						portletsHeaderContextMenuAction: function(action, header){alert(action)},
+						portletsHeaderContextMenuAction: function(action, header, data){alert(data)},
 						legendContextMenuId: "legendMenu",
-						legendContextMenuAction: function(action, legend){alert(action);},
+						legendContextMenuAction: function(action, legend, data){alert(action);},
 						portletContextMenuId: "myMenu",
-						portletContextMenuAction: function(action, portlet){alert(action);},
+						portletContextMenuAction: function(action, portlet, data){alert(action);},
 						beforeShowPortletsHeaderContextMenu: function(el, menu){
 							if(el.text().indexOf("ATMS")!=-1){
 								menu.disableContextMenuItems('#new-requirement');
@@ -58,7 +58,7 @@
 		
 			<div id="myportlet">
 				<div class="atms-ui-portlets-main">
-					<div class="atms-ui-portlets-header">
+					<div class="atms-ui-portlets-header" id="5">
 						ATMS (ATMS)
 						<!-- <span class="ui-icon ui-icon-circle-minus"></span> -->
 					</div>

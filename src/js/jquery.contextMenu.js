@@ -24,6 +24,7 @@ if(jQuery)( function() {
 			if( o.inSpeed == 0 ) o.inSpeed = -1;
 			if( o.outSpeed == 0 ) o.outSpeed = -1;
 			if( o.beforeShow == null ) o.beforeShow = function(){};
+			if( o.data == null ) o.data = function(el){ return el.attr("id"); };
 			// Loop each context menu
 			$(this).each( function() {
 				var el = $(this);
@@ -115,7 +116,7 @@ if(jQuery)( function() {
 								$(document).unbind('click').unbind('keypress');
 								$(".contextMenu").hide();
 								// Callback
-								if( callback ) callback( $(this).attr('href').substr(1), $(srcElement), {x: x - offset.left, y: y - offset.top, docX: x, docY: y} );
+								if( callback ) callback( $(this).attr('href').substr(1), $(srcElement), {x: x - offset.left, y: y - offset.top, docX: x, docY: y}, o.data($(srcElement)) );
 								return false;
 							});
 							

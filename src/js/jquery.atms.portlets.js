@@ -319,8 +319,8 @@
 			menu: config.portletsHeaderContextMenuId,
 			beforeShow: function(el, menu){ config.beforeShowPortletsHeaderContextMenu(el, menu); }
 		},
-			function(action, el, pos) {
-				contextMenuAction(action, el, config);
+			function(action, el, pos, data) {
+				contextMenuAction(action, el, config, data);
 		});
 	}
 	
@@ -332,8 +332,8 @@
 			menu: config.legendContextMenuId,
 			beforeShow: function(el, menu){ config.beforeShowLegendContextMenu(el, menu); }
 		},
-			function(action, el, pos) {
-				contextMenuAction(action, el, config);
+			function(action, el, pos, data) {
+				contextMenuAction(action, el, config, data);
 		});
 	}
 	
@@ -345,15 +345,15 @@
 			menu: config.portletContextMenuId,
 			beforeShow: function(el, menu){ config.beforeShowPortletContextMenu(el, menu); }
 		},
-			function(action, el, pos) {
-				contextMenuAction(action, el, config);
+			function(action, el, pos, data) {
+				contextMenuAction(action, el, config, data);
 		});
 	}
 	
 	/*
 	 * Handles all context menu actions
 	 */
-	function contextMenuAction(action, el, config){
+	function contextMenuAction(action, el, config, data){
 		
 		action = action.substring(action.lastIndexOf("#")+1, action.length);
 		
@@ -370,7 +370,7 @@
 				break;
 			}
 			
-			config.portletsHeaderContextMenuAction(action, el);
+			config.portletsHeaderContextMenuAction(action, el, data);
 		}
 		if(el.hasClass("atms-ui-portlet-column-legend")){
 			switch(action){
@@ -385,10 +385,10 @@
 				break;
 			}
 			
-			config.legendContextMenuAction(action, el);
+			config.legendContextMenuAction(action, el, data);
 		}
 		if(el.hasClass("atms-ui-portlet")){
-			config.portletContextMenuAction(action, el);
+			config.portletContextMenuAction(action, el, data);
 		}
 	}
 	
