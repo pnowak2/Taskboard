@@ -306,9 +306,12 @@
 		$("#"+config.portletsHeaderContextMenuId).append(collapseAll);
 		$("#"+config.portletsHeaderContextMenuId).append(expandAll);
 		$("#"+config.portletsHeaderContextMenuId).append(restoreDefault);
-		$("#"+config.legendContextMenuId).append(collapseAll);
-		$("#"+config.legendContextMenuId).append(expandAll);
-		$("#"+config.legendContextMenuId).append(restoreDefault);	
+		// Prevent doubling items in menu if used the same ids for multiple menus.
+		if(config.portletsHeaderContextMenuId != config.legendContextMenuId){
+			$("#"+config.legendContextMenuId).append(collapseAll);
+			$("#"+config.legendContextMenuId).append(expandAll);
+			$("#"+config.legendContextMenuId).append(restoreDefault);	
+		}
 	}
 	
 	/*
