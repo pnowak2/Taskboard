@@ -54,6 +54,10 @@
 		 handleRefreshHeight(this);
 		 refreshWidth();
 		 
+		 $("#mnu").bind("mouseover", function(e){
+			 $(this).show();
+		 });
+		 
 		 $(".atms-ui-portlet").each(function(){
 			 $(this).hover(
 					 function(){
