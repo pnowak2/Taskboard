@@ -49,27 +49,27 @@
 							sortable: false
 						},
 						{
-							name : 'name1',
+							name : 'name',
 							index : 'name',
 							width : 180
 						}, {
-							name : 'num',
-							index : 'acc_num',
+							name : 'type',
+							index : 'type',
 							width : 80,
 							align : "center"
 						}, {
-							name : 'debit',
-							index : 'debit',
+							name : 'length',
+							index : 'length',
 							width : 80,
 							align : "right"
 						}, {
-							name : 'credit',
-							index : 'credit',
+							name : 'estimate',
+							index : 'estimate',
 							width : 140,
 							align : "right"
 						}, {
-							name : 'balance',
-							index : 'balance',
+							name : 'priority',
+							index : 'priority',
 							width : 80,
 							align : "right"
 						},
@@ -88,7 +88,7 @@
 						height : 'auto',
 						pager : "#ptreegrid2",
 						treeGrid : true,
-						ExpandColumn : 'name1',
+						ExpandColumn : 'name',
 						caption : "METT (Backlog)",
 						loadComplete: function(){
 						 	$("#treegrid2 tr").contextMenu({
@@ -117,6 +117,7 @@
 		<div style="margin: 1em;">
 			<table id="treegrid2"></table><br/> 
 		</div>
+		<div id="ptreegrid2"></div>
 		
 		<ul id="menu" class="contextMenu ui-widget-content">
 			<li class="edit"><a href="#edit">Move to sprint</a></li>
