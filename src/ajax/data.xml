@@ -5,114 +5,63 @@
 	<records>1</records>
 	<row>
 		<cell>1</cell>
-		<cell>METT</cell>
-		<cell>100</cell>
-		<cell>400.00</cell>
-		<cell>250.00</cell>
-		<cell>150.00</cell>
 		<cell>0</cell>
+		<cell>Taskboard</cell>
+		<cell>story</cell>
+		<cell>2d 0: 0</cell>
+		<cell>W 16(55d 0: 0)</cell>
+		<cell>4-wysoki</cell>
+		<cell>2010-12-22</cell>
+		<cell>2010-12-24</cell>
 		<cell>0</cell>
-		<cell>1</cell>
-		<cell>8</cell>
+		<cell>null</cell>
 		<cell>false</cell>
 		<cell>false</cell>
 	</row>
 	<row>
 		<cell>2</cell>
-		<cell>Cash 1</cell>
-		<cell>1</cell>
-		<cell>300.00</cell>
-		<cell>200.00</cell>
-		<cell>100.00</cell>
 		<cell>0</cell>
+		<cell>Wygląd</cell>
+		<cell>story</cell>
+		<cell>1d 0: 0</cell>
+		<cell>W 6(24d 0: 0)</cell>
+		<cell>2-niski</cell>
+		<cell>2010-06-18</cell>
+		<cell>2010-07-16</cell>
 		<cell>1</cell>
-		<cell>2</cell>
-		<cell>5</cell>
-		<cell>false</cell>
+		<cell>1</cell>
+		<cell>true</cell>
 		<cell>false</cell>
 	</row>
 	<row>
 		<cell>3</cell>
-		<cell>Sub Cash 1</cell>
-		<cell>1</cell>
-		<cell>300.00</cell>
-		<cell>200.00</cell>
-		<cell>100.00</cell>
 		<cell>0</cell>
+		<cell>Sprintboard</cell>
+		<cell>story</cell>
+		<cell>2d 0: 0</cell>
+		<cell>W 16(55d 0: 0)</cell>
+		<cell>5-krytyczny</cell>
+		<cell>2010-02-13</cell>
+		<cell>2010-08-16</cell>
+		<cell>0</cell>
+		<cell>null</cell>
+		<cell>false</cell>
+		<cell>false</cell>
+	</row>
+	<row>
 		<cell>2</cell>
+		<cell>0</cell>
+		<cell>Wygląd</cell>
+		<cell>story</cell>
+		<cell>1d 0: 0</cell>
+		<cell>W 2(24d 0: 0)</cell>
+		<cell>3-średni</cell>
+		<cell>2010-03-10</cell>
+		<cell>2010-04-11</cell>
+		<cell>1</cell>
 		<cell>3</cell>
-		<cell>4</cell>
 		<cell>true</cell>
-		<cell>true</cell>
-	</row>
-	<row>
-		<cell>4</cell>
-		<cell>Cash 2</cell>
-		<cell>2</cell>
-		<cell>100.00</cell>
-		<cell>50.00</cell>
-		<cell>50.00</cell>
-		<cell>0</cell>
-		<cell>1</cell>
-		<cell>6</cell>
-		<cell>7</cell>
-		<cell>true</cell>
-		<cell>true</cell>
-	</row>
-	<row>
-		<cell>5</cell>
-		<cell>Letter Generator</cell>
-		<cell>200</cell>
-		<cell>1500.00</cell>
-		<cell>1000.00</cell>
-		<cell>500.00</cell>
-		<cell>0</cell>
-		<cell>0</cell>
-		<cell>9</cell>
-		<cell>14</cell>
-		<cell>false</cell>
 		<cell>false</cell>
 	</row>
-	<row>
-		<cell>6</cell>
-		<cell>Bank 1</cell>
-		<cell>1</cell>
-		<cell>500.00</cell>
-		<cell>0.00</cell>
-		<cell>500.00</cell>
-		<cell>0</cell>
-		<cell>1</cell>
-		<cell>10</cell>
-		<cell>11</cell>
-		<cell>true</cell>
-		<cell>true</cell>
-	</row>
-	<row>
-		<cell>7</cell>
-		<cell>Bank 2</cell>
-		<cell>2</cell>
-		<cell>1000.00</cell>
-		<cell>1000.00</cell>
-		<cell>0.00</cell>
-		<cell>0</cell>
-		<cell>1</cell>
-		<cell>12</cell>
-		<cell>13</cell>
-		<cell>true</cell>
-		<cell>true</cell>
-	</row>
-	<row>
-		<cell>8</cell>
-		<cell>Toolbox</cell>
-		<cell>300</cell>
-		<cell>0.00</cell>
-		<cell>1000.00</cell>
-		<cell>-1000.00</cell>
-		<cell>0</cell>
-		<cell>0</cell>
-		<cell>15</cell>
-		<cell>16</cell>
-		<cell>true</cell>
-		<cell>true</cell>
-	</row>
+
 </rows>

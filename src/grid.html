@@ -23,15 +23,32 @@
 						url : 'ajax/data.xml',
 						treegrid: true,
 						treedatatype : "xml",
+						treeGridModel: 'adjacency',
 						mtype : "POST",
-						colNames : [ "id", "Nazwa", "Typ", "Długość", "Szacowanie czasu", "Priorytet", " " ],
+						colNames : [ "id", " ", "Nazwa", "Typ", "Długość", "Szacowanie czasu", "Priorytet", "Data od", "Data do" ],
 						colModel : [ {
 							name : 'id',
 							index : 'id',
 							width : 1,
 							hidden : true,
 							key : true
-						}, {
+						},
+						{
+							name : 'enbl',
+							index : 'enbl',
+							width : 30,
+							align : 'center',
+							formatter : 'checkbox',
+							editoptions : {
+								value : '1:0'
+							},
+							formatoptions : {
+								disabled : false
+							},
+							search: false,
+							sortable: false
+						},
+						{
 							name : 'name1',
 							index : 'name',
 							width : 180
@@ -55,26 +72,24 @@
 							index : 'balance',
 							width : 80,
 							align : "right"
-						}, {
-							name : 'enbl',
-							index : 'enbl',
-							width : 30,
-							align : 'center',
-							formatter : 'checkbox',
-							editoptions : {
-								value : '1:0'
-							},
-							formatoptions : {
-								disabled : false
-							},
-							search: false,
-							sortable: false
-						} ],
+						},
+						{
+							name : 'datefrom',
+							index : 'datefrom',
+							width : 80,
+							align : "right"
+						},
+						{
+							name : 'dateto',
+							index : 'dateto',
+							width : 80,
+							align : "right"
+						}],
 						height : 'auto',
 						pager : "#ptreegrid2",
 						treeGrid : true,
 						ExpandColumn : 'name1',
-						caption : "Treegrid example",
+						caption : "METT (Backlog)",
 						loadComplete: function(){
 						 	$("#treegrid2 tr").contextMenu({
 								menu: "menu"
@@ -86,6 +101,8 @@
 					});
 			 
 			jQuery("#treegrid2").jqGrid('filterToolbar');
+			jQuery("#gs_datefrom").datepicker({dateFormat:"yy-mm-dd"});
+			jQuery("#gs_dateto").datepicker({dateFormat:"yy-mm-dd"});
 
 
 
