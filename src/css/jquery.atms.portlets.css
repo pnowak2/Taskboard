@@ -276,3 +276,20 @@ input.atms-ui-portlet-searchbox  {
 .atms-ui-text-normal {
 	font-weight: normal;
 }
+
+ul.actions {
+	margin: 0;
+	padding: 0;
+}
+ul.actions li {
+	float: left;
+	list-style:none;
+	margin: 0;
+	padding: 0;
+	display: inline;
+	list-style-type: none;
+}
+ul.actions li {width: 1em; cursor: pointer; padding-left: .3em; background-repeat: no-repeat; background-position: center;}
+ul.actions li.add { background-image: url(img/add.png);}
+ul.actions li.edit { background-image: url(img/page_white_edit.png); }
+ul.actions li.user { background-image: url(img/user.png); }
