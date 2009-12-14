@@ -280,19 +280,20 @@
 		});
 	 	
 	 	el.find(".atms-ui-portlet-column-legend-action").each(function(){
-	 		
-	 		$(this).click(function(){
-	 			config.legendAction($(this).prev(".atms-ui-portlet-column-legend"));
-	 		});
-	 		
-	 		$(this).hover(
-		 			function() {
-		 				$(this).addClass("ui-state-highlight");
-		 			}, 
-		 			function(){
-		 				$(this).removeClass("ui-state-highlight");
-		 			}
-		 	);
+	 		if(!$(this).hasClass("ui-state-disabled")){
+		 		$(this).click(function(){
+	 				config.legendAction($(this).prev(".atms-ui-portlet-column-legend"));
+		 		});
+		 		
+		 		$(this).hover(
+			 			function() {
+			 				$(this).addClass("ui-state-highlight");
+			 			}, 
+			 			function(){
+			 				$(this).removeClass("ui-state-highlight");
+			 			}
+			 	);
+	 		}
 	 	});
 	}
 	
