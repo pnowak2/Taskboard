@@ -53,6 +53,21 @@
 		 handleQuickSearch(this, config);
 		 handleRefreshHeight(this);
 		 refreshWidth();
+		 
+		 $(".atms-ui-portlet").each(function(){
+			 $(this).hover(
+					 function(){
+						 $("#mnu").css("top", $(this).position().top)
+						 $("#mnu").css("left", $(this).position().left + 2)
+						 $("#mnu").show();
+					 }, 
+					 function(){
+						 $("#mnu").hide();
+					 });
+			 $(this).bind("mousedown",function(){
+				 $("#mnu").hide();
+			 });
+		 });
 
 		 $( window ).wresize( refreshWidth );
 		 $(this).css("visibility", "visible");
