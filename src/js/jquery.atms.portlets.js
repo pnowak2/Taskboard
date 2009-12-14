@@ -48,6 +48,9 @@
 		 handleStyles(this);
 		 handleSortable(this);
 		 handleEvents(this, config);
+		 
+		 $(this).find(".atms-ui-portlet-row").selectable({filter: ".atms-ui-portlet"});
+		 
 		 handleTooltips(this);
 		 handleQuickSearch(this, config);
 		 handleRefreshHeight(this);
