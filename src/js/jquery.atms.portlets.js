@@ -65,6 +65,7 @@
 			 var finalWidth = 0;
 			 var colWidth = config.element.find(".atms-ui-portlet-column:visible:first").outerWidth(true);
 			 var legendWidth = config.element.find(".atms-ui-portlet-column-legend:visible:first").outerWidth(true);
+			 var legendActionWidth = config.element.find(".atms-ui-portlet-column-legend-action:visible:first").outerWidth(true);
 			 var cols = 0;
 
 			 config.element.find(".atms-ui-portlet-row:first-child").each(function(){
@@ -74,7 +75,7 @@
 				 }
 			 });
 			 
-			 finalWidth = (cols * colWidth) + legendWidth + 3
+			 finalWidth = (cols * colWidth) + legendWidth + legendActionWidth + 3
 
 			 if(finalWidth > config.element.parent().width()){
 				 config.element.width(finalWidth);	
@@ -198,7 +199,7 @@
 		el.find(".atms-ui-portlet-row").each(function(){
 			// Checks if theres any column legend and sets min height for columns
 			var legend = $(this).find(".atms-ui-portlet-column-legend:first");
-			$(this).find(".atms-ui-portlet-column-legend, .atms-ui-portlet-column").each(function(){
+			$(this).find(".atms-ui-portlet-column-legend, .atms-ui-portlet-column-legend-action, .atms-ui-portlet-column").each(function(){
 				$(this).css("min-height", legend ? legend.height() : 0);
 			});
 			
@@ -228,7 +229,7 @@
 		if(el.find(".atms-ui-portlet-column .atms-ui-portlet-column-header").length>0){
 			totalHeight+= el.find(".atms-ui-portlet-column-header").outerHeight(true);
 		}
-		el.find(".atms-ui-portlet-column, .atms-ui-portlet-column-legend").each(function(){ $(this).height(totalHeight);});
+		el.find(".atms-ui-portlet-column, .atms-ui-portlet-column-legend, .atms-ui-portlet-column-legend-action").each(function(){ $(this).height(totalHeight);});
 	}
 	
 	/*
@@ -240,6 +241,7 @@
 		el.find(".atms-ui-portlets-header").addClass("ui-widget-header ui-corner-all")
 			.prepend('<span class="ui-icon ui-icon-carat-1-n"></span>');
 		el.find(".atms-ui-portlet-column-legend").addClass(/*ui-widget-header*/"ui-state-highlight ui-corner-all");
+		el.find(".atms-ui-portlet-column-legend-action").addClass(/*ui-widget-header*/"ui-widget-header ui-corner-all");
 		el.find(".atms-ui-portlet-column-header").addClass("ui-corner-all");
 		el.find(".atms-ui-portlet-column-pointer").addClass("ui-state-highlight ui-corner-all");
 		el.find(".atms-ui-portlet-row").addClass("ui-helper-clearfix ui-corner-all ui-widget-content");
@@ -275,6 +277,15 @@
 				refreshHeight($(this).parents(".atms-ui-portlet-row:first"));
 			});
 		});
+	 	
+	 	el.find(".atms-ui-portlet-column-legend-action").hover(
+	 			function() {
+	 				$(this).addClass("ui-state-highlight");
+	 			}, 
+	 			function(){
+	 				$(this).removeClass("ui-state-highlight");
+	 			}
+	 	);
 	}
 	
 	/*

@@ -18,7 +18,7 @@ body {
 	margin-top: .3em;
 }
 
-.atms-ui-portlet-column, .atms-ui-portlet-column-legend {
+.atms-ui-portlet-column, .atms-ui-portlet-column-legend, .atms-ui-portlet-column-legend-action {
 	float: left;
 	padding-bottom: .3em;
 	margin-left: .3em;
@@ -30,7 +30,7 @@ body {
 .atms-ui-portlet-column {
 	width: 16em;	
 }
-.atms-ui-portlet-column-legend {
+.atms-ui-portlet-column-legend, atms-ui-portlet-column-legend-action {
 	font-weight: bold;	
 	margin-left: 0;
 	width: 20em;
@@ -139,13 +139,13 @@ div#switcher {
 	padding-left: 0;
 }
 
-.atms-ui-portlet-row > .atms-ui-portlet-column-legend, .atms-ui-portlet-row > .atms-ui-portlet-column {
+.atms-ui-portlet-row > .atms-ui-portlet-column-legend, .atms-ui-portlet-row > .atms-ui-portlet-column-legend-action, .atms-ui-portlet-row > .atms-ui-portlet-column {
 	background-attachment: inherit;
 	background-position: top;
 }
 
 
-.atms-ui-portlet-row .atms-ui-portlet-column-legend {
+.atms-ui-portlet-row .atms-ui-portlet-column-legend, .atms-ui-portlet-row .atms-ui-portlet-column-legend-action {
 	margin-top: 0;
 	margin-bottom: 0;
 	margin-left: 0.3em;
