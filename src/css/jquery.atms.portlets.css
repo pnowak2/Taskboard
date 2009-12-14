@@ -18,6 +18,18 @@ body {
 	margin-top: .3em;
 }
 
+.atms-ui-portlet-column-legend-action {
+	cursor: pointer;	
+}
+
+.atms-ui-portlet-column-legend-action-icon {
+	position:relative; 
+	top:48%; 
+	margin: 0; 
+	padding: 0; 
+	text-align: center;	
+}
+
 .atms-ui-portlet-column, .atms-ui-portlet-column-legend, .atms-ui-portlet-column-legend-action {
 	float: left;
 	padding-bottom: .3em;
