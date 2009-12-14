@@ -31,6 +31,7 @@
 					   legendContextMenuAction: function(action, legend){},
 					   portletContextMenuId: null,
 					   portletContextMenuAction: function(action, portlet){},
+					   legendAction: function(legend){},
 					   beforeShowPortletsHeaderContextMenu: function(el, menu){},
 					   beforeShowLegendContextMenu: function(el, menu){},
 					   beforeShowPortletContextMenu: function(el, menu){},
@@ -46,7 +47,7 @@
 		 handlePortletContextMenu(this, config);
 		 handleStyles(this);
 		 handleSortable(this);
-		 handleEvents(this);
+		 handleEvents(this, config);
 		 handleTooltips(this);
 		 handleQuickSearch(this, config);
 		 handleRefreshHeight(this);
@@ -263,7 +264,7 @@
 	 * Handles events
 	 * Any additional events should be added here.
 	 */
-	function handleEvents(el){
+	function handleEvents(el, config){
 		// Expand/Collapse entire portlets container headers
 		el.find('.atms-ui-portlets-header .ui-icon-carat-1-n').bind('click', function(){
 			$(this).toggleClass("ui-icon-carat-1-n").toggleClass("ui-icon-carat-1-s");
@@ -278,14 +279,21 @@
 			});
 		});
 	 	
-	 	el.find(".atms-ui-portlet-column-legend-action").hover(
-	 			function() {
-	 				$(this).addClass("ui-state-highlight");
-	 			}, 
-	 			function(){
-	 				$(this).removeClass("ui-state-highlight");
-	 			}
-	 	);
+	 	el.find(".atms-ui-portlet-column-legend-action").each(function(){
+	 		
+	 		$(this).click(function(){
+	 			config.legendAction($(this).prev(".atms-ui-portlet-column-legend"));
+	 		});
+	 		
+	 		$(this).hover(
+		 			function() {
+		 				$(this).addClass("ui-state-highlight");
+		 			}, 
+		 			function(){
+		 				$(this).removeClass("ui-state-highlight");
+		 			}
+		 	);
+	 	});
 	}
 	
 	/*
