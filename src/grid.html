@@ -104,6 +104,9 @@
 			jQuery("#gs_datefrom").datepicker({dateFormat:"yy-mm-dd"});
 			jQuery("#gs_dateto").datepicker({dateFormat:"yy-mm-dd"});
 
+			$("#sct").click(function(evt){
+				evt.preventDefault();
+			});
 
 
 			
@@ -120,7 +123,11 @@
 		<div id="ptreegrid2"></div>
 		
 		<ul id="menu" class="contextMenu ui-widget-content">
-			<li class="edit"><a href="#edit">Move to sprint</a></li>
+			<li class="table-go"><a href="#new-task">Move to sprint: <select id="sct" style="font-size: 11px;"><option value="">Wybierz</option><option value="test1">Sprint 1</option><option value="test2">Sprint 2</option></select></a></li>
+			<li class="edit separator"><a href="#edit">Edit requirement</a></li>
+			<li class="table"><a href="#tasks">Tasks</a></li>
+			<li class="arrow-divide"><a href="#split">Requirement split</a></li>
+			<li class="add separator"><a href="#new-task">New task</a></li>
 		</ul>
 	</body>
 </html>
