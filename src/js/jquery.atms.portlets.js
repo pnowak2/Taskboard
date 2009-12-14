@@ -62,7 +62,7 @@
 			 $(this).hover(
 					 function(){
 						 $("#mnu").css("top", $(this).position().top)
-						 $("#mnu").css("left", $(this).position().left + 2)
+						 $("#mnu").css("left", $(this).position().left + 7)
 						 $("#mnu").show();
 					 }, 
 					 function(){
