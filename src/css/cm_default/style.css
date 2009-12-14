@@ -4,15 +4,12 @@ body ul.cm_default,body ul.cm_default ul { /* Required settings */
 	position: absolute;
 	z-index: 999;
 	/* Possibly inherited values overrides */
-	border-width: 0;
 	float: none;
 	height: auto;
 	margin: 0;
 	padding: 0;
 	width: auto;
 	/* Additional settings */
-	border-top: solid 1px #acacac;
-	border-bottom: solid 1px #acacac;
 }
 
 body ul.cm_default li { /* Required settings */
@@ -32,24 +29,16 @@ body ul.cm_default li { /* Required settings */
 	text-transform: none;
 	vertical-align: top;
 	word-spacing: normal;
-	font-family: Arial, Sans-Serif;
-	font-size: 13px;
-	font-style: normal;
-	font-variant: normal;
 	font-weight: normal;
 	/* Additional settings */
 	overflow: hidden;
 	cursor: default;
 	padding: 5px 5px 5px 31px;
-	border-left: solid 1px #acacac;
-	border-right: solid 1px #acacac;
-	background: #e6e6e6 url(images/background.gif) repeat-y 0 0
 }
 
 body ul.cm_default li.separator {
 	width: 198px;
 	height: 12px;
-	background: #e6e6e6 url(images/separator.gif) no-repeat;
 	padding: 0
 }
 
@@ -76,13 +65,11 @@ body ul.cm_default li.disabled span.submenu {
 
 body ul.cm_default li.hover {
 	background-color: #d4dde6;
-	background-image: url(images/hover.gif)
 }
 
 /* no hover effects on separators*/
 body ul.cm_default li.hover.separator {
 	background-color: #e6e6e6;
-	background-image: url(images/separator.gif)
 }
 
 /*icons*/
