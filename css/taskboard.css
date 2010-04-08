@@ -74,7 +74,8 @@ div.portlet-content span.ui-icon {
 }
 
 .column-header {
-	height: 3em;
-	font-size: 1em;
+	font-size: 1.3em;
+	padding: .5em;
 	margin-bottom: .3em;
+	text-align: center;
 }

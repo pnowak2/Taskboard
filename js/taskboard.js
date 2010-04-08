@@ -1,6 +1,7 @@
 $(function() {
 	$(".column").sortable({
-		connectWith: '.column'
+		connectWith: '.column',
+		items: '.portlet:not(.ui-state-disabled)'
 	});
 
 	$(".portlet").addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all")
