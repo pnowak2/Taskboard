@@ -6,7 +6,8 @@
 	width: 250px;
 	float: left;
 	padding-bottom: 100px;
-	border-right: 1px solid #ddd;
+	background-color: #f8f8f8;
+	margin-right: .3em;
 }
 
 .portlet {
@@ -70,4 +71,10 @@
 div.portlet-content span.ui-icon {
 	float: left;
 	margin: 0 4px;
+}
+
+.column-header {
+	height: 3em;
+	font-size: 1em;
+	margin-bottom: .3em;
 }
