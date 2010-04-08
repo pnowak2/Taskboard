@@ -8,8 +8,8 @@ $(function() {
 			.addClass("ui-widget-header ui-corner-all")
 			.prepend('<span class="ui-icon ui-icon-wrench" title="Edytuj"></span>')
 			.prepend('<span class="ui-icon ui-icon-person" title="Przypisz do mnie"></span>')
-			.prepend('<span class="ui-icon ui-icon-shuffle" title="Przypisanie zadania"></span>')
-			.prepend('<span class="ui-icon ui-icon-calendar" title="Rejestracja czasu"></span>')
+			.prepend('<span class="ui-icon ui-icon-transfer-e-w" title="Przypisanie zadania"></span>')
+			.prepend('<span class="ui-icon ui-icon-clock" title="Rejestracja czasu"></span>')
 			.prepend('<span class="ui-icon ui-icon-carat-1-n" title="Minimalizuj/Maksymalizuj"></span>')
 			.end()
 		.find(".portlet-content");
