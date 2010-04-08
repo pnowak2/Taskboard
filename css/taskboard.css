@@ -1,0 +1,73 @@
+﻿.taskboard {
+	margin: 5px;
+}
+
+.column {
+	width: 250px;
+	float: left;
+	padding-bottom: 100px;
+	border-right: 1px solid #ddd;
+}
+
+.portlet {
+	margin: 0 .3em .3em .3em;
+}
+
+.portlet-header {
+	margin: 0.3em;
+	padding-bottom: 2px;
+	padding-top: 1px;
+	padding-left: 0.2em;
+}
+
+.portlet-header .ui-icon {
+	float: right;
+}
+
+.portlet-content {
+	padding: 0.4em;
+	padding-top: 0;
+}
+
+.ui-sortable-placeholder {
+	border: 1px dotted black;
+	visibility: visible !important;
+	height: 50px !important;
+}
+
+.ui-sortable-placeholder * {
+	visibility: hidden;
+}
+
+.task-priority,.task-person,.task-date,.task-description {
+	color: #666;
+	clear: both;
+}
+
+.task-priority {
+	
+}
+
+.task-person {
+	
+}
+
+.task-date {
+	
+}
+
+.task-description {
+	
+}
+
+.task-line {
+	border: 0;
+	width: 100%;
+	height: 1px;
+	background-color: #ddd;
+}
+
+div.portlet-content span.ui-icon {
+	float: left;
+	margin: 0 4px;
+}
