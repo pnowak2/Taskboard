@@ -1,7 +1,8 @@
 $(function() {
 	$(".column").sortable({
 		connectWith: '.column',
-		items: '.portlet:not(.ui-state-disabled)'
+		items: '.portlet:not(.ui-state-disabled)',
+		handle: 'div.portlet-header'
 	});
 
 	$(".portlet").addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all")
@@ -15,10 +16,9 @@ $(function() {
 			.end()
 		.find(".portlet-content");
 
-	$(".portlet-header .ui-icon").click(function() {
+	$(".portlet-header .ui-icon-carat-1-n").click(function() {
 		$(this).toggleClass("ui-icon-carat-1-n").toggleClass("ui-icon-carat-1-s");
 		$(this).parents(".portlet:first").find(".portlet-content").toggle();
 	});
 
-	$(".column").disableSelection();
 });
