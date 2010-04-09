@@ -6,10 +6,11 @@
 		<link rel="stylesheet" href="css/base.css" type="text/css" media="all" />
 		<link type="text/css" href="css/redmond/jquery-ui-1.8.custom.css" rel="stylesheet" />	
 		<link rel="stylesheet" href="css/taskboard.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="css/jquery.contextMenu.css" type="text/css" />
 		<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 		<script type="text/javascript" src="js/jquery-ui-1.8.custom.min.js"></script>
+		<script type="text/javascript" src="js/jquery.contextMenu.js"></script>
 		<script type="text/javascript" src="js/taskboard.js"></script>
-
 	</head>
 	<body>
 		<div class="taskboard">
@@ -18,14 +19,14 @@
 				<div class="column-header ui-widget-header">Nowe</div>
 				
 				<div class="portlet">
-					<div class="portlet-header">Brak pola...</div>
+					<div class="portlet-header">Brak pola walidacji w folderze dodawania sprawy i doca</div>
 					<div class="portlet-content">
 						<div class="task-person">
 							<span class="ui-icon ui-icon-person atms-icon" title="Osoba"></span>
 							<span>Janus Pawel</span>
 						</div>
 						<div class="task-priority">
-							<span class="ui-icon ui-icon-flag" title="Priorytet"></span>5-najwyzszy
+							<span class="ui-icon ui-icon-flag" title="Priorytet"></span>3-zwykly
 						</div>
 						<div class="task-date">
 							<span class="ui-icon ui-icon-calendar" title="Data wykonania"></span>02-03-2010
@@ -37,33 +38,46 @@
 					</div>
 				</div>
 				<div class="portlet">
-					<div class="portlet-header">Brak walidacji</div>
+					<div class="portlet-header taksboard-ui-widget-header-alert">Brak walidacji</div>
 					<div class="portlet-content">
 						<div class="task-person">
 							<span class="ui-icon ui-icon-person atms-icon" title="Osoba"></span>
 							<span>Anna Bednarczyk</span>
 						</div>
 						<div class="task-priority">
-							<span class="ui-icon ui-icon-flag" title="Priorytet"></span>3-sredni
+							<span class="ui-icon ui-icon-flag" title="Priorytet"></span>5-najwyzszy
 						</div>
 						<div class="task-date">
 							<span class="ui-icon ui-icon-calendar" title="Data wykonania"></span>01-04-2010
 						</div>
-						<div class="task-description">
-							<span class="ui-icon ui-icon-comment" title="Komentarz"></span>
-							Pole tekstowe 'nazwa uzytkownika' jest wymagane, lecz aplikacja to zlewa
-						</div>
 					</div>
 				</div>
 				<div class="portlet">
-					<div class="portlet-header">Brak pola...</div>
+					<div class="portlet-header">Rozpatrywanie urlopow - odswiezanie</div>
+					<div class="portlet-content">
+						<div class="task-priority">
+							<span class="ui-icon ui-icon-flag" title="Priorytet"></span>2-niski
+						</div>
+						<div class="task-date">
+							<span class="ui-icon ui-icon-calendar" title="Data wykonania"></span>02-03-2010
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+			<div class="column">
+				<div class="column-header ui-widget-header">Nowe</div>
+				
+				<div class="portlet">
+					<div class="portlet-header">Brak pola walidacji w folderze dodawania sprawy i doca</div>
 					<div class="portlet-content">
 						<div class="task-person">
 							<span class="ui-icon ui-icon-person atms-icon" title="Osoba"></span>
 							<span>Janus Pawel</span>
 						</div>
 						<div class="task-priority">
-							<span class="ui-icon ui-icon-flag" title="Priorytet"></span>5-najwyzszy
+							<span class="ui-icon ui-icon-flag" title="Priorytet"></span>3-zwykly
 						</div>
 						<div class="task-date">
 							<span class="ui-icon ui-icon-calendar" title="Data wykonania"></span>02-03-2010
@@ -71,6 +85,134 @@
 						<div class="task-description">
 							<span class="ui-icon ui-icon-comment" title="Komentarz"></span>
 							BUG - Brak pola w rejestracji czasu pracy. Niniejszy blad wystepuje tylko w IE7.
+						</div>
+					</div>
+				</div>
+				<div class="portlet">
+					<div class="portlet-header taksboard-ui-widget-header-alert">Brak walidacji</div>
+					<div class="portlet-content">
+						<div class="task-person">
+							<span class="ui-icon ui-icon-person atms-icon" title="Osoba"></span>
+							<span>Anna Bednarczyk</span>
+						</div>
+						<div class="task-priority">
+							<span class="ui-icon ui-icon-flag" title="Priorytet"></span>5-najwyzszy
+						</div>
+						<div class="task-date">
+							<span class="ui-icon ui-icon-calendar" title="Data wykonania"></span>01-04-2010
+						</div>
+					</div>
+				</div>
+				<div class="portlet">
+					<div class="portlet-header">Rozpatrywanie urlopow - odswiezanie</div>
+					<div class="portlet-content">
+						<div class="task-priority">
+							<span class="ui-icon ui-icon-flag" title="Priorytet"></span>2-niski
+						</div>
+						<div class="task-date">
+							<span class="ui-icon ui-icon-calendar" title="Data wykonania"></span>02-03-2010
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+			<div class="column">
+				<div class="column-header ui-widget-header">Nowe</div>
+				
+				<div class="portlet">
+					<div class="portlet-header">Brak pola walidacji w folderze dodawania sprawy i doca</div>
+					<div class="portlet-content">
+						<div class="task-person">
+							<span class="ui-icon ui-icon-person atms-icon" title="Osoba"></span>
+							<span>Janus Pawel</span>
+						</div>
+						<div class="task-priority">
+							<span class="ui-icon ui-icon-flag" title="Priorytet"></span>3-zwykly
+						</div>
+						<div class="task-date">
+							<span class="ui-icon ui-icon-calendar" title="Data wykonania"></span>02-03-2010
+						</div>
+						<div class="task-description">
+							<span class="ui-icon ui-icon-comment" title="Komentarz"></span>
+							BUG - Brak pola w rejestracji czasu pracy. Niniejszy blad wystepuje tylko w IE7.
+						</div>
+					</div>
+				</div>
+				<div class="portlet">
+					<div class="portlet-header taksboard-ui-widget-header-alert">Brak walidacji</div>
+					<div class="portlet-content">
+						<div class="task-person">
+							<span class="ui-icon ui-icon-person atms-icon" title="Osoba"></span>
+							<span>Anna Bednarczyk</span>
+						</div>
+						<div class="task-priority">
+							<span class="ui-icon ui-icon-flag" title="Priorytet"></span>5-najwyzszy
+						</div>
+						<div class="task-date">
+							<span class="ui-icon ui-icon-calendar" title="Data wykonania"></span>01-04-2010
+						</div>
+					</div>
+				</div>
+				<div class="portlet">
+					<div class="portlet-header">Rozpatrywanie urlopow - odswiezanie</div>
+					<div class="portlet-content">
+						<div class="task-priority">
+							<span class="ui-icon ui-icon-flag" title="Priorytet"></span>2-niski
+						</div>
+						<div class="task-date">
+							<span class="ui-icon ui-icon-calendar" title="Data wykonania"></span>02-03-2010
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+			<div class="column">
+				<div class="column-header ui-widget-header">Nowe</div>
+				
+				<div class="portlet">
+					<div class="portlet-header">Brak pola walidacji w folderze dodawania sprawy i doca</div>
+					<div class="portlet-content">
+						<div class="task-person">
+							<span class="ui-icon ui-icon-person atms-icon" title="Osoba"></span>
+							<span>Janus Pawel</span>
+						</div>
+						<div class="task-priority">
+							<span class="ui-icon ui-icon-flag" title="Priorytet"></span>3-zwykly
+						</div>
+						<div class="task-date">
+							<span class="ui-icon ui-icon-calendar" title="Data wykonania"></span>02-03-2010
+						</div>
+						<div class="task-description">
+							<span class="ui-icon ui-icon-comment" title="Komentarz"></span>
+							BUG - Brak pola w rejestracji czasu pracy. Niniejszy blad wystepuje tylko w IE7.
+						</div>
+					</div>
+				</div>
+				<div class="portlet">
+					<div class="portlet-header taksboard-ui-widget-header-alert">Brak walidacji</div>
+					<div class="portlet-content">
+						<div class="task-person">
+							<span class="ui-icon ui-icon-person atms-icon" title="Osoba"></span>
+							<span>Anna Bednarczyk</span>
+						</div>
+						<div class="task-priority">
+							<span class="ui-icon ui-icon-flag" title="Priorytet"></span>5-najwyzszy
+						</div>
+						<div class="task-date">
+							<span class="ui-icon ui-icon-calendar" title="Data wykonania"></span>01-04-2010
+						</div>
+					</div>
+				</div>
+				<div class="portlet">
+					<div class="portlet-header">Rozpatrywanie urlopow - odswiezanie</div>
+					<div class="portlet-content">
+						<div class="task-priority">
+							<span class="ui-icon ui-icon-flag" title="Priorytet"></span>2-niski
+						</div>
+						<div class="task-date">
+							<span class="ui-icon ui-icon-calendar" title="Data wykonania"></span>02-03-2010
 						</div>
 					</div>
 				</div>
@@ -78,6 +220,13 @@
 			</div>
 			
 		</div>
+
+		<ul id="myMenu" class="contextMenu">
+			<li class="edit"><a href="#edit">Edit</a></li>
+			<li class="user"><a href="#assign">Assign to me</a></li>
+			<li class="table-go"><a href="#task-assignment">Task assignment</a></li>
+			<li class="time"><a href="#time-recording">Time recording</a></li>
+		</ul>
 
 	</body>
 </html>
