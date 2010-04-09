@@ -26,8 +26,8 @@ body {
 .portlet-header {
 	margin: 0.25em;
 	padding-bottom: 2px;
-	padding-top: 1px;
-	padding-left: 0.3em;
+	padding-top: 2px;
+	padding-left: 0.6em;
 	cursor: move;
 }
 
@@ -106,8 +106,6 @@ div.portlet-content span.ui-icon {
 }
 
 .ui-state-highlight { 
-	/*height: 1.5em;*/ 
 	line-height: 1.2em;
 	margin: .3em;
-	-moz-border-radius: 5px 5px 5px 5px; 
 }
