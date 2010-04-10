@@ -6,10 +6,14 @@ $(function() {
 		handle: 'div.portlet-header',
 		placeholder: 'ui-state-highlight',
 		opacity: 0.7,
-		revert: 100,
+		revert: 200,
 		tolerance: 'pointer',
 		cursor: 'move',
 		forcePlaceholderSize: true,
+		over: function(event, ui) { ui.placeholder.parent().addClass("ui-state-highlight");},
+		update: function(event, ui) { ui.item.parent().removeClass("ui-state-highlight"); },
+		deactivate: function(event, ui) { ui.item.parent().removeClass("ui-state-highlight"); },
+		out: function(event, ui) { ui.item.parent().removeClass("ui-state-highlight"); },
 		start: function(event, ui) {
 			  $(ui.placeholder).addClass("ui-corner-all");
 		}
