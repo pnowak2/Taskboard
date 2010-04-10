@@ -11,7 +11,7 @@ body {
 	margin: 5px;
 }
 
-.column {
+.column, .column-req {
 	width: 200px;
 	float: left;
 	padding-bottom: .3em;
