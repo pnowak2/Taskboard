@@ -15,7 +15,7 @@ $(function() {
 				jQuery.data(ui.item, "previ").removeClass("ui-state-focus");
 			}
 			jQuery.data(ui.item, "previ", ui.placeholder.parent())
-			ui.placeholder.parent().addClass("ui-state-focus");
+			ui.placeholder.parent().addClass("ui-state-focus").css("border", 0).css("background-image", "none").css("font-weight", "normal");
 		},
 		update: function(event, ui) { ui.item.parent().removeClass("ui-state-focus"); },
 
