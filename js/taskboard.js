@@ -8,6 +8,7 @@ $(function() {
 		opacity: 0.7,
 		revert: 100,
 		tolerance: 'pointer',
+		cursor: 'move',
 		forcePlaceholderSize: true,
 		start: function(event, ui) {
 			  $(ui.placeholder).addClass("ui-corner-all");
