@@ -13,8 +13,6 @@ $(function() {
 		over: function(event, ui) { 
 			if(jQuery.data(ui.item, "previ")){
 				jQuery.data(ui.item, "previ").removeClass("ui-state-highlight");
-			}else{
-			
 			}
 			jQuery.data(ui.item, "previ", ui.placeholder.parent())
 			ui.placeholder.parent().addClass("ui-state-highlight");
