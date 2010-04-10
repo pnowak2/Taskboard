@@ -34,4 +34,6 @@ $(function() {
 		alert(action);
 	});
 	
+	$('#switcher').themeswitcher();
+
 });

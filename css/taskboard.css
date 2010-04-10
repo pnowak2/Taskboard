@@ -109,3 +109,7 @@ div.portlet-content span.ui-icon {
 	line-height: 1.2em;
 	margin: .3em;
 }
+
+div#switcher {
+	float: right;
+}
