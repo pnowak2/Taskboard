@@ -12,14 +12,14 @@ $(function() {
 		forcePlaceholderSize: true,
 		over: function(event, ui) { 
 			if(jQuery.data(ui.item, "previ")){
-				jQuery.data(ui.item, "previ").removeClass("ui-state-highlight");
+				jQuery.data(ui.item, "previ").removeClass("ui-state-focus");
 			}
 			jQuery.data(ui.item, "previ", ui.placeholder.parent())
-			ui.placeholder.parent().addClass("ui-state-highlight");
+			ui.placeholder.parent().addClass("ui-state-focus");
 		},
-		update: function(event, ui) { ui.item.parent().removeClass("ui-state-highlight"); },
-		deactivate: function(event, ui) { ui.item.parent().removeClass("ui-state-highlight"); },
-		out: function(event, ui) { ui.item.parent().removeClass("ui-state-highlight"); },
+		update: function(event, ui) { ui.item.parent().removeClass("ui-state-focus"); },
+
+		out: function(event, ui) { ui.item.parent().removeClass("ui-state-focus"); },
 		start: function(event, ui) {
 			  $(ui.placeholder).addClass("ui-corner-all");
 		}
