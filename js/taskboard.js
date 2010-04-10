@@ -10,7 +10,15 @@ $(function() {
 		tolerance: 'pointer',
 		cursor: 'move',
 		forcePlaceholderSize: true,
-		over: function(event, ui) { ui.placeholder.parent().addClass("ui-state-highlight");},
+		over: function(event, ui) { 
+			if(jQuery.data(ui.item, "previ")){
+				jQuery.data(ui.item, "previ").removeClass("ui-state-highlight");
+			}else{
+			
+			}
+			jQuery.data(ui.item, "previ", ui.placeholder.parent())
+			ui.placeholder.parent().addClass("ui-state-highlight");
+		},
 		update: function(event, ui) { ui.item.parent().removeClass("ui-state-highlight"); },
 		deactivate: function(event, ui) { ui.item.parent().removeClass("ui-state-highlight"); },
 		out: function(event, ui) { ui.item.parent().removeClass("ui-state-highlight"); },
