@@ -11,18 +11,14 @@ $(function() {
 		cursor: 'move',
 		forcePlaceholderSize: true,
 		over: function(event, ui) { 
-			if(jQuery.data(ui.item, "last-selected-column")){
-				jQuery.data(ui.item, "last-selected-column").removeClass("ui-state-focus");
-			}
+			$(jQuery.data(ui.item, "last-selected-column")).removeClass("ui-state-focus");
 			jQuery.data(ui.item, "last-selected-column", ui.placeholder.parent())
 			
 			if(!(ui.placeholder.parent(".column:first").find(".portlet-dragged").length > 0)){
-				ui.placeholder.parent().addClass("ui-state-focus").css("border", 0).css("background-image", "none").css("font-weight", "normal");
+				ui.placeholder.parent().addClass("ui-state-focus");
 			}
 		},
 		update: function(event, ui) { ui.item.parent().removeClass("ui-state-focus"); ui.item.removeClass("portlet-dragged"); },
-
-		out: function(event, ui) { ui.item.parent().removeClass("ui-state-focus"); },
 		start: function(event, ui) {
 			  $(ui.placeholder).addClass("ui-corner-all");
 			  $(ui.item).addClass("portlet-dragged");
