@@ -12,7 +12,7 @@ $(function() {
 		forcePlaceholderSize: true,
 		over: function(event, ui) { 
 			$(jQuery.data(ui.item, "last-selected-column")).removeClass("ui-state-focus");
-			jQuery.data(ui.item, "last-selected-column", ui.placeholder.parent())
+			jQuery.data(ui.item, "last-selected-column", ui.placeholder.parent());
 			
 			if(!(ui.placeholder.parent(".column:first").find(".portlet-dragged").length > 0)){
 				ui.placeholder.parent().addClass("ui-state-focus");
