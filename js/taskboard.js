@@ -25,7 +25,7 @@ $(function() {
 		out: function(event, ui) { ui.item.parent().removeClass("ui-state-focus"); },
 		start: function(event, ui) {
 			  $(ui.placeholder).addClass("ui-corner-all");
-			   $(ui.item).addClass("portlet-dragged");
+			  $(ui.item).addClass("portlet-dragged");
 		}
 	});
 
