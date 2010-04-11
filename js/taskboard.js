@@ -11,13 +11,12 @@ $(function() {
 		cursor: 'move',
 		forcePlaceholderSize: true,
 		over: function(event, ui) { 
-			if(jQuery.data(ui.item, "previ")){
-				jQuery.data(ui.item, "previ").removeClass("ui-state-focus");
+			if(jQuery.data(ui.item, "last-selected-column")){
+				jQuery.data(ui.item, "last-selected-column").removeClass("ui-state-focus");
 			}
+			jQuery.data(ui.item, "last-selected-column", ui.placeholder.parent())
 			
-			jQuery.data(ui.item, "previ", ui.placeholder.parent())
-			
-			if(!(ui.placeholder.parent().find(".portlet-dragged").length > 0)){
+			if(!(ui.placeholder.parent(".column:first").find(".portlet-dragged").length > 0)){
 				ui.placeholder.parent().addClass("ui-state-focus").css("border", 0).css("background-image", "none").css("font-weight", "normal");
 			}
 		},
