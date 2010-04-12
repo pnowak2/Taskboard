@@ -1,4 +1,4 @@
-   $.fn.taskboard = function(settings) {
+$.fn.taskboard = function(settings) {
 	     
      var config = {  
 				   data: "#",
@@ -7,7 +7,7 @@
      }
  
      if (settings) $.extend(config, settings);
-   
+
      this.each(function() {
 
     		// Sortables
@@ -58,6 +58,6 @@
 		alert(action);
 	});
  
-     return this;
-	}
+    return this;
+}
 
