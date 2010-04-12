@@ -12,7 +12,6 @@ schema/*.db
 *.sqlite
 *.sqlite3
 *.db
-src/*
 .hgignore
 .hg/*
 .svn/*
