@@ -9,8 +9,60 @@
 	     }
 	     if (settings) $.extend(config, settings);
 
+		handleTags(this);
+		handleContextMenu(this);
+		handleStyles(this);
+		handleSortable(this);
+		
+	    return this;
+	};
+	
+	/* Private functions */
+
+	/*
+	 * Handle Tags
+	 */
+	function handleTags(el){
+		
+		/* Header */
+		var column = $("<div/>", {
+			  "class": "column"
+			})
+		var columnHeader = $("<div/>", {
+			  "class": "column-header",
+			  text: 'Header'
+			});
+		/* Portlet */
+		var portlet = $("<div/>", {
+			  "class": "portlet"
+			});
+		var portletHeader = $("<div/>", {
+			  "class": "portlet-header",
+			  text: 'Portlet'
+			});
+		
+		portlet.append(portletHeader);
+		column.append(columnHeader).append(portlet);
+		el.append(column);
+	}
+	
+	/*
+	 * Creates portlet UI based on data
+	 */
+	function createPortlet(column, data){
+		return;
+	}
+	
+	function createColumn(data){
+		return;
+	}
+	
+	/*
+	 * Handles sortables
+	 */
+	function handleSortable(el){
 		// Sortables
-		$(this).find(".column").sortable({
+		el.find(".column").sortable({
 			connectWith: '.column',
 			items: '.portlet:not(.ui-state-disabled)',
 			handle: 'div.portlet-header',
@@ -24,24 +76,6 @@
 			update: updateMethod,
 			start: startMethod
 		});
-		
-		handleStyles(this);
-		handleContextMenu(this);
-
-	    return this;
-	};
-	
-	/* Private functions */
-
-	/*
-	 * Creates portlet UI based on data
-	 */
-	function createPortlet(column, data){
-		return;
-	}
-	
-	function createColumn(data){
-		return;
 	}
 	
 	/*
