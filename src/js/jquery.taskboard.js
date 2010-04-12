@@ -34,6 +34,17 @@
 	/* Private functions */
 
 	/*
+	 * Creates portlet UI based on data
+	 */
+	function createPortlet(column, data){
+		return;
+	}
+	
+	function createColumn(data){
+		return;
+	}
+	
+	/*
 	 * Handles UI tasks
 	 */
 	function handleStyles(el){
