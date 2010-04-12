@@ -37,6 +37,7 @@
 	 * Handles UI tasks
 	 */
 	function handleStyles(el){
+		el.find(".column .column-header").addClass("ui-widget-header");
 	 	el.find(".portlet").addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all")
 		.find(".portlet-header")
 			.addClass("ui-widget-header ui-corner-all")
