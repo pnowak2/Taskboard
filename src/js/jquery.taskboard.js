@@ -4,7 +4,7 @@
 		     
 	     var config = {  
 					   data: "#",
-					   collapsedByDefault: false,
+					   allCollapsedByDefault: false,
 					   update: function(){}
 	     }
 	     if (settings) $.extend(config, settings);
