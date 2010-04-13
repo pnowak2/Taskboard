@@ -200,8 +200,8 @@
 		  $(ui.item).addClass("portlet-dragged");
 		  
 		  $(this).parent().find(".task-column-pointer").each(function(){
-			  $(this).css("left", $(this).parents(".column:first").position().left + ($(this).width()));
-			  $(this).css("top", ui.placeholder.position().top + (ui.placeholder.height()/3));
+			  $(this).css("left", $(this).parents(".column:first").position().left + ($(this).parents(".column:first").width()/2) - ($(this).width()/1.28));
+			  $(this).css("top", ui.placeholder.position().top + (ui.placeholder.height()/2) - ($(this).outerHeight(true)/2) );
 			  $(this).show();
 		  });
 		  
