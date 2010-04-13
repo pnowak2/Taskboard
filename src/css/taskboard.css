@@ -113,6 +113,14 @@ div.portlet-content span.ui-icon {
 	font-weight: bold;
 }
 
+.task-column-pointer {
+	display: none;
+	position: fixed;
+	width: 50px;
+	padding: 1em;
+	text-align: center;
+}
+
 div#switcher {
 	float: right;
 }

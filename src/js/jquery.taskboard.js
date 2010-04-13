@@ -35,12 +35,17 @@
 	 * Handle Tags
 	 */
 	function handleTags(el){
+		
 		/* Header */
 		var column = $("<div/>", {
 			  "class": "column"
 			})
 		$("<div/>", {
 			  "class": "column-header",
+			  text: 'Header'
+			}).appendTo(column);
+		$("<div/>", {
+			  "class": "task-column-pointer ui-state-highlight ui-corner-all",
 			  text: 'Header'
 			}).appendTo(column);
 		
