@@ -115,7 +115,7 @@ div.portlet-content span.ui-icon {
 
 .task-column-pointer {
 	display: none;
-	position: fixed;
+	position: absolute;
 	width: 50px;
 	padding: 1em;
 	text-align: center;

@@ -166,7 +166,8 @@
 			forcePlaceholderSize: true,
 			over: overMethod,
 			update: updateMethod,
-			start: startMethod
+			start: startMethod,
+			stop: stopMethod
 		});
 	}
 	
@@ -187,7 +188,7 @@
 	 */
 	function updateMethod(event, ui) { 
 		ui.item.parent().removeClass("ui-state-focus"); 
-		ui.item.removeClass("portlet-dragged"); 
+		ui.item.removeClass("portlet-dragged");
 		refreshHeight($(this).parent());
 	}
 	
@@ -197,6 +198,17 @@
 	function startMethod(event, ui) {
 		  $(ui.placeholder).addClass("ui-corner-all");
 		  $(ui.item).addClass("portlet-dragged");
+		  
+		  $(this).parent().find(".task-column-pointer").each(function(){
+			  $(this).css("left", $(this).parents(".column:first").position().left + ($(this).width()));
+			  $(this).css("top", ui.placeholder.position().top + (ui.placeholder.height()/3));
+			  $(this).show();
+		  });
+		  
+	}
+	
+	function stopMethod(event, ui) {
+		$(this).parent().find(".task-column-pointer").hide();
 	}
 	
 })(jQuery);
