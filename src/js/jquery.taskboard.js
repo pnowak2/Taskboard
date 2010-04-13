@@ -50,7 +50,7 @@
 					}).appendTo(portletContent);
 				
 					$("<span/>", {
-						  "class": "ui-icon ui-icon-person atms-icon",
+						  "class": "ui-icon ui-icon-person atms-icon"
 						}).appendTo(taskPerson);
 					$("<span/>", {
 						text: "Janus Pawel"
@@ -60,7 +60,7 @@
 					  "class": "task-priority"
 					}).appendTo(portletContent);
 					$("<span/>", {
-						  "class": "ui-icon ui-icon-flag",
+						  "class": "ui-icon ui-icon-flag"
 						}).appendTo(taskPriority);
 					$("<span/>", {
 						text: "Normalny"
@@ -70,7 +70,7 @@
 					  "class": "task-date"
 					}).appendTo(portletContent);
 					$("<span/>", {
-						  "class": "ui-icon ui-icon-calendar",
+						  "class": "ui-icon ui-icon-calendar"
 						}).appendTo(taskDate);
 					$("<span/>", {
 						text: "02-03-2010"
@@ -80,7 +80,7 @@
 					  "class": "task-description"
 					}).appendTo(portletContent);
 					$("<span/>", {
-						  "class": "ui-icon ui-icon ui-icon-comment",
+						  "class": "ui-icon ui-icon ui-icon-comment"
 						}).appendTo(taskDescr);
 					$("<span/>", {
 						text: "BUG - Brak pola w rejestracji czasu pracy. Niniejszy blad wystepuje tylko w IE7."
