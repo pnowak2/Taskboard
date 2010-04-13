@@ -13,8 +13,8 @@ body {
 }
 
 .taskboard {
-	margin: 5px;
 	clear: both;
+	width: 100%;
 }
 
 .column, .column-req {
@@ -111,7 +111,7 @@ div.portlet-content span.ui-icon {
 	margin: 0 4px;
 }
 
-.column-header {
+.column-header, .project-header {
 	font-size: 1.3em;
 	padding: .5em;
 	margin-bottom: .3em;
@@ -135,4 +135,13 @@ div.portlet-content span.ui-icon {
 
 div#switcher {
 	float: right;
+}
+
+.project {
+	margin: 5px;
+}
+
+.project-header {
+	text-align: left;
+	width: 800px;
 }

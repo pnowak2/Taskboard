@@ -11,7 +11,7 @@
 	     }
 	     if (settings) $.extend(config, settings);
 	     
-			handleTags(this);
+			// handleTags(this);
 			handleContextMenu(this, config);
 			handleStyles(this);
 			handleSortable(this);
@@ -179,7 +179,7 @@
 		jQuery.data(ui.item, "last-selected-column", ui.placeholder.parent());
 		
 		if(!(ui.placeholder.parent(".column:first").find(".portlet-dragged").length > 0)){
-			ui.placeholder.parent().addClass("ui-state-focus");
+			ui.placeholder.parent().addClass("ui-state-focus ui-corner-all").css("border", "none");
 		}
 	}
 	
