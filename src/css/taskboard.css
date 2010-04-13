@@ -26,6 +26,18 @@ body {
 	overflow: hidden;
 }
 
+.column-req {
+	font-weight: bold;	
+}
+
+.column-req-details {
+	width: 100%;	
+}
+
+.column-req .column-req-details {
+	padding: .3em;
+}
+
 .portlet {
 	margin: 0 .3em .3em .3em;
 	min-width:100px;
