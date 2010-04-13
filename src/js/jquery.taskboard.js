@@ -16,6 +16,7 @@
 			handleStyles(this);
 			handleSortable(this);
 	     
+			refreshHeight(this);
 	    return this;
 	};
 	
@@ -34,7 +35,6 @@
 	 * Handle Tags
 	 */
 	function handleTags(el){
-		
 		/* Header */
 		var column = $("<div/>", {
 			  "class": "column"
@@ -91,6 +91,24 @@
 	
 	function createColumn(data){
 		return;
+	}
+	
+	/*
+	 * Recalculates heights
+	 */
+	function refreshHeight(el){
+		var totalHeight = 0;
+		el.find(".column").each(function(){
+			var portletHeights = 0;
+			$(this).find(".portlet").each(function(){
+				portletHeights+=$(this).outerHeight(true);
+			});
+			if(portletHeights>totalHeight){
+				totalHeight = portletHeights;
+			 }
+		});
+		totalHeight+= el.find(".portlet-header").height();
+		el.find(".column, .column-req").each(function(){ $(this).height(totalHeight);});
 	}
 	
 	/*
@@ -165,6 +183,7 @@
 	function updateMethod(event, ui) { 
 		ui.item.parent().removeClass("ui-state-focus"); 
 		ui.item.removeClass("portlet-dragged"); 
+		refreshHeight($(this).parent());
 	}
 	
 	/*
