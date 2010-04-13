@@ -28,6 +28,7 @@ body {
 
 .column-req {
 	font-weight: bold;	
+	margin-left: 0;
 }
 
 .column-req-details {
@@ -36,6 +37,7 @@ body {
 
 .column-req .column-req-details {
 	padding: .3em;
+	margin-left: 0;
 }
 
 .portlet {
@@ -144,4 +146,9 @@ div#switcher {
 .project-header {
 	text-align: left;
 	width: 800px;
+}
+
+.project-header span.ui-icon {
+	float: left;
+	margin-right: .3em;
 }
