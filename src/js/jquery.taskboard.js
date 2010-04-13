@@ -5,13 +5,14 @@
 	     var config = {  
 					   data: "#",
 					   contextMenu: null,
+					   contextMenuAction: function(item, el){},
 					   allCollapsedByDefault: false,
 					   update: function(){}
 	     }
 	     if (settings) $.extend(config, settings);
 	     
 			handleTags(this);
-			handleContextMenu(this);
+			handleContextMenu(this, config);
 			handleStyles(this);
 			handleSortable(this);
 	     
@@ -113,14 +114,16 @@
 	/*
 	 * Handles context menu for portlets
 	 */
-	function handleContextMenu(el) {
-		// Show menu when #myDiv is clicked
-	 	el.find("div.portlet-content").contextMenu({
-			menu: 'myMenu'
-		},
-			function(action, el, pos) {
-			alert(action);
-		});
+	function handleContextMenu(el, config) {
+		// Creates menu by config.contextMenu property
+		if(config.contextMenu){
+		 	el.find("div.portlet-content").contextMenu({
+				menu: config.contextMenu
+			},
+				function(action, el, pos) {
+					config.contextMenuAction(action, el);
+			});
+		}
 	}
 	
 	/*

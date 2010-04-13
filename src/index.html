@@ -20,7 +20,8 @@
 		<script type="text/javascript">
 			$(function(){
 				var tb = $(".taskboard").taskboard({
-													contextMenu: "myMenu"
+													contextMenu: "myMenu",
+													contextMenuAction: function(item, el){alert("item: "+item);}
 												   });
 				
 				$('#switcher').themeswitcher();
