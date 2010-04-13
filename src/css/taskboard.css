@@ -7,6 +7,11 @@ body {
 	*/
 }
 
+.ui-state-highlight { 
+	line-height: 1.2em;
+	margin: .3em;
+}
+
 .taskboard {
 	margin: 5px;
 }
@@ -16,7 +21,8 @@ body {
 	float: left;
 	padding-bottom: .3em;
 	margin-right: .3em;
-	height: 1500px;
+	margin-top: 0;
+	height: 400px;
 }
 
 .portlet {
@@ -104,11 +110,6 @@ div.portlet-content span.ui-icon {
 	border: 1px solid #a04349;
 	color: #FFFFFF;
 	font-weight: bold;
-}
-
-.ui-state-highlight { 
-	line-height: 1.2em;
-	margin: .3em;
 }
 
 div#switcher {

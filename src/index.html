@@ -19,7 +19,8 @@
 		
 		<script type="text/javascript">
 			$(function(){
-				$(".taskboard").taskboard();
+				var tb = $(".taskboard").taskboard();
+				
 				$('#switcher').themeswitcher();
 			})
 		</script>
@@ -30,7 +31,7 @@
 		<div id="switcher"></div>
 		<div class="taskboard">
 			
-			<div class="column-req ui-state-highlight">
+			<div class="ui-state-highlight ui-corner-all column-req">
 				<div class="column-header">Requirement</div>
 			</div>
 			

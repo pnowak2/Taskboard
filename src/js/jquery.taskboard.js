@@ -8,13 +8,22 @@
 					   update: function(){}
 	     }
 	     if (settings) $.extend(config, settings);
-
-		handleTags(this);
-		handleContextMenu(this);
-		handleStyles(this);
-		handleSortable(this);
-		
+	     
+			handleTags(this);
+			handleContextMenu(this);
+			handleStyles(this);
+			handleSortable(this);
+	     
 	    return this;
+	};
+	
+	/* Public functions */
+
+	/*
+	 * Performs data refresh
+	 */
+	$.fn.taskboard.refresh = function() {
+		
 	};
 	
 	/* Private functions */
