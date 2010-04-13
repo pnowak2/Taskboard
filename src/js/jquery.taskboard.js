@@ -37,6 +37,7 @@
 		var portlet = $("<div/>", {
 			  "class": "portlet"
 			}).appendTo(column);
+		
 			$("<div/>", {
 				  "class": "portlet-header",
 				  text: 'Portlet'
@@ -45,48 +46,29 @@
 				  "class": "portlet-content"
 				}).appendTo(portlet);
 		
-				var taskPerson = $("<div/>", {
-					  "class": "task-person"
-					}).appendTo(portletContent);
-				
-					$("<span/>", {
-						  "class": "ui-icon ui-icon-person atms-icon"
-						}).appendTo(taskPerson);
-					$("<span/>", {
-						text: "Janus Pawel"
-						}).appendTo(taskPerson);
-				
-				var taskPriority = $("<div/>", {
-					  "class": "task-priority"
-					}).appendTo(portletContent);
-					$("<span/>", {
-						  "class": "ui-icon ui-icon-flag"
-						}).appendTo(taskPriority);
-					$("<span/>", {
-						text: "Normalny"
-						}).appendTo(taskPriority);
-					
-				var taskDate = $("<div/>", {
-					  "class": "task-date"
-					}).appendTo(portletContent);
-					$("<span/>", {
-						  "class": "ui-icon ui-icon-calendar"
-						}).appendTo(taskDate);
-					$("<span/>", {
-						text: "02-03-2010"
-						}).appendTo(taskDate);
-					
-				var taskDescr = $("<div/>", {
-					  "class": "task-description"
-					}).appendTo(portletContent);
-					$("<span/>", {
-						  "class": "ui-icon ui-icon ui-icon-comment"
-						}).appendTo(taskDescr);
-					$("<span/>", {
-						text: "BUG - Brak pola w rejestracji czasu pracy. Niniejszy blad wystepuje tylko w IE7."
-						}).appendTo(taskDescr);
+			createPortletItem("task-person", "ui-icon-person", "Janus Pawel").appendTo(portletContent);
+			createPortletItem("task-priority", "ui-icon-flag", "Normalny").appendTo(portletContent);
+			createPortletItem("task-date", "ui-icon-calendar", "02-03-2010").appendTo(portletContent);
+			createPortletItem("task-description", "ui-icon ui-icon-comment", "BUG - Brak pola w rejestracji czasu pracy. Niniejszy blad wystepuje tylko w IE7.").appendTo(portletContent);
 		
 		el.append(column);
+	}
+	
+	/*
+	 * Creates portlet item
+	 */
+	function createPortletItem(clazz, icon, text) {
+		var portletItem = $("<div/>", {
+			  "class": clazz
+			});
+			$("<span/>", {
+				  "class": ("ui-icon " + icon)
+				}).appendTo(portletItem);
+			$("<span/>", {
+				text: text
+				}).appendTo(portletItem);
+			
+		return portletItem;
 	}
 	
 	/*
@@ -98,27 +80,6 @@
 	
 	function createColumn(data){
 		return;
-	}
-	
-	/*
-	 * Handles sortables
-	 */
-	function handleSortable(el){
-		// Sortables
-		el.find(".column").sortable({
-			connectWith: '.column',
-			items: '.portlet:not(.ui-state-disabled)',
-			handle: 'div.portlet-header',
-			placeholder: 'ui-state-highlight',
-			opacity: 0.7,
-			revert: 200,
-			tolerance: 'pointer',
-			cursor: 'move',
-			forcePlaceholderSize: true,
-			over: overMethod,
-			update: updateMethod,
-			start: startMethod
-		});
 	}
 	
 	/*
@@ -149,6 +110,27 @@
 		},
 			function(action, el, pos) {
 			alert(action);
+		});
+	}
+	
+	/*
+	 * Handles sortables
+	 */
+	function handleSortable(el){
+		// Sortables
+		el.find(".column").sortable({
+			connectWith: '.column',
+			items: '.portlet:not(.ui-state-disabled)',
+			handle: 'div.portlet-header',
+			placeholder: 'ui-state-highlight',
+			opacity: 0.7,
+			revert: 200,
+			tolerance: 'pointer',
+			cursor: 'move',
+			forcePlaceholderSize: true,
+			over: overMethod,
+			update: updateMethod,
+			start: startMethod
 		});
 	}
 	
