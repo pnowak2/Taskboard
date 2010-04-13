@@ -4,6 +4,7 @@
 		     
 	     var config = {  
 					   data: "#",
+					   contextMenu: null,
 					   allCollapsedByDefault: false,
 					   update: function(){}
 	     }

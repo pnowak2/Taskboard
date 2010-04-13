@@ -19,7 +19,9 @@
 		
 		<script type="text/javascript">
 			$(function(){
-				var tb = $(".taskboard").taskboard();
+				var tb = $(".taskboard").taskboard({
+													contextMenu: "myMenu"
+												   });
 				
 				$('#switcher').themeswitcher();
 			})
