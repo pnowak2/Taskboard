@@ -1,6 +1,6 @@
 (function($) {
 	
-	$.fn.taskboard = function(settings) {
+	$.fn.portlets = function(settings) {
 		     
 	     var config = {  
 					   data: "#",
@@ -25,7 +25,7 @@
 	/*
 	 * Performs data refresh
 	 */
-	$.fn.taskboard.refresh = function() {
+	$.fn.portlets.refresh = function() {
 		
 	};
 	
