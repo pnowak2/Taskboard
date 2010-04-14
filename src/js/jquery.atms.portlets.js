@@ -115,7 +115,8 @@
 				totalHeight = portletHeights;
 			 }
 		});
-		totalHeight+= el.find(".atms-ui-portlet-column-header").outerHeight(true)+15;
+		totalHeight+= el.find(".atms-ui-portlet-column-header").outerHeight(true);
+		totalHeight+=15; // 15 aby bylo miejsce na placeholder
 		el.find(".atms-ui-portlet-column, .atms-ui-portlet-column-legend").each(function(){ $(this).height(totalHeight);});
 	}
 	
