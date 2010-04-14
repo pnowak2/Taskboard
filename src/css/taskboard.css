@@ -12,13 +12,13 @@ body {
 	margin: .3em;
 }
 
-.taskboard {
+.atms-ui-portlets-container {
 	clear: both;
 	width: 100%;
 	margin-top: .3em;
 }
 
-.column, .column-req {
+.atms-ui-portlet-column, .atms-ui-portlet-column-legend {
 	width: 200px;
 	float: left;
 	padding-bottom: .3em;
@@ -27,16 +27,16 @@ body {
 	overflow: hidden;
 }
 
-.column-req {
+.atms-ui-portlet-column-legend {
 	font-weight: bold;	
 	margin-left: 0;
 }
 
-.column-req-details {
+.atms-ui-portlet-column-legend-details {
 	width: 100%;	
 }
 
-.column-req .column-req-details {
+.atms-ui-portlet-column-legend .atms-ui-portlet-column-legend-details {
 	padding: .3em;
 	margin-left: 0;
 }
@@ -114,7 +114,7 @@ div.portlet-content span.ui-icon {
 	margin: 0 4px;
 }
 
-.column-header, .project-header {
+.atms-ui-portlet-column-header, .atms-ui-portlet-header {
 	font-size: 1.3em;
 	padding: .5em;
 	margin-bottom: .3em;
@@ -140,16 +140,16 @@ div#switcher {
 	float: right;
 }
 
-.project {
+.atms-ui-portlet {
 	margin: 0px;
 }
 
-.project-header {
+.atms-ui-portlet-header {
 	text-align: left;
 	width: 800px;
 }
 
-.project-header span.ui-icon {
+.atms-ui-portlet-header span.ui-icon {
 	float: left;
 	margin-right: .3em;
 }

@@ -41,7 +41,7 @@
 			  "class": "column"
 			})
 		$("<div/>", {
-			  "class": "column-header",
+			  "class": "atms-ui-portlet-column-header",
 			  text: 'Header'
 			}).appendTo(column);
 		$("<div/>", {
@@ -103,7 +103,7 @@
 	 */
 	function refreshHeight(el){
 		var totalHeight = 0;
-		el.find(".column").each(function(){
+		el.find(".atms-ui-portlet-column").each(function(){
 			var portletHeights = 0;
 			$(this).find(".portlet").each(function(){
 				portletHeights+=$(this).outerHeight(true);
@@ -113,14 +113,14 @@
 			 }
 		});
 		totalHeight+= el.find(".portlet-header").height();
-		el.find(".column, .column-req").each(function(){ $(this).height(totalHeight);});
+		el.find(".atms-ui-portlet-column, .atms-ui-portlet-column-legend").each(function(){ $(this).height(totalHeight);});
 	}
 	
 	/*
 	 * Handles UI tasks
 	 */
 	function handleStyles(el){
-		el.find(".column .column-header").addClass("ui-widget-header");
+		el.find(".atms-ui-portlet-column .atms-ui-portlet-column-header").addClass("ui-widget-header");
 	 	el.find(".portlet").addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all")
 		.find(".portlet-header")
 			.addClass("ui-widget-header ui-corner-all")
@@ -154,8 +154,8 @@
 	 */
 	function handleSortable(el){
 		// Sortables
-		el.find(".column").sortable({
-			connectWith: '.column',
+		el.find(".atms-ui-portlet-column").sortable({
+			connectWith: '.atms-ui-portlet-column',
 			items: '.portlet:not(.ui-state-disabled)',
 			handle: 'div.portlet-header',
 			placeholder: 'ui-state-highlight',
@@ -178,7 +178,7 @@
 		$(jQuery.data(ui.item, "last-selected-column")).removeClass("ui-state-focus");
 		jQuery.data(ui.item, "last-selected-column", ui.placeholder.parent());
 		
-		if(!(ui.placeholder.parent(".column:first").find(".portlet-dragged").length > 0)){
+		if(!(ui.placeholder.parent(".atms-ui-portlet-column:first").find(".portlet-dragged").length > 0)){
 			ui.placeholder.parent().addClass("ui-state-focus ui-corner-all").css("border", "none");
 		}
 	}
@@ -200,7 +200,7 @@
 		  $(ui.item).addClass("portlet-dragged");
 		  
 		  $(this).parent().find(".task-column-pointer").each(function(){
-			  $(this).css("left", $(this).parents(".column:first").position().left + ($(this).parents(".column:first").width()/2) - ($(this).width()/1.28));
+			  $(this).css("left", $(this).parents(".atms-ui-portlet-column:first").position().left + ($(this).parents(".atms-ui-portlet-column:first").width()/2) - ($(this).width()/1.28));
 			  $(this).css("top", ui.placeholder.position().top + (ui.placeholder.height()/2) - ($(this).outerHeight(true)/2) );
 			  $(this).show();
 		  });
