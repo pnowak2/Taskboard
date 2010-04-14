@@ -179,7 +179,9 @@
 
 	 	el.find(".atms-ui-portlet-header .ui-icon-carat-1-n").click(function() {
 			$(this).toggleClass("ui-icon-carat-1-n").toggleClass("ui-icon-carat-1-s");
-			$(this).parents(".atms-ui-portlet:first").find(".atms-ui-portlet-content").toggle("fast");
+			$(this).parents(".atms-ui-portlet:first").find(".atms-ui-portlet-content").toggle("fast", function(){
+				refreshHeight($(this).parents(".atms-ui-portlet-row:first"));
+			});
 		});
 	}
 	
