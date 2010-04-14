@@ -128,7 +128,7 @@ div.portlet-content span.ui-icon {
 	font-weight: bold;
 }
 
-.task-column-pointer {
+.atms-ui-portlet-column-pointer {
 	display: none;
 	position: absolute;
 	width: 50px;
