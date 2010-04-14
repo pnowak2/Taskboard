@@ -12,7 +12,7 @@ body {
 	margin: .3em;
 }
 
-.atms-ui-portlets-container {
+.atms-ui-portlet-columns-container {
 	clear: both;
 	width: 100%;
 	margin-top: .3em;
@@ -41,7 +41,7 @@ body {
 	margin-left: 0;
 }
 
-.portlet {
+.atms-ui-portlet {
 	margin: 0 .3em .3em .3em;
 	min-width:100px;
 }
@@ -140,7 +140,7 @@ div#switcher {
 	float: right;
 }
 
-.atms-ui-portlet {
+.atms-ui-portlet-container {
 	margin: 0px;
 }
 

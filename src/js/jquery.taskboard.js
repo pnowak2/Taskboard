@@ -105,7 +105,7 @@
 		var totalHeight = 0;
 		el.find(".atms-ui-portlet-column").each(function(){
 			var portletHeights = 0;
-			$(this).find(".portlet").each(function(){
+			$(this).find(".atms-ui-portlet").each(function(){
 				portletHeights+=$(this).outerHeight(true);
 			});
 			if(portletHeights>totalHeight){
@@ -121,7 +121,7 @@
 	 */
 	function handleStyles(el){
 		el.find(".atms-ui-portlet-column .atms-ui-portlet-column-header").addClass("ui-widget-header");
-	 	el.find(".portlet").addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all")
+	 	el.find(".atms-ui-portlet").addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all")
 		.find(".portlet-header")
 			.addClass("ui-widget-header ui-corner-all")
 			.prepend('<span class="ui-icon ui-icon-carat-1-n" title="Minimalizuj/Maksymalizuj"></span>')
@@ -130,7 +130,7 @@
 	
 	 	el.find(".portlet-header .ui-icon-carat-1-n").click(function() {
 			$(this).toggleClass("ui-icon-carat-1-n").toggleClass("ui-icon-carat-1-s");
-			$(this).parents(".portlet:first").find(".portlet-content").toggle("fast");
+			$(this).parents(".atms-ui-portlet:first").find(".portlet-content").toggle("fast");
 		});
 	}
 	
@@ -156,7 +156,7 @@
 		// Sortables
 		el.find(".atms-ui-portlet-column").sortable({
 			connectWith: '.atms-ui-portlet-column',
-			items: '.portlet:not(.ui-state-disabled)',
+			items: '.atms-ui-portlet:not(.ui-state-disabled)',
 			handle: 'div.portlet-header',
 			placeholder: 'ui-state-highlight',
 			opacity: 0.7,
