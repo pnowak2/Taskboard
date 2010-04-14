@@ -1,0 +1,129 @@
+body {
+	/*
+	background-image: url("img/taskboard-background.jpg");
+	background-repeat: no-repeat;
+	background-color: #cbe0fb;
+	background-position: top left;
+	*/
+}
+
+.ui-state-highlight { 
+	line-height: 1.2em;
+	margin: .3em;
+}
+
+.atms-ui-portlet-columns-container {
+	clear: both;
+	width: 100%;
+	margin-top: .3em;
+}
+
+.atms-ui-portlet-column, .atms-ui-portlet-column-legend {
+	width: 200px;
+	float: left;
+	padding-bottom: .3em;
+	margin-right: .3em;
+	margin-top: 0;
+	overflow: hidden;
+}
+
+.atms-ui-portlet-column-legend {
+	font-weight: bold;	
+	margin-left: 0;
+}
+
+.atms-ui-portlet-column-legend-details {
+	width: 100%;	
+}
+
+.atms-ui-portlet-column-legend .atms-ui-portlet-column-legend-details {
+	padding: .3em;
+	margin-left: 0;
+}
+
+.atms-ui-portlet {
+	margin: 0 .3em .3em .3em;
+	min-width:100px;
+}
+
+.atms-ui-portlet-header {
+	margin: 0.25em;
+	padding-bottom: 2px;
+	padding-top: 2px;
+	padding-left: 0.6em;
+	cursor: move;
+}
+
+.atms-ui-portlet-header .ui-icon-carat-1-n, .atms-ui-portlet-header .ui-icon-carat-1-s  {
+	cursor: pointer;	
+}
+
+.atms-ui-portlet-header,.atms-ui-portlet-content {
+	overflow: hidden;
+}
+
+.atms-ui-portlet-header .ui-icon {
+	float: right;
+}
+
+.atms-ui-portlet-content {
+	padding: 0.4em;
+	padding-top: 0;
+}
+
+.ui-sortable-placeholder {
+	border: 1px dotted black;
+	visibility: visible !important;
+	height: 50px !important;
+}
+
+.ui-sortable-placeholder * {
+	visibility: hidden;
+}
+
+.atms-ui-portlet-text-entry, .atms-ui-portlet-text-entry-descr {
+	color: #666;
+	clear: both;
+}
+
+.atms-ui-portlet-text-entry-descr {
+	color: #888;
+}
+
+div.atms-ui-portlet-content span.ui-icon {
+	float: left;
+	margin: 0 4px;
+}
+
+.atms-ui-portlet-column-header, .atms-ui-portlets-header {
+	font-size: 1.3em;
+	padding: .5em;
+	margin-bottom: .3em;
+	text-align: center;
+}
+
+.atms-ui-portlet-column-pointer {
+	display: none;
+	position: absolute;
+	width: 50px;
+	padding: 1em;
+	text-align: center;
+}
+
+div#switcher {
+	float: right;
+}
+
+.atms-ui-portlet-container {
+	margin: 0px;
+}
+
+.atms-ui-portlets-header {
+	text-align: left;
+	width: 800px;
+}
+
+.atms-ui-portlets-header span.ui-icon {
+	float: left;
+	margin-right: .3em;
+}
