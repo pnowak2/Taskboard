@@ -41,7 +41,7 @@
 		
 		/* Header */
 		var column = $("<div/>", {
-			  "class": "column"
+			  "class": "atms-ui-portlet-column"
 			})
 		$("<div/>", {
 			  "class": "atms-ui-portlet-column-header",
@@ -54,7 +54,7 @@
 		
 		/* Portlet */
 		var portlet = $("<div/>", {
-			  "class": "portlet"
+			  "class": "atms-ui-portlet"
 			}).appendTo(column);
 		
 			$("<div/>", {
@@ -65,11 +65,12 @@
 				  "class": "atms-ui-portlet-content"
 				}).appendTo(portlet);
 		
-			createPortletItem("task-person", "ui-icon-person", "Janus Pawel").appendTo(portletContent);
-			createPortletItem("task-priority", "ui-icon-flag", "Normalny").appendTo(portletContent);
-			createPortletItem("task-date", "ui-icon-calendar", "02-03-2010").appendTo(portletContent);
-			createPortletItem("task-description", "ui-icon ui-icon-comment", "BUG - Brak pola w rejestracji czasu pracy. Niniejszy blad wystepuje tylko w IE7.").appendTo(portletContent);
+			createPortletItem("ui-icon-person", "Janus Pawel").appendTo(portletContent);
+			createPortletItem("ui-icon-flag", "Normalny").appendTo(portletContent);
+			createPortletItem("ui-icon-calendar", "02-03-2010").appendTo(portletContent);
+			createPortletItem("ui-icon ui-icon-comment", "BUG - Brak pola w rejestracji czasu pracy. Niniejszy blad wystepuje tylko w IE7.").appendTo(portletContent);
 		
+
 			$('.result').ajaxError(function(e, xhr, settings, exception) {
 				$(this).text('Triggered ajaxError handler. ' + settings.url);
 			});
@@ -88,14 +89,17 @@
 			});
 			
 		el.append(column);
+
+		el.find(".atms-ui-portlet-row:first").append(column);
+
 	}
 	
 	/*
 	 * Creates portlet item
 	 */
-	function createPortletItem(clazz, icon, text) {
+	function createPortletItem(icon, text) {
 		var portletItem = $("<div/>", {
-			  "class": clazz
+			  "class": "atms-ui-portlet-text-entry"
 			});
 			$("<span/>", {
 				  "class": ("ui-icon " + icon)
@@ -147,6 +151,12 @@
 	 */
 	function handleStyles(el){
 		el.addClass("atms-ui-portlet-container");
+	 	el.find(".atms-ui-portlet-row:first .atms-ui-portlet-column").each(function(){
+	 		$("<div/>", {
+				  "class": ("atms-ui-portlet-column-pointer"),
+				  text: $(this).find(".atms-ui-portlet-column-header").text()
+			}).appendTo($(this));
+	 	});
 		el.find(".atms-ui-portlets-header").addClass("ui-widget-header ui-corner-all");
 		el.find(".atms-ui-portlet-column-legend").addClass("ui-state-highlight ui-corner-all");
 		el.find(".atms-ui-portlet-column-header").addClass("ui-corner-all");
@@ -231,7 +241,7 @@
 		  $(ui.placeholder).addClass("ui-corner-all");
 		  $(ui.item).addClass("portlet-dragged");
 		  
-		  $(this).parent().find(".atms-ui-portlet-column-pointer").each(function(){
+		  $(this).parents(".atms-ui-portlet-columns-container").find(".atms-ui-portlet-column-pointer").each(function(){
 			  $(this).css("left", $(this).parents(".atms-ui-portlet-column:first").position().left + ($(this).parents(".atms-ui-portlet-column:first").width()/2) - ($(this).width()/1.28));
 			  $(this).css("top", ui.placeholder.position().top + (ui.placeholder.height()/2) - ($(this).outerHeight(true)/2) );
 			  $(this).show();
@@ -240,7 +250,7 @@
 	}
 	
 	function stopMethod(event, ui) {
-		$(this).parent().find(".atms-ui-portlet-column-pointer").hide();
+		$(this).parents(".atms-ui-portlet-columns-container").find(".atms-ui-portlet-column-pointer").hide();
 	}
 	
 })(jQuery);
