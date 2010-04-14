@@ -31,6 +31,7 @@ body {
 .atms-ui-portlet-column-legend {
 	font-weight: bold;	
 	margin-left: 0;
+	width: 20em;
 }
 
 .atms-ui-portlet-column-legend-details {
@@ -121,7 +122,6 @@ div#switcher {
 
 .atms-ui-portlets-header {
 	text-align: left;
-	width: 800px;
 }
 
 .atms-ui-portlets-header span.ui-icon {
