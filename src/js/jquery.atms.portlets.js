@@ -11,7 +11,7 @@
 	     }
 	     if (settings) $.extend(config, settings);
 	     
-			// handleTags(this);
+			handleTags(this);
 			handleContextMenu(this, config);
 			handleStyles(this);
 			handleSortable(this);
@@ -70,6 +70,23 @@
 			createPortletItem("task-date", "ui-icon-calendar", "02-03-2010").appendTo(portletContent);
 			createPortletItem("task-description", "ui-icon ui-icon-comment", "BUG - Brak pola w rejestracji czasu pracy. Niniejszy blad wystepuje tylko w IE7.").appendTo(portletContent);
 		
+			$('.result').ajaxError(function(e, xhr, settings, exception) {
+				$(this).text('Triggered ajaxError handler. ' + settings.url);
+			});
+			
+			$.getJSON('ajax/data.json', function(data) {
+				$('.result').append('<p>' + data.message + '</p>');
+				$.each(data.projects, function(i,project){
+					$('.result').append('<p><b>Project: ' + project.name + '</b></p>');
+					$.each(project.requirements, function(i,requirement){
+						$('.result').append('<p>Requirement: ' + requirement.name + '</p>');
+						$.each(requirement.tasks, function(i,task){
+							$('.result').append('<p>' + task.status + '</p>');
+						});
+					});
+				});
+			});
+			
 		el.append(column);
 	}
 	
