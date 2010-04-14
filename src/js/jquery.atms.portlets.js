@@ -88,7 +88,7 @@
 			createPortletItem("ui-icon-calendar", "02-03-2010").appendTo(portletContent);
 			createPortletItem("ui-icon ui-icon-comment", "BUG - Brak pola w rejestracji czasu pracy. Niniejszy blad wystepuje tylko w IE7.").appendTo(portletContent);
 			
-		 	el.find(".atms-ui-portlet-row:first .atms-ui-portlet-column").each(function(){
+		 	el.find(".atms-ui-portlet-row:first-child .atms-ui-portlet-column").each(function(){
 		 		$("<div/>", {
 					  "class": ("atms-ui-portlet-column-pointer"),
 					  text: $(this).find(".atms-ui-portlet-column-header").text()
