@@ -15,6 +15,7 @@
 		 handleContextMenu(this, config);
 		 handleStyles(this);
 		 handleSortable(this);
+		 handleEvents(this);
      
 		 $(this).find(".atms-ui-portlet-row").each(function(){
 		 	refreshHeight($(this));
@@ -164,7 +165,16 @@
 			.prepend('<span class="ui-icon ui-icon-carat-1-n" title="Minimalizuj/Maksymalizuj"></span>')
 			.end()
 		.find(".atms-ui-portlet-content");
+	}
 	
+	/*
+	 * Handles events
+	 */
+	function handleEvents(el){
+		el.find('.atms-ui-portlets-header').live('click', function(){
+			$(this).parents(".atms-ui-portlets-main").find('.atms-ui-portlet-columns-container').toggle();
+		});
+
 	 	el.find(".atms-ui-portlet-header .ui-icon-carat-1-n").click(function() {
 			$(this).toggleClass("ui-icon-carat-1-n").toggleClass("ui-icon-carat-1-s");
 			$(this).parents(".atms-ui-portlet:first").find(".atms-ui-portlet-content").toggle("fast");
