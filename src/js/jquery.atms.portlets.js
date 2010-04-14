@@ -154,6 +154,7 @@
 	function handleStyles(el){
 		el.addClass("atms-ui-portlet-container");
 		el.find(".atms-ui-portlets-header").addClass("ui-widget-header ui-corner-all")
+			.prepend('<span class="ui-icon ui-icon-newwin" title="Minimalizuj/Maksymalizuj portlety"></span>')
 			.prepend('<span class="ui-icon ui-icon-carat-1-n" title="Minimalizuj/Maksymalizuj"></span>');
 		el.find(".atms-ui-portlet-column-legend").addClass("ui-state-highlight ui-corner-all");
 		el.find(".atms-ui-portlet-column-header").addClass("ui-corner-all");
@@ -176,6 +177,16 @@
 			$(this).toggleClass("ui-icon-carat-1-n").toggleClass("ui-icon-carat-1-s");
 			$(this).parents(".atms-ui-portlets-main:first").find('.atms-ui-portlet-columns-container').toggle("fast");
 		});
+		
+//		el.find('.atms-ui-portlets-header .ui-icon-newwin').bind('click', function(){
+//			$(this).parents(".atms-ui-portlets-main:first").find('.atms-ui-portlet-row .atms-ui-portlet-content').toggle(0, function(){
+//					$(this).parents(".atms-ui-portlet")
+//						.find(".atms-ui-portlet-header .ui-icon-carat-1-n")
+//						.toggleClass("ui-icon-carat-1-s")
+//						.toggleClass("ui-icon-carat-1-n");
+//					refreshHeight($(this).parents(".atms-ui-portlet-row:first"));
+//			});
+//		});
 
 	 	el.find(".atms-ui-portlet-header .ui-icon-carat-1-n").click(function() {
 			$(this).toggleClass("ui-icon-carat-1-n").toggleClass("ui-icon-carat-1-s");
