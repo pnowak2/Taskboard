@@ -59,7 +59,7 @@
 				  text: 'Portlet'
 				}).appendTo(portlet);
 			var portletContent = $("<div/>", {
-				  "class": "portlet-content"
+				  "class": "atms-ui-portlet-content"
 				}).appendTo(portlet);
 		
 			createPortletItem("task-person", "ui-icon-person", "Janus Pawel").appendTo(portletContent);
@@ -126,11 +126,11 @@
 			.addClass("ui-widget-header ui-corner-all")
 			.prepend('<span class="ui-icon ui-icon-carat-1-n" title="Minimalizuj/Maksymalizuj"></span>')
 			.end()
-		.find(".portlet-content");
+		.find(".atms-ui-portlet-content");
 	
 	 	el.find(".atms-ui-portlet-header .ui-icon-carat-1-n").click(function() {
 			$(this).toggleClass("ui-icon-carat-1-n").toggleClass("ui-icon-carat-1-s");
-			$(this).parents(".atms-ui-portlet:first").find(".portlet-content").toggle("fast");
+			$(this).parents(".atms-ui-portlet:first").find(".atms-ui-portlet-content").toggle("fast");
 		});
 	}
 	
@@ -140,7 +140,7 @@
 	function handleContextMenu(el, config) {
 		// Creates menu by config.contextMenu property
 		if(config.contextMenu){
-		 	el.find("div.portlet-content").contextMenu({
+		 	el.find("div.atms-ui-portlet-content").contextMenu({
 				menu: config.contextMenu
 			},
 				function(action, el, pos) {
