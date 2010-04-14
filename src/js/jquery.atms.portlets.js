@@ -115,8 +115,13 @@
 				totalHeight = portletHeights;
 			 }
 		});
-		totalHeight+= el.find(".atms-ui-portlet-column-header").outerHeight(true);
-		totalHeight+=15; // 15 aby bylo miejsce na placeholder
+		
+		totalHeight+=15; // 15 for placeholder place
+		
+		/* If row contains headers, they should be calculated into total column height */
+		if(el.find(".atms-ui-portlet-column .atms-ui-portlet-column-header").length>0){
+			totalHeight+= el.find(".atms-ui-portlet-column-header").outerHeight(true);
+		}
 		el.find(".atms-ui-portlet-column, .atms-ui-portlet-column-legend").each(function(){ $(this).height(totalHeight);});
 	}
 	
