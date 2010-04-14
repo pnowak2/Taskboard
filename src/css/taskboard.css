@@ -81,12 +81,12 @@ body {
 	visibility: hidden;
 }
 
-.task-priority,.task-person,.task-date,.task-description {
+.atms-ui-portlet-text-entry, .atms-ui-portlet-text-entry-descr {
 	color: #666;
 	clear: both;
 }
 
-.task-description {
+.atms-ui-portlet-text-entry-descr {
 	color: #888;
 }
 
