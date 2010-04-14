@@ -133,3 +133,8 @@ div#switcher {
 	width: 100%;
 	margin-top: .3em;
 }
+
+.atms-ui-portlet-row .atms-ui-portlet-column-legend {
+	margin-top: 0;
+	margin-bottom: 0;
+}
