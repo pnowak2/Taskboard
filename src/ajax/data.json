@@ -1,0 +1,49 @@
+{
+  "message" : "To zadanie jest juz przypisane",
+  "projects": [
+  				{
+  					"id" : 1,
+  					"name" : "Projekt 1",
+  					"requirements": [
+  										{
+  											"id" : 1,
+  											"name" : "Wymaganie 1",
+  											"tasks" : [
+  														{
+  															"id" : 1,
+  															"name" : "Zadanie 1",
+  															"status" : "5 - najwyzszy"
+  														},
+  														{
+  															"id" : 2,
+  															"name" : "Zadanie 2",
+  															"status" : "3 - normalny"
+  														}
+  													  ]
+  										}
+  									]
+  				},
+  				{
+  					"id" : 2,
+  					"name" : "Projekt 2",
+  					"requirements": [
+  										{
+  											"id" : 2,
+  											"name" : "Wymaganie 2",
+  											"tasks" : [
+  														{
+  															"id" : 1,
+  															"name" : "Zadanie 1",
+  															"status" : "1 - niski"
+  														},
+  														{
+  															"id" : 2,
+  															"name" : "Zadanie 2",
+  															"status" : "4 - wazny"
+  														}
+  													  ]
+  										}
+  									]
+  				}
+  			  ]
+}
