@@ -25,6 +25,7 @@ body {
 	margin-right: .3em;
 	margin-top: 0;
 	overflow: hidden;
+	min-height: 12em;
 }
 
 .atms-ui-portlet-column-legend {
@@ -126,4 +127,8 @@ div#switcher {
 .atms-ui-portlets-header span.ui-icon {
 	float: left;
 	margin-right: .3em;
+}
+
+.atms-ui-portlet-row {
+	width: 100%;
 }
