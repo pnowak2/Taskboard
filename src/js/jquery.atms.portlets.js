@@ -38,7 +38,7 @@
 	 * Handle Tags
 	 */
 	function handleTags(el){
-		
+ 	
 		$("<div/>", {
 			  "class": "atms-ui-portlets-header",
 			  text: "ATMS (ATMS)"
@@ -56,10 +56,6 @@
 			});
 		$("<div/>", {
 			  "class": "atms-ui-portlet-column-header",
-			  text: 'Header'
-			}).appendTo(column);
-		$("<div/>", {
-			  "class": "atms-ui-portlet-column-pointer ui-state-highlight ui-corner-all",
 			  text: 'Header'
 			}).appendTo(column);
 		
@@ -87,6 +83,13 @@
 			createPortletItem("ui-icon-flag", "Normalny").appendTo(portletContent);
 			createPortletItem("ui-icon-calendar", "02-03-2010").appendTo(portletContent);
 			createPortletItem("ui-icon ui-icon-comment", "BUG - Brak pola w rejestracji czasu pracy. Niniejszy blad wystepuje tylko w IE7.").appendTo(portletContent);
+			
+		 	el.find(".atms-ui-portlet-row:first .atms-ui-portlet-column").each(function(){
+		 		$("<div/>", {
+					  "class": ("atms-ui-portlet-column-pointer"),
+					  text: $(this).find(".atms-ui-portlet-column-header").text()
+				}).appendTo($(this));
+		 	});
 	}
 	
 	/*
@@ -146,12 +149,6 @@
 	 */
 	function handleStyles(el){
 		el.addClass("atms-ui-portlet-container");
-	 	el.find(".atms-ui-portlet-row:first .atms-ui-portlet-column").each(function(){
-	 		$("<div/>", {
-				  "class": ("atms-ui-portlet-column-pointer"),
-				  text: $(this).find(".atms-ui-portlet-column-header").text()
-			}).appendTo($(this));
-	 	});
 		el.find(".atms-ui-portlets-header").addClass("ui-widget-header ui-corner-all");
 		el.find(".atms-ui-portlet-column-legend").addClass("ui-state-highlight ui-corner-all");
 		el.find(".atms-ui-portlet-column-header").addClass("ui-corner-all");
