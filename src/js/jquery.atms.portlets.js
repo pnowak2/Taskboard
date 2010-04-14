@@ -39,10 +39,21 @@
 	 */
 	function handleTags(el){
 		
-		/* Header */
+		$("<div/>", {
+			  "class": "atms-ui-portlets-header",
+			  text: "ATMS (ATMS)"
+			}).appendTo(el);
+		var portletsColumnsContainer = $("<div/>", {
+			  "class": "atms-ui-portlet-columns-container"
+			}).appendTo(el);
+		var portletsRow = $("<div/>", {
+			  "class": "atms-ui-portlet-row"
+			}).appendTo(portletsColumnsContainer);
+		
+		
 		var column = $("<div/>", {
 			  "class": "atms-ui-portlet-column"
-			})
+			});
 		$("<div/>", {
 			  "class": "atms-ui-portlet-column-header",
 			  text: 'Header'
@@ -51,6 +62,13 @@
 			  "class": "atms-ui-portlet-column-pointer ui-state-highlight ui-corner-all",
 			  text: 'Header'
 			}).appendTo(column);
+		
+		var columnLegend = $("<div/>", {
+			  "class": "atms-ui-portlet-column-legend"
+			});
+		
+		columnLegend.appendTo(portletsRow);
+		column.appendTo(portletsRow);
 		
 		/* Portlet */
 		var portlet = $("<div/>", {
@@ -69,29 +87,6 @@
 			createPortletItem("ui-icon-flag", "Normalny").appendTo(portletContent);
 			createPortletItem("ui-icon-calendar", "02-03-2010").appendTo(portletContent);
 			createPortletItem("ui-icon ui-icon-comment", "BUG - Brak pola w rejestracji czasu pracy. Niniejszy blad wystepuje tylko w IE7.").appendTo(portletContent);
-		
-
-			$('.result').ajaxError(function(e, xhr, settings, exception) {
-				$(this).text('Triggered ajaxError handler. ' + settings.url);
-			});
-			
-			$.getJSON('ajax/data.json', function(data) {
-				$('.result').append('<p>' + data.message + '</p>');
-				$.each(data.projects, function(i,project){
-					$('.result').append('<p><b>Project: ' + project.name + '</b></p>');
-					$.each(project.requirements, function(i,requirement){
-						$('.result').append('<p>Requirement: ' + requirement.name + '</p>');
-						$.each(requirement.tasks, function(i,task){
-							$('.result').append('<p>' + task.status + '</p>');
-						});
-					});
-				});
-			});
-			
-		el.append(column);
-
-		el.find(".atms-ui-portlet-row:first").append(column);
-
 	}
 	
 	/*

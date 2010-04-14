@@ -25,6 +25,23 @@
 												   });
 				
 				$('#switcher').themeswitcher();
+
+				$('.result').ajaxError(function(e, xhr, settings, exception) {
+					$(this).text('Triggered ajaxError handler. ' + settings.url);
+				});
+				
+				$.getJSON('ajax/data.json', function(data) {
+					$('.result').append('<p>' + data.message + '</p>');
+					$.each(data.projects, function(i,project){
+						$('.result').append('<p><b>Project: ' + project.name + '</b></p>');
+						$.each(project.requirements, function(i,requirement){
+							$('.result').append('<p>Requirement: ' + requirement.name + '</p>');
+							$.each(requirement.tasks, function(i,task){
+								$('.result').append('<p>' + task.status + '</p>');
+							});
+						});
+					});
+				});
 			})
 		</script>
 		
