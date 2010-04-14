@@ -11,7 +11,7 @@
 	     }
 	     if (settings) $.extend(config, settings);
 	     
-			// handleTags(this);
+			handleTags(this);
 			handleContextMenu(this, config);
 			handleStyles(this);
 			handleSortable(this);
@@ -41,7 +41,7 @@
 		
 		/* Header */
 		var column = $("<div/>", {
-			  "class": "column"
+			  "class": "atms-ui-portlet-column"
 			})
 		$("<div/>", {
 			  "class": "atms-ui-portlet-column-header",
@@ -54,7 +54,7 @@
 		
 		/* Portlet */
 		var portlet = $("<div/>", {
-			  "class": "portlet"
+			  "class": "atms-ui-portlet"
 			}).appendTo(column);
 		
 			$("<div/>", {
@@ -65,20 +65,20 @@
 				  "class": "atms-ui-portlet-content"
 				}).appendTo(portlet);
 		
-			createPortletItem("task-person", "ui-icon-person", "Janus Pawel").appendTo(portletContent);
-			createPortletItem("task-priority", "ui-icon-flag", "Normalny").appendTo(portletContent);
-			createPortletItem("task-date", "ui-icon-calendar", "02-03-2010").appendTo(portletContent);
-			createPortletItem("task-description", "ui-icon ui-icon-comment", "BUG - Brak pola w rejestracji czasu pracy. Niniejszy blad wystepuje tylko w IE7.").appendTo(portletContent);
+			createPortletItem("ui-icon-person", "Janus Pawel").appendTo(portletContent);
+			createPortletItem("ui-icon-flag", "Normalny").appendTo(portletContent);
+			createPortletItem("ui-icon-calendar", "02-03-2010").appendTo(portletContent);
+			createPortletItem("ui-icon ui-icon-comment", "BUG - Brak pola w rejestracji czasu pracy. Niniejszy blad wystepuje tylko w IE7.").appendTo(portletContent);
 		
-		el.append(column);
+		el.find(".atms-ui-portlet-row:first").append(column);
 	}
 	
 	/*
 	 * Creates portlet item
 	 */
-	function createPortletItem(clazz, icon, text) {
+	function createPortletItem(icon, text) {
 		var portletItem = $("<div/>", {
-			  "class": clazz
+			  "class": "atms-ui-portlet-text-entry"
 			});
 			$("<span/>", {
 				  "class": ("ui-icon " + icon)
