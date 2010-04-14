@@ -86,27 +86,8 @@ body {
 	clear: both;
 }
 
-.task-priority {
-	
-}
-
-.task-person {
-	
-}
-
-.task-date {
-	
-}
-
 .task-description {
 	color: #888;
-}
-
-.task-line {
-	border: 0;
-	width: 100%;
-	height: 1px;
-	background-color: #ddd;
 }
 
 div.atms-ui-portlet-content span.ui-icon {
@@ -119,13 +100,6 @@ div.atms-ui-portlet-content span.ui-icon {
 	padding: .5em;
 	margin-bottom: .3em;
 	text-align: center;
-}
-
-.taksboard-ui-widget-header-alert {
-	background: url("img/red-header.png") repeat-x scroll 50% 50% #5C9CCC;
-	border: 1px solid #a04349;
-	color: #FFFFFF;
-	font-weight: bold;
 }
 
 .atms-ui-portlet-column-pointer {
