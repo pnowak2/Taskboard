@@ -1,5 +1,19 @@
 {
   "message" : "To zadanie jest juz przypisane",
+  "statuses": [
+  				{
+  					"name" : "Nowy"
+  				},
+  				{
+  					"name" : "W trakcie"
+  				},
+  				{
+  					"name" : "Do testow"
+  				},
+  				{
+  					"name" : "Zamkniete"
+  				}
+  			  ],
   "projects": [
   				{
   					"id" : 1,

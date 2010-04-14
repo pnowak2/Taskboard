@@ -3,24 +3,24 @@
 	$.fn.portlets = function(settings) {
 		     
 	     var config = {  
-					   data: "#",
+					   data: null,
 					   contextMenu: null,
 					   contextMenuAction: function(item, el){},
 					   allCollapsedByDefault: false,
 					   update: function(){}
 	     }
 	     if (settings) $.extend(config, settings);
-	     
-			handleTags(this);
-			handleContextMenu(this, config);
-			handleStyles(this);
-			handleSortable(this);
-	     
-			$(this).find(".atms-ui-portlet-row").each(function(){
-				refreshHeight($(this));
-			});
+
+		 handleTags(this);
+		 handleContextMenu(this, config);
+		 handleStyles(this);
+		 handleSortable(this);
+     
+		 $(this).find(".atms-ui-portlet-row").each(function(){
+		 	refreshHeight($(this));
+		 });
 			
-	    return this;
+	     return this;
 	};
 	
 	/* Public functions */
