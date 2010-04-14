@@ -55,7 +55,7 @@
 			}).appendTo(column);
 		
 			$("<div/>", {
-				  "class": "portlet-header",
+				  "class": "atms-ui-portlet-header",
 				  text: 'Portlet'
 				}).appendTo(portlet);
 			var portletContent = $("<div/>", {
@@ -112,7 +112,7 @@
 				totalHeight = portletHeights;
 			 }
 		});
-		totalHeight+= el.find(".portlet-header").height();
+		totalHeight+= el.find(".atms-ui-portlet-header").height();
 		el.find(".atms-ui-portlet-column, .atms-ui-portlet-column-legend").each(function(){ $(this).height(totalHeight);});
 	}
 	
@@ -122,13 +122,13 @@
 	function handleStyles(el){
 		el.find(".atms-ui-portlet-column .atms-ui-portlet-column-header").addClass("ui-widget-header");
 	 	el.find(".atms-ui-portlet").addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all")
-		.find(".portlet-header")
+		.find(".atms-ui-portlet-header")
 			.addClass("ui-widget-header ui-corner-all")
 			.prepend('<span class="ui-icon ui-icon-carat-1-n" title="Minimalizuj/Maksymalizuj"></span>')
 			.end()
 		.find(".portlet-content");
 	
-	 	el.find(".portlet-header .ui-icon-carat-1-n").click(function() {
+	 	el.find(".atms-ui-portlet-header .ui-icon-carat-1-n").click(function() {
 			$(this).toggleClass("ui-icon-carat-1-n").toggleClass("ui-icon-carat-1-s");
 			$(this).parents(".atms-ui-portlet:first").find(".portlet-content").toggle("fast");
 		});
@@ -157,7 +157,7 @@
 		el.find(".atms-ui-portlet-column").sortable({
 			connectWith: '.atms-ui-portlet-column',
 			items: '.atms-ui-portlet:not(.ui-state-disabled)',
-			handle: 'div.portlet-header',
+			handle: 'div.atms-ui-portlet-header',
 			placeholder: 'ui-state-highlight',
 			opacity: 0.7,
 			revert: 200,

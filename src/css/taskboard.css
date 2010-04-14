@@ -46,7 +46,7 @@ body {
 	min-width:100px;
 }
 
-.portlet-header {
+.atms-ui-portlet-header {
 	margin: 0.25em;
 	padding-bottom: 2px;
 	padding-top: 2px;
@@ -54,15 +54,15 @@ body {
 	cursor: move;
 }
 
-.portlet-header .ui-icon-carat-1-n, .portlet-header .ui-icon-carat-1-s  {
+.atms-ui-portlet-header .ui-icon-carat-1-n, .atms-ui-portlet-header .ui-icon-carat-1-s  {
 	cursor: pointer;	
 }
 
-.portlet-header,.portlet-content {
+.atms-ui-portlet-header,.portlet-content {
 	overflow: hidden;
 }
 
-.portlet-header .ui-icon {
+.atms-ui-portlet-header .ui-icon {
 	float: right;
 }
 
