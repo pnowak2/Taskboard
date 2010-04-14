@@ -140,3 +140,7 @@ div#switcher {
 	margin-bottom: 0;
 	margin-left: .3em;
 }
+
+.atms-ui-portlets-main {
+	width: 100%;
+}

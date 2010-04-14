@@ -38,14 +38,17 @@
 	 * Handle Tags
 	 */
 	function handleTags(el){
- 	
+		
+		var portletsMain = $("<div/>", {
+			  "class": "atms-ui-portlets-main"
+			}).appendTo(el);
 		$("<div/>", {
 			  "class": "atms-ui-portlets-header",
 			  text: "ATMS (ATMS)"
-			}).appendTo(el);
+			}).appendTo(portletsMain);
 		var portletsColumnsContainer = $("<div/>", {
 			  "class": "atms-ui-portlet-columns-container"
-			}).appendTo(el);
+			}).appendTo(portletsMain);
 		var portletsRow = $("<div/>", {
 			  "class": "atms-ui-portlet-row"
 			}).appendTo(portletsColumnsContainer);
