@@ -166,6 +166,14 @@
 			.prepend('<span class="ui-icon ui-icon-carat-1-n" title="Minimalizuj/Maksymalizuj"></span>')
 			.end()
 		.find(".atms-ui-portlet-content");
+	 	
+	 	el.find(".atms-ui-portlet-row").each(function(i){
+	 		jQuery.data(this, "atms-ui-portlet-column-connect", i);
+
+	 		$(this).find(".atms-ui-portlet-column").each(function(){
+	 			$(this).addClass("atms-ui-portlet-column-connect-"+i);
+	 		});
+	 	});
 	}
 	
 	/*
@@ -204,22 +212,28 @@
 	 * Handles sortables
 	 */
 	function handleSortable(el){
-		// Sortables
-		el.find(".atms-ui-portlet-column").sortable({
-			connectWith: '.atms-ui-portlet-column',
-			items: '.atms-ui-portlet:not(.ui-state-disabled)',
-			handle: 'div.atms-ui-portlet-header',
-			placeholder: 'ui-state-highlight',
-			opacity: 0.7,
-			revert: 200,
-			tolerance: 'pointer',
-			cursor: 'move',
-			forcePlaceholderSize: true,
-			over: overMethod,
-			update: updateMethod,
-			start: startMethod,
-			stop: stopMethod
+		
+		el.find(".atms-ui-portlet-row").each(function(){
+			var i = jQuery.data(this, "atms-ui-portlet-column-connect");
+	
+			// Sortables
+			$(this).find(".atms-ui-portlet-column").sortable({
+				connectWith: '.atms-ui-portlet-column-connect-'+i,
+				items: '.atms-ui-portlet:not(.ui-state-disabled)',
+				handle: 'div.atms-ui-portlet-header',
+				placeholder: 'ui-state-highlight',
+				opacity: 0.7,
+				revert: 200,
+				tolerance: 'pointer',
+				cursor: 'move',
+				forcePlaceholderSize: true,
+				over: overMethod,
+				update: updateMethod,
+				start: startMethod,
+				stop: stopMethod
+			});
 		});
+
 	}
 	
 	/*
