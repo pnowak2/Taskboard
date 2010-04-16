@@ -15,6 +15,7 @@
 		 handleContextMenu(this, config);
 		 handleStyles(this);
 		 handleSortable(this);
+		 handleTooltips(this);
 		 handleEvents(this);
      
 		 $(this).find(".atms-ui-portlet-row").each(function(){
@@ -234,6 +235,16 @@
 			});
 		});
 
+	}
+	
+	/*
+	 * Handles tooltips
+	 */
+	function handleTooltips(el){
+		 el.find("*[title]").tooltip({
+				id: "atms-ui-tooltip-id",
+				extraClass: "ui-state-default ui-corner-all"
+		 });
 	}
 	
 	/*
