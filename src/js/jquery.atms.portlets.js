@@ -156,7 +156,7 @@
 		el.addClass("atms-ui-portlet-container");
 		el.find(".atms-ui-portlets-header").addClass("ui-widget-header ui-corner-all")
 			.prepend('<span class="ui-icon ui-icon-carat-1-n" title="Minimalizuj/Maksymalizuj"></span>');
-		el.find(".atms-ui-portlet-column-legend").addClass("ui-state-highlight ui-corner-all");
+		el.find(".atms-ui-portlet-column-legend").addClass(/*ui-state-highlight*/"ui-widget-header ui-corner-all");
 		el.find(".atms-ui-portlet-column-header").addClass("ui-corner-all");
 		el.find(".atms-ui-portlet-column-pointer").addClass("ui-state-highlight ui-corner-all");
 		el.find(".atms-ui-portlet-row").addClass("ui-helper-clearfix ui-corner-all ui-widget-content");
