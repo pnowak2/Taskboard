@@ -6,11 +6,13 @@
 		<link type="text/css" rel="stylesheet" href="http://jqueryui.com/themes/base/ui.all.css" />
 		<link rel="stylesheet" href="css/jquery.contextMenu.css" type="text/css" />
 		<link rel="stylesheet" href="css/base.css" type="text/css" media="all" />
-		<link type="text/css" href="css/redmond/jquery-ui-1.8.custom.css" rel="stylesheet" />	
+		<link type="text/css" href="css/redmond/jquery-ui-1.8.custom.css" rel="stylesheet" />
+		<link type="text/css" href="css/jquery.tooltip.css" rel="stylesheet" />		
 		<link rel="stylesheet" href="css/jquery.atms.portlets.css" type="text/css" media="all" />
 		<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 		<script type="text/javascript" src="js/jquery-ui-1.8.custom.min.js"></script>
 		<script type="text/javascript" src="js/jquery.contextMenu.js"></script>
+		<script type="text/javascript" src="js/jquery.tooltip.js"></script>
 		<script type="text/javascript" src="js/jquery.atms.portlets.js"></script>
 		
 		<script type="text/javascript"
@@ -30,6 +32,11 @@
 						contextMenu: "myMenu",
 						contextMenuAction: function(item, el){alert("item: "+item);}
 					 });
+
+					 $("span[title]").tooltip({extraClass: "ui-state-default ui-corner-all"});
+
+				
+
 				});
 
 				
