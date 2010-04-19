@@ -29,6 +29,7 @@
 				$.getJSON('ajax/data.json', function(data) {
 					$("#myportlet").portlets({
 						data: data,
+						update: function(event, ui){},
 						contextMenu: "myMenu",
 						contextMenuAction: function(item, el){alert("item: "+item);}
 					 });

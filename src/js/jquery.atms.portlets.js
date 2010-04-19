@@ -7,7 +7,7 @@
 					   contextMenu: null,
 					   contextMenuAction: function(item, el){},
 					   allCollapsedByDefault: false,
-					   update: function(){}
+					   update: function(event, ui){}
 	     }
 	     if (settings) $.extend(config, settings);
 
@@ -22,6 +22,79 @@
 		 	refreshHeight($(this));
 		 });
 			
+		/*
+		 * Handles sortables
+		 */
+		function handleSortable(el){
+			
+			el.find(".atms-ui-portlet-row").each(function(){
+				var i = jQuery.data(this, "atms-ui-portlet-column-connect");
+		
+				// Sortables
+				$(this).find(".atms-ui-portlet-column").sortable({
+					connectWith: '.atms-ui-portlet-column-connect-'+i,
+					items: '.atms-ui-portlet:not(.ui-state-disabled)',
+					handle: 'div.atms-ui-portlet-header',
+					placeholder: 'ui-state-highlight',
+					opacity: 0.7,
+					revert: 200,
+					tolerance: 'pointer',
+					cursor: 'move',
+					forcePlaceholderSize: true,
+					over: overMethod,
+					update: updateMethod,
+					receive: receiveMethod,
+					start: startMethod,
+					stop: stopMethod
+				});
+			});
+
+		}
+		
+		/*
+		 * Handles portlet over another column
+		 */
+		function overMethod(event, ui) { 
+			$(jQuery.data(ui.item, "last-selected-column")).removeClass("ui-state-focus");
+			jQuery.data(ui.item, "last-selected-column", ui.placeholder.parent());
+			
+			if(!(ui.placeholder.parent(".atms-ui-portlet-column:first").find(".portlet-dragged").length > 0)){
+				ui.placeholder.parent().addClass("ui-state-focus ui-corner-all").css("border", "none");
+			}
+		}
+		
+		/*
+		 * Handles finished update portlet drop on column
+		 */
+		function updateMethod(event, ui) { 
+			ui.item.parent().removeClass("ui-state-focus"); 
+			ui.item.removeClass("portlet-dragged");
+			refreshHeight($(this).parents(".atms-ui-portlet-row:first"));
+		}
+		
+		function receiveMethod(event, ui){
+			config.update(event, ui);
+		}
+		
+		/*
+		 * Handles start drag of portlet
+		 */
+		function startMethod(event, ui) {
+			  $(ui.placeholder).addClass("ui-corner-all");
+			  $(ui.item).addClass("portlet-dragged");
+			  
+			  $(this).parents(".atms-ui-portlet-rows-container").find(".atms-ui-portlet-column-pointer").each(function(){
+				  $(this).css("left", $(this).parents(".atms-ui-portlet-column:first").position().left + ($(this).parents(".atms-ui-portlet-column:first").width()/2) - ($(this).width()/1.28));
+				  $(this).css("top", ui.placeholder.position().top + (ui.placeholder.height()/2) - ($(this).outerHeight(true)/2) );
+				  $(this).show();
+			  });
+			  
+		}
+		
+		function stopMethod(event, ui) {
+			$(this).parents(".atms-ui-portlet-rows-container").find(".atms-ui-portlet-column-pointer").hide();
+		}
+		 
 	     return this;
 	};
 	
@@ -210,34 +283,6 @@
 	}
 	
 	/*
-	 * Handles sortables
-	 */
-	function handleSortable(el){
-		
-		el.find(".atms-ui-portlet-row").each(function(){
-			var i = jQuery.data(this, "atms-ui-portlet-column-connect");
-	
-			// Sortables
-			$(this).find(".atms-ui-portlet-column").sortable({
-				connectWith: '.atms-ui-portlet-column-connect-'+i,
-				items: '.atms-ui-portlet:not(.ui-state-disabled)',
-				handle: 'div.atms-ui-portlet-header',
-				placeholder: 'ui-state-highlight',
-				opacity: 0.7,
-				revert: 200,
-				tolerance: 'pointer',
-				cursor: 'move',
-				forcePlaceholderSize: true,
-				over: overMethod,
-				update: updateMethod,
-				start: startMethod,
-				stop: stopMethod
-			});
-		});
-
-	}
-	
-	/*
 	 * Handles tooltips
 	 */
 	function handleTooltips(el){
@@ -245,46 +290,6 @@
 				id: "atms-ui-tooltip-id",
 				extraClass: "ui-state-default ui-corner-all"
 		 });
-	}
-	
-	/*
-	 * Handles portlet over another column
-	 */
-	function overMethod(event, ui) { 
-		$(jQuery.data(ui.item, "last-selected-column")).removeClass("ui-state-focus");
-		jQuery.data(ui.item, "last-selected-column", ui.placeholder.parent());
-		
-		if(!(ui.placeholder.parent(".atms-ui-portlet-column:first").find(".portlet-dragged").length > 0)){
-			ui.placeholder.parent().addClass("ui-state-focus ui-corner-all").css("border", "none");
-		}
-	}
-	
-	/*
-	 * Handles finished update portlet drop on column
-	 */
-	function updateMethod(event, ui) { 
-		ui.item.parent().removeClass("ui-state-focus"); 
-		ui.item.removeClass("portlet-dragged");
-		refreshHeight($(this).parents(".atms-ui-portlet-row:first"));
-	}
-	
-	/*
-	 * Handles start drag of portlet
-	 */
-	function startMethod(event, ui) {
-		  $(ui.placeholder).addClass("ui-corner-all");
-		  $(ui.item).addClass("portlet-dragged");
-		  
-		  $(this).parents(".atms-ui-portlet-rows-container").find(".atms-ui-portlet-column-pointer").each(function(){
-			  $(this).css("left", $(this).parents(".atms-ui-portlet-column:first").position().left + ($(this).parents(".atms-ui-portlet-column:first").width()/2) - ($(this).width()/1.28));
-			  $(this).css("top", ui.placeholder.position().top + (ui.placeholder.height()/2) - ($(this).outerHeight(true)/2) );
-			  $(this).show();
-		  });
-		  
-	}
-	
-	function stopMethod(event, ui) {
-		$(this).parents(".atms-ui-portlet-rows-container").find(".atms-ui-portlet-column-pointer").hide();
 	}
 	
 })(jQuery);
