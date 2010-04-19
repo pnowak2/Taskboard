@@ -30,8 +30,10 @@
 					$("#myportlet").portlets({
 						data: data,
 						update: function(portlet, newColumn, oldColumn, row){},
-						contextMenuId: "myMenu",
-						contextMenuAction: function(action, portlet){}
+						legendContextMenuId: "legendMenu",
+						legendContextMenuAction: function(action, legend){alert(action);},
+						portletContextMenuId: "myMenu",
+						portletContextMenuAction: function(action, portlet){alert(action);}
 					 });
 				});
 
@@ -235,6 +237,11 @@
 			<li class="user"><a href="#assign">Assign to me</a></li>
 			<li class="table-go"><a href="#task-assignment">Task assignment</a></li>
 			<li class="time"><a href="#time-recording">Time recording</a></li>
+		</ul>
+		
+		<ul id="legendMenu" class="contextMenu ui-widget-content">
+			<li class="edit"><a href="#edit">Edit</a></li>
+			<li class="user"><a href="#new-requirement">New requirement</a></li>
 		</ul>
 
 	</body>

@@ -4,14 +4,17 @@
 		     
 	     var config = {  
 					   data: null,
-					   contextMenuId: null,
-					   contextMenuAction: function(action, portlet){},
+					   legendContextMenuId: null,
+					   legendContextMenuAction: function(action, legend){},
+					   portletContextMenuId: null,
+					   portletContextMenuAction: function(action, portlet){},
 					   update: function(portlet, newColumn, oldColumn, row){}
 	     }
 	     if (settings) $.extend(config, settings);
 
 		 handleTags(this);
-		 handleContextMenu(this, config);
+		 handleLegendContextMenu(this, config);
+		 handlePortletContextMenu(this, config);
 		 handleStyles(this);
 		 handleSortable(this);
 		 handleTooltips(this);
@@ -269,14 +272,27 @@
 	/*
 	 * Handles context menu for portlets
 	 */
-	function handleContextMenu(el, config) {
-		// Creates menu by config.contextMenu property
-		if(config.contextMenuId){
+	function handlePortletContextMenu(el, config) {
+		if(config.portletContextMenuId){
 		 	el.find("div.atms-ui-portlet-content").contextMenu({
-				menu: config.contextMenuId
+				menu: config.portletContextMenuId
 			},
 				function(action, el, pos) {
-					config.contextMenuAction(action, el.parents(".atms-ui-portlet:first"));
+					config.portletContextMenuAction(action, el.parents(".atms-ui-portlet:first"));
+			});
+		}
+	}
+	
+	/*
+	 * Handles context menu for legends
+	 */
+	function handleLegendContextMenu(el, config) {
+		if(config.legendContextMenuId){
+		 	el.find(".atms-ui-portlet-column-legend").contextMenu({
+				menu: config.legendContextMenuId
+			},
+				function(action, el, pos) {
+					config.legendContextMenuAction(action, el);
 			});
 		}
 	}
@@ -285,9 +301,14 @@
 	 * Handles tooltips
 	 */
 	function handleTooltips(el){
+		 el.find(".atms-ui-portlet-column-header").each(function(){
+			$(this).parents(".atms-ui-portlet-column-legend:first").attr("title",$(this).text()); 
+		 });
+		 
 		 el.find("*[title]").tooltip({
 				id: "atms-ui-tooltip-id",
-				extraClass: "ui-state-default ui-corner-all"
+				extraClass: "ui-state-default ui-corner-all",
+				delay: 1000
 		 });
 	}
 	
