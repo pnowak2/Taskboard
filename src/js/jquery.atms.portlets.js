@@ -4,9 +4,8 @@
 		     
 	     var config = {  
 					   data: null,
-					   contextMenu: null,
-					   contextMenuAction: function(item, el){},
-					   allCollapsedByDefault: false,
+					   contextMenuId: null,
+					   contextMenuAction: function(action, portlet){},
 					   update: function(portlet, newColumn, oldColumn, row){}
 	     }
 	     if (settings) $.extend(config, settings);
@@ -116,7 +115,7 @@
 		
 		var portletsMain = $("<div/>", {
 			  "class": "atms-ui-portlets-main"
-			}).appendTo(el);
+			});/*.appendTo(el);*/
 		$("<div/>", {
 			  "class": "atms-ui-portlets-header",
 			  text: "ATMS (ATMS)"
@@ -272,12 +271,12 @@
 	 */
 	function handleContextMenu(el, config) {
 		// Creates menu by config.contextMenu property
-		if(config.contextMenu){
+		if(config.contextMenuId){
 		 	el.find("div.atms-ui-portlet-content").contextMenu({
-				menu: config.contextMenu
+				menu: config.contextMenuId
 			},
 				function(action, el, pos) {
-					config.contextMenuAction(action, el);
+					config.contextMenuAction(action, el.parents(".atms-ui-portlet:first"));
 			});
 		}
 	}
