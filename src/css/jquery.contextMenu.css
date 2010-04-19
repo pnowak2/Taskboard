@@ -58,4 +58,8 @@
 .contextMenu LI.user A { background-image: url(img/user.png); }
 .contextMenu LI.table-go A { background-image: url(img/table_go.png); }
 .contextMenu LI.time A { background-image: url(img/time.png); }
+.contextMenu LI.table A { background-image: url(img/table.png); }
+.contextMenu LI.arrow-divide A { background-image: url(img/arrow_divide.png); }
+.contextMenu LI.add A { background-image: url(img/add.png); }
+
 
