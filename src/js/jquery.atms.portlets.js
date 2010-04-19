@@ -7,7 +7,7 @@
 					   contextMenu: null,
 					   contextMenuAction: function(item, el){},
 					   allCollapsedByDefault: false,
-					   update: function(event, ui){}
+					   update: function(portlet, newColumn, oldColumn){}
 	     }
 	     if (settings) $.extend(config, settings);
 
@@ -73,7 +73,7 @@
 		}
 		
 		function receiveMethod(event, ui){
-			config.update(event, ui);
+			config.update(ui.item, ui.item.parents(".atms-ui-portlet-column:first"), ui.sender);
 		}
 		
 		/*
