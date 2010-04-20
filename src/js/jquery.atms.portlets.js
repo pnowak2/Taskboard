@@ -3,6 +3,7 @@
 	$.fn.portlets = function(settings) {
 		     
 	     var config = {  
+	    		 	   element: $(this),
 					   data: null,
 					   portletsHeaderContextMenuId: null,
 					   portletsHeaderContextMenuAction: function(action, header){},
@@ -22,11 +23,39 @@
 		 handleSortable(this);
 		 handleTooltips(this);
 		 handleEvents(this);
-     
+		 
 		 $(this).find(".atms-ui-portlet-row").each(function(){
 		 	refreshHeight($(this));
 		 });
-			
+
+		 refreshWidth();
+		 $( window ).wresize( refreshWidth );
+		 $(this).css("visibility", "visible");
+		 
+		 /*
+		  * Handles width resize 
+		  */
+		 function refreshWidth(){
+			 var finalWidth = 0;
+			 var colWidth = config.element.find(".atms-ui-portlet-column:first").outerWidth(true);
+			 var legendWidth = config.element.find(".atms-ui-portlet-column-legend:first").outerWidth(true);
+			 var cols = 0;
+
+			 config.element.find(".atms-ui-portlet-row:first-child").each(function(){
+				 var localCols = $(this).find(".atms-ui-portlet-column").length;
+				 if(localCols > cols){
+					cols = localCols; 
+				 }
+			 });
+			 finalWidth = (cols * colWidth) + legendWidth + 3
+
+			 if(finalWidth > config.element.parent().width()){
+				 config.element.width(finalWidth);	
+			 }else{
+				 config.element.width(config.element.parent().width());
+			 }
+		}
+		 
 		/*
 		 * Handles sortables
 		 */

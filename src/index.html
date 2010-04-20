@@ -13,6 +13,7 @@
 		<script type="text/javascript" src="js/jquery-ui-1.8.custom.min.js"></script>
 		<script type="text/javascript" src="js/jquery.contextMenu.js"></script>
 		<script type="text/javascript" src="js/jquery.tooltip.js"></script>
+		<script type="text/javascript" src="js/jquery.wresize.js"></script>
 		<script type="text/javascript" src="js/jquery.atms.portlets.js"></script>
 		
 		<script type="text/javascript"
@@ -89,10 +90,6 @@
 										<div class="atms-ui-portlet-text-entry">
 											<span class="ui-icon ui-icon-calendar" title="Data wykonania"></span>02-03-2010
 										</div>
-										<div class="atms-ui-portlet-text-entry-descr">
-											<span class="ui-icon ui-icon-comment" title="Komentarz"></span>
-											BUG - Brak pola w rejestracji czasu pracy. Niniejszy blad wystepuje tylko w IE7.
-										</div>
 									</div>
 								</div>
 							
@@ -113,10 +110,6 @@
 										</div>
 										<div class="atms-ui-portlet-text-entry">
 											<span class="ui-icon ui-icon-calendar" title="Data wykonania"></span>02-03-2010
-										</div>
-										<div class="atms-ui-portlet-text-entry-descr">
-											<span class="ui-icon ui-icon-comment" title="Komentarz"></span>
-											BUG - Brak pola w rejestracji czasu pracy. Niniejszy blad wystepuje tylko w IE7.
 										</div>
 									</div>
 								</div>
@@ -229,6 +222,48 @@
 							</div>
 						</div>
 					</div>
+					
+					<div class="atms-ui-portlets-header">
+						ATMS (ATMS)
+						<!-- <span class="ui-icon ui-icon-circle-minus"></span> -->
+					</div>
+					
+					<div class="atms-ui-portlet-rows-container">
+						
+						<div class="atms-ui-portlet-row">
+							<div class="atms-ui-portlet-column-legend">
+								<div class="atms-ui-portlet-column-header">
+									Other stuff
+								</div>
+								<div class="atms-ui-portlet-column-legend-details">
+									Bug Fixing
+									<div>
+										<span>Priority:</span>
+										<span>5 - highest</span>
+									</div>
+								</div>
+							</div>
+							
+							<div class="atms-ui-portlet-column">
+								<div class="atms-ui-portlet-column-header">Nowe</div>
+								<div class="atms-ui-portlet">
+									<div class="atms-ui-portlet-header ui-state-highlight">Rozpatrywanie urlopow - odswiezanie</div>
+									<div class="atms-ui-portlet-content">
+										<div class="atms-ui-portlet-text-entry">
+											<span class="ui-icon ui-icon-flag" title="Priorytet"></span>2-niski
+										</div>
+										<div class="atms-ui-portlet-text-entry">
+											<span class="ui-icon ui-icon-calendar" title="Data wykonania"></span>02-03-2010
+										</div>
+									</div>
+								</div>
+							</div>
+							
+
+						</div>
+
+					</div>
+					
 				</div>
 			</div>
 		
@@ -250,6 +285,7 @@
 		
 		<ul id="portletsHeaderMenu" class="contextMenu ui-widget-content">
 			<li class="add"><a href="#new-requirement">New requirement</a></li>
+			<li class="add"><a href="#collapse">Collapse</a></li>
 		</ul>
 		
 		

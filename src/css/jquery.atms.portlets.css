@@ -19,7 +19,7 @@ body {
 }
 
 .atms-ui-portlet-column, .atms-ui-portlet-column-legend {
-	width: 200px;
+	width: 150px;
 	float: left;
 	padding-bottom: .3em;
 	margin-right: .3em;
@@ -110,6 +110,7 @@ div.atms-ui-portlet-content span.ui-icon {
 	width: 50px;
 	padding: 1em;
 	text-align: center;
+	overflow: hidden;
 }
 
 div#switcher {
