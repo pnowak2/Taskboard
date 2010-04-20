@@ -4,6 +4,8 @@
 		     
 	     var config = {  
 					   data: null,
+					   portletsHeaderContextMenuId: null,
+					   portletsHeaderContextMenuAction: function(action, header){},
 					   legendContextMenuId: null,
 					   legendContextMenuAction: function(action, legend){},
 					   portletContextMenuId: null,
@@ -13,6 +15,7 @@
 	     if (settings) $.extend(config, settings);
 
 		 handleTags(this);
+		 handlePortletsHeaderContextMenu(this, config);
 		 handleLegendContextMenu(this, config);
 		 handlePortletContextMenu(this, config);
 		 handleStyles(this);
@@ -279,6 +282,17 @@
 			},
 				function(action, el, pos) {
 					config.portletContextMenuAction(action, el.parents(".atms-ui-portlet:first"));
+			});
+		}
+	}
+	
+	function handlePortletsHeaderContextMenu(el, config){
+		if(config.portletsHeaderContextMenuId){
+		 	el.find(".atms-ui-portlets-header").contextMenu({
+				menu: config.portletsHeaderContextMenuId
+			},
+				function(action, el, pos) {
+					config.portletsHeaderContextMenuAction(action, el);
 			});
 		}
 	}

@@ -30,6 +30,8 @@
 					$("#myportlet").portlets({
 						data: data,
 						update: function(portlet, newColumn, oldColumn, row){},
+						portletsHeaderContextMenuId: "portletsHeaderMenu",
+						portletsHeaderContextMenuAction: function(action, header){alert(header)},
 						legendContextMenuId: "legendMenu",
 						legendContextMenuAction: function(action, legend){alert(action);},
 						portletContextMenuId: "myMenu",
@@ -156,7 +158,7 @@
 						<div class="atms-ui-portlet-row">
 							<div class="atms-ui-portlet-column-legend">
 								<div class="atms-ui-portlet-column-header">
-									Requirement
+									Other stuff
 								</div>
 								<div class="atms-ui-portlet-column-legend-details">
 									Bug Fixing
@@ -193,7 +195,7 @@
 						<div class="atms-ui-portlet-row">
 							<div class="atms-ui-portlet-column-legend">
 								<div class="atms-ui-portlet-column-header">
-									Requirement
+									My stuff
 								</div>
 								<div class="atms-ui-portlet-column-legend-details">
 									Bug Fixing
@@ -245,6 +247,12 @@
 			<li class="arrow-divide"><a href="#split">Requirement split</a></li>
 			<li class="add separator"><a href="#new-task">New task</a></li>
 		</ul>
+		
+		<ul id="portletsHeaderMenu" class="contextMenu ui-widget-content">
+			<li class="add"><a href="#new-requirement">New requirement</a></li>
+		</ul>
+		
+		
 
 	</body>
 </html>
