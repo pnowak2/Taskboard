@@ -176,6 +176,11 @@
 	 			$(this).addClass("atms-ui-portlet-column-connect-"+i);
 	 		});
 	 	});
+	 	
+	 	el.find(".atms-ui-portlet-collapsed .atms-ui-portlet-content").each(function(){
+	 		$(this).hide();
+	 		$(this).parents(".atms-ui-portlet:first .ui-icon-carat-1-n").toggleClass("ui-icon-carat-1-s");
+	 	});
 	}
 	
 	/*
