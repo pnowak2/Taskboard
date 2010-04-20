@@ -118,89 +118,12 @@
 	 * Handle Tags
 	 */
 	function handleTags(el){
-		
-		var portletsMain = $("<div/>", {
-			  "class": "atms-ui-portlets-main"
-			});/*.appendTo(el);*/
-		$("<div/>", {
-			  "class": "atms-ui-portlets-header",
-			  text: "ATMS (ATMS)"
-			}).appendTo(portletsMain);
-		var portletsColumnsContainer = $("<div/>", {
-			  "class": "atms-ui-portlet-rows-container"
-			}).appendTo(portletsMain);
-		var portletsRow = $("<div/>", {
-			  "class": "atms-ui-portlet-row"
-			}).appendTo(portletsColumnsContainer);
-		
-		
-		var column = $("<div/>", {
-			  "class": "atms-ui-portlet-column"
-			});
-		$("<div/>", {
-			  "class": "atms-ui-portlet-column-header",
-			  text: 'Header'
-			}).appendTo(column);
-		
-		var columnLegend = $("<div/>", {
-			  "class": "atms-ui-portlet-column-legend"
-			});
-		
-		columnLegend.appendTo(portletsRow);
-		column.appendTo(portletsRow);
-		
-		/* Portlet */
-		var portlet = $("<div/>", {
-			  "class": "atms-ui-portlet"
-			}).appendTo(column);
-		
-			$("<div/>", {
-				  "class": "atms-ui-portlet-header",
-				  text: 'Portlet'
-				}).appendTo(portlet);
-			var portletContent = $("<div/>", {
-				  "class": "atms-ui-portlet-content"
-				}).appendTo(portlet);
-		
-			createPortletItem("ui-icon-person", "Janus Pawel").appendTo(portletContent);
-			createPortletItem("ui-icon-flag", "Normalny").appendTo(portletContent);
-			createPortletItem("ui-icon-calendar", "02-03-2010").appendTo(portletContent);
-			createPortletItem("ui-icon ui-icon-comment", "BUG - Brak pola w rejestracji czasu pracy. Niniejszy blad wystepuje tylko w IE7.").appendTo(portletContent);
-			
-		 	el.find(".atms-ui-portlet-row:first-child .atms-ui-portlet-column").each(function(){
-		 		$("<div/>", {
-					  "class": ("atms-ui-portlet-column-pointer"),
-					  text: $(this).find(".atms-ui-portlet-column-header").text()
-				}).appendTo($(this));
-		 	});
-	}
-	
-	/*
-	 * Creates portlet item
-	 */
-	function createPortletItem(icon, text) {
-		var portletItem = $("<div/>", {
-			  "class": "atms-ui-portlet-text-entry"
-			});
-			$("<span/>", {
-				  "class": ("ui-icon " + icon)
-				}).appendTo(portletItem);
-			$("<span/>", {
-				text: text
-				}).appendTo(portletItem);
-			
-		return portletItem;
-	}
-	
-	/*
-	 * Creates portlet UI based on data
-	 */
-	function createPortlet(column, data){
-		return;
-	}
-	
-	function createColumn(data){
-		return;
+	 	el.find(".atms-ui-portlet-row:first-child .atms-ui-portlet-column").each(function(){
+	 		$("<div/>", {
+				  "class": ("atms-ui-portlet-column-pointer"),
+				  text: $(this).find(".atms-ui-portlet-column-header").text()
+			}).appendTo($(this));
+	 	});
 	}
 	
 	/*
