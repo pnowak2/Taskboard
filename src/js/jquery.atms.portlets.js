@@ -132,15 +132,6 @@
 	     return this;
 	};
 	
-	/* Public functions */
-
-	/*
-	 * Performs data refresh
-	 */
-	$.fn.portlets.refresh = function() {
-		
-	};
-	
 	/* Private functions */
 
 	/*
