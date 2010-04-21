@@ -71,6 +71,7 @@ body {
 .atms-ui-portlet-content {
 	padding: 0.4em;
 	padding-top: 0;
+	cursor: help;
 }
 
 .ui-sortable-placeholder {
@@ -120,7 +121,6 @@ div#switcher {
 .atms-ui-portlet-container {
 	margin: 0px;
 	width: 100%;
-	cursor: help;
 }
 
 .atms-ui-portlets-header {
