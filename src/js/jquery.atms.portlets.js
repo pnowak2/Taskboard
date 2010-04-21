@@ -21,8 +21,8 @@
 		 handlePortletContextMenu(this, config);
 		 handleStyles(this);
 		 handleSortable(this);
-		 handleTooltips(this);
 		 handleEvents(this);
+		 handleTooltips(this);
 		 
 		 $(this).find(".atms-ui-portlet-row").each(function(){
 		 	refreshHeight($(this));
@@ -267,10 +267,12 @@
 			$(this).parents(".atms-ui-portlet-column-legend:first").attr("title",$(this).text()); 
 		 });
 		 
-		 el.find("*[title]").tooltip({
+		 el.find(".atms-ui-portlet-content").tooltip({
 				id: "atms-ui-tooltip-id",
 				extraClass: "ui-state-default ui-corner-all",
-				delay: 1000
+				bodyHandler: function() {
+		        	return $(this).find(".atms-ui-portlet-tooltip").html(); 
+		    	}
 		 });
 	}
 	
