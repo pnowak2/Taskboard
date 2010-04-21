@@ -120,6 +120,7 @@ div#switcher {
 .atms-ui-portlet-container {
 	margin: 0px;
 	width: 100%;
+	cursor: help;
 }
 
 .atms-ui-portlets-header {
