@@ -225,11 +225,11 @@
 	 */
 	function handlePortletContextMenu(el, config) {
 		if(config.portletContextMenuId){
-		 	el.find("div.atms-ui-portlet-content").contextMenu({
+		 	el.find("div.atms-ui-portlet").contextMenu({
 				menu: config.portletContextMenuId
 			},
 				function(action, el, pos) {
-					config.portletContextMenuAction(action, el.parents(".atms-ui-portlet:first"));
+					config.portletContextMenuAction(action, el);
 			});
 		}
 	}
@@ -263,9 +263,14 @@
 	 * Handles tooltips
 	 */
 	function handleTooltips(el){
-		 el.find(".atms-ui-portlet-column-header").each(function(){
-			$(this).parents(".atms-ui-portlet-column-legend:first").attr("title",$(this).text()); 
-		 });
+		 
+		 el.find(".atms-ui-portlet-column-legend").tooltip({
+			id: "atms-ui-tooltip-id",
+			extraClass: "ui-state-default ui-corner-all",
+			bodyHandler: function() {
+	        	return $(this).find(".atms-ui-portlet-column-header").text(); 
+	    	}
+		 }); 
 		 
 		 el.find(".atms-ui-portlet-content:has(.atms-ui-portlet-tooltip)").tooltip({
 				id: "atms-ui-tooltip-id",

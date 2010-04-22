@@ -32,6 +32,7 @@ if(jQuery)( function() {
 				// Simulate a true right click
 				$(this).mousedown( function(e) {
 					var evt = e;
+					if (e.which == 3){
 					evt.stopPropagation();
 					$(this).mouseup( function(e) {
 						e.stopPropagation();
@@ -126,6 +127,7 @@ if(jQuery)( function() {
 							}, 0);
 						}
 					});
+				}
 				});
 				
 				// Disable text selection
