@@ -158,6 +158,7 @@ div#switcher {
 	width: 10em;
 	color: #666;
 	font-weight: normal;
+	
 }
 
 label.atms-ui-portlet-label span.atms-ui-portlet-label-icon {
@@ -165,4 +166,13 @@ label.atms-ui-portlet-label span.atms-ui-portlet-label-icon {
 	position: relative;
 	left: -2em; 
 	margin-right: -2em;
+	margin-top: -.1em;
+}
+
+.atms-ui-portlet-column-legend label.atms-ui-portlet-label span.atms-ui-portlet-label-icon {
+	margin-top: -.3em;
+}
+
+.atms-ui-portlet-column-legend .atms-ui-portlet-label{
+	width: 17em;
 }
