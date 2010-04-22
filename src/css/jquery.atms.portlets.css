@@ -19,7 +19,7 @@ body {
 }
 
 .atms-ui-portlet-column, .atms-ui-portlet-column-legend {
-	width: 150px;
+	width: 15em;
 	float: left;
 	padding-bottom: .3em;
 	margin-right: .3em;
@@ -81,15 +81,6 @@ body {
 
 .ui-sortable-placeholder * {
 	visibility: hidden;
-}
-
-.atms-ui-portlet-text-entry, .atms-ui-portlet-text-entry-descr {
-	color: #666;
-	clear: both;
-}
-
-.atms-ui-portlet-text-entry-descr {
-	color: #888;
 }
 
 div.atms-ui-portlet-content span.ui-icon {
@@ -157,4 +148,20 @@ div#switcher {
 .atms-ui-portlet-tooltip {
 	display: none;
 	font-weight: normal;
+}
+
+.atms-ui-portlet-label {
+	clear: both; 
+	display: block; 
+	float: left; 
+	padding-left: 2em;
+	width: 10em;
+	color: #666;
+}
+
+label.atms-ui-portlet-label span.atms-ui-portlet-label-icon {
+	float: left; 
+	position: relative;
+	left: -2em; 
+	margin-right: -2em;
 }

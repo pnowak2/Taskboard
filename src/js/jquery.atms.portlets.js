@@ -71,7 +71,6 @@
 					handle: 'div.atms-ui-portlet-header',
 					placeholder: 'ui-state-highlight',
 					opacity: 0.7,
-					revert: 200,
 					tolerance: 'pointer',
 					cursor: 'move',
 					forcePlaceholderSize: true,
@@ -209,12 +208,12 @@
 	function handleEvents(el){
 		el.find('.atms-ui-portlets-header .ui-icon-carat-1-n').bind('click', function(){
 			$(this).toggleClass("ui-icon-carat-1-n").toggleClass("ui-icon-carat-1-s");
-			$(this).parents(".atms-ui-portlets-main:first").find('.atms-ui-portlet-rows-container').toggle("fast");
+			$(this).parents(".atms-ui-portlets-main:first").find('.atms-ui-portlet-rows-container').toggle();
 		});
 
 	 	el.find(".atms-ui-portlet-header .ui-icon-carat-1-n").click(function() {
 			$(this).toggleClass("ui-icon-carat-1-n").toggleClass("ui-icon-carat-1-s");
-			$(this).parents(".atms-ui-portlet:first").find(".atms-ui-portlet-content").toggle("fast", function(){
+			$(this).parents(".atms-ui-portlet:first").find(".atms-ui-portlet-content").toggle(0, function(){
 				refreshHeight($(this).parents(".atms-ui-portlet-row:first"));
 			});
 		});
