@@ -170,9 +170,39 @@ label.atms-ui-portlet-label span.atms-ui-portlet-label-icon {
 }
 
 .atms-ui-portlet-column-legend label.atms-ui-portlet-label span.atms-ui-portlet-label-icon {
-	margin-top: -.3em;
+	margin-top: -.18em;
+}
+
+.atms-ui-portlet-column-legend .atms-ui-portlet-label {
+	font-size: 1.2em;
+	margin-bottom: 1em;	
+	margin-left: .6em;
 }
 
 .atms-ui-portlet-column-legend .atms-ui-portlet-label{
 	width: 17em;
+}
+.atms-icon {
+	width: 16px; 
+	height: 16px;	
+}
+
+.atms-icon-add { 
+	background-image: url(img/add.png); 
+}
+
+.atms-icon-accept { 
+	background-image: url(img/accept.png); 
+}
+
+.atms-icon-flag-blue { 
+	background-image: url(img/flag_blue.png); 
+}
+
+.atms-icon-script { 
+	background-image: url(img/script.png); 
+}
+
+.atms-icon-monitor { 
+	background-image: url(img/monitor.png); 
 }
