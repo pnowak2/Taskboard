@@ -213,3 +213,5 @@ label.atms-ui-portlet-label span.atms-ui-portlet-label-icon {
 .atms-icon-error { 
 	background-image: url(img/error.png); 
 }
+
+.atms-ui-state-error-text { color: #cd0a0a; }
