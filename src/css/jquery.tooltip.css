@@ -4,7 +4,7 @@
 	padding: .6em;
 	overflow: hidden;
 	min-width: 10em;
-	max-width: 20em;
+	max-width: 25em;
 	font-weight: normal;
 }
 #atms-ui-tooltip-id h3, #atms-ui-tooltip-id div { margin: 0; }

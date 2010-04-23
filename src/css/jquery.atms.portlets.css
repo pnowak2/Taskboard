@@ -179,8 +179,20 @@ label.atms-ui-portlet-label span.atms-ui-portlet-label-icon {
 }
 
 .atms-ui-portlet-column-legend .atms-ui-portlet-label{
-	width: 17em;
+	width: 13em;
 }
+
+.atms-ui-porlet-tooltip-container .atms-ui-portlet-label {
+	width: 20em;
+	font-size: 1.1em;
+}
+
+.atms-ui-portlet-tooltip .atms-ui-portlet-label {
+	font-size: 1.2em;
+	margin-bottom: .6em;	
+	margin-left: .6em;
+}
+
 .atms-icon {
 	width: 16px; 
 	height: 16px;	
