@@ -76,7 +76,7 @@ body {
 .ui-sortable-placeholder {
 	border: 1px dotted black;
 	visibility: visible !important;
-	height: 50px !important;
+	height: 5em !important;
 }
 
 .ui-sortable-placeholder * {
@@ -98,7 +98,7 @@ div.atms-ui-portlet-content span.ui-icon {
 .atms-ui-portlet-column-pointer {
 	display: none;
 	position: absolute;
-	width: 50px;
+	width: 7em;
 	padding: 1em;
 	text-align: center;
 	overflow: hidden;
