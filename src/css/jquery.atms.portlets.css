@@ -25,7 +25,7 @@ body {
 	margin-right: .3em;
 	margin-top: 0;
 	overflow: hidden;
-	min-height: 10em;
+	min-height: 14em;
 }
 
 .atms-ui-portlet-column-legend {
@@ -204,4 +204,8 @@ label.atms-ui-portlet-label span.atms-ui-portlet-label-icon {
 
 .atms-icon-monitor { 
 	background-image: url(img/monitor.png); 
+}
+
+.atms-icon-date { 
+	background-image: url(img/date.png); 
 }
