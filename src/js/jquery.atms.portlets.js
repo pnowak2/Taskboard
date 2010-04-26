@@ -175,7 +175,7 @@
 	function handleStyles(el){
 		el.addClass("atms-ui-portlet-container");
 		el.find(".atms-ui-portlets-header").addClass("ui-widget-header ui-corner-all")
-			.prepend('<span class="ui-icon ui-icon-carat-1-n" title="Minimalizuj/Maksymalizuj"></span>');
+			.prepend('<span class="ui-icon ui-icon-carat-1-n"></span>');
 		el.find(".atms-ui-portlet-column-legend").addClass(/*ui-widget-header*/"ui-state-highlight ui-corner-all");
 		el.find(".atms-ui-portlet-column-header").addClass("ui-corner-all");
 		el.find(".atms-ui-portlet-column-pointer").addClass("ui-state-highlight ui-corner-all");
@@ -184,7 +184,7 @@
 	 	el.find(".atms-ui-portlet").addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all")
 		.find(".atms-ui-portlet-header")
 			.addClass("ui-widget-header ui-corner-all")
-			.prepend('<span class="ui-icon ui-icon-carat-1-n" title="Minimalizuj/Maksymalizuj"></span>')
+			.prepend('<span class="ui-icon ui-icon-carat-1-n"></span>')
 			.end()
 		.find(".atms-ui-portlet-content");
 	 	
