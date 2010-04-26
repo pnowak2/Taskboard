@@ -133,6 +133,7 @@ div#switcher {
 	margin-bottom: .3em;
 	padding-top: .3em;
 	padding-bottom: .3em;
+	position:relative;
 }
 
 .atms-ui-portlet-row > .atms-ui-portlet-column-legend, .atms-ui-portlet-row > .atms-ui-portlet-column {
@@ -163,7 +164,6 @@ div#switcher {
 	padding-left: 2em;
 	width: 10em;
 	font-weight: normal;
-	
 }
 
 label.atms-ui-portlet-label span.atms-ui-portlet-label-icon {
