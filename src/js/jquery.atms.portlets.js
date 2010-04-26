@@ -152,7 +152,7 @@
 		var totalHeight = 0;
 		el.find(".atms-ui-portlet-column").each(function(){
 			var portletHeights = 0;
-			$(this).find(".atms-ui-portlet").each(function(){
+			$(this).find(".atms-ui-portlet:visible").each(function(){
 				portletHeights+=$(this).outerHeight(true);
 			});
 			if(portletHeights>totalHeight){
@@ -209,6 +209,14 @@
 		el.find('.atms-ui-portlets-header .ui-icon-carat-1-n').bind('click', function(){
 			$(this).toggleClass("ui-icon-carat-1-n").toggleClass("ui-icon-carat-1-s");
 			$(this).parents(".atms-ui-portlets-main:first").find('.atms-ui-portlet-rows-container').toggle();
+		});
+		
+		el.find('.atms-ui-portlet-column-legend .ui-icon-carat-1-n').bind('click', function(){
+			$(this).toggleClass("ui-icon-carat-1-n").toggleClass("ui-icon-carat-1-s");
+			$(this).parents(".atms-ui-portlet-row:first").each(function(){
+				$(this).find(".atms-ui-portlet").toggle();
+				refreshHeight($(this));
+			});
 		});
 
 	 	el.find(".atms-ui-portlet-header .ui-icon-carat-1-n").click(function() {
