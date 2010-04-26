@@ -32,6 +32,24 @@
 		 $( window ).wresize( refreshWidth );
 		 $(this).css("visibility", "visible");
 		 
+		 $(".atms-ui-portlets-main").each(function(){
+			 $(this).find(".searchBox").bind("keypress", function(event){
+				 if(event.keyCode == 13){
+					 var txt =  $(".searchBox").val();
+					 $(this).parents(".atms-ui-portlets-main:first").find(".atms-ui-portlet:not(:contains('" + txt + "'))").each(function(){
+						 $(this).hide();
+					 });
+					 $(this).parents(".atms-ui-portlets-main:first").find(".atms-ui-portlet:contains('" + txt + "')").each(function(){
+						 $(this).show();
+					 });
+					 $(".atms-ui-portlet-row").each(function(){
+						 refreshHeight($(this));
+					 });
+				 }
+				 
+			 });
+		 });
+		 
 		 /*
 		  * Handles width resize 
 		  */
@@ -152,7 +170,7 @@
 		var totalHeight = 0;
 		el.find(".atms-ui-portlet-column").each(function(){
 			var portletHeights = 0;
-			$(this).find(".atms-ui-portlet").each(function(){
+			$(this).find(".atms-ui-portlet:visible").each(function(){
 				portletHeights+=$(this).outerHeight(true);
 			});
 			if(portletHeights>totalHeight){
