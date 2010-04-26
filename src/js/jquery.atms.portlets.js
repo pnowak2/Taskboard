@@ -45,6 +45,16 @@
 					 $(".atms-ui-portlet-row").each(function(){
 						 refreshHeight($(this));
 					 });
+					 
+//					 $(".atms-ui-portlet-row").each(function(){
+//						 var l = $(this).find(".atms-ui-portlet:visible").length;
+//						 if(l<=0){
+//							$(this).hide(); 
+//						 }else{
+//   						    $(this).show();
+//						 }
+//					 });
+					 
 				 }
 				 
 			 });
