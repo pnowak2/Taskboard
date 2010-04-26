@@ -32,29 +32,20 @@
 		 $( window ).wresize( refreshWidth );
 		 $(this).css("visibility", "visible");
 		 
-		 $(".atms-ui-portlets-main").each(function(){
+		 $(this).find(".atms-ui-portlets-main").each(function(){
+		     var main = $(this);
 			 $(this).find(".searchBox").bind("keypress", function(event){
 				 if(event.keyCode == 13){
-					 var txt =  $(".searchBox").val();
-					 $(this).parents(".atms-ui-portlets-main:first").find(".atms-ui-portlet:not(:contains('" + txt + "'))").each(function(){
-						 $(this).hide();
+					 var txt =  $(this).val();
+					 main.find(".atms-ui-portlet").each(function(){
+						 var portlet = $(this);
+						 var found = $(this).find(":contains('" + txt + "')").length;
+						 (found>0) ? $(this).show() : $(this).hide();
 					 });
-					 $(this).parents(".atms-ui-portlets-main:first").find(".atms-ui-portlet:contains('" + txt + "')").each(function(){
-						 $(this).show();
-					 });
-					 $(".atms-ui-portlet-row").each(function(){
+
+					 main.find(".atms-ui-portlet-row").each(function(){
 						 refreshHeight($(this));
-					 });
-					 
-//					 $(".atms-ui-portlet-row").each(function(){
-//						 var l = $(this).find(".atms-ui-portlet:visible").length;
-//						 if(l<=0){
-//							$(this).hide(); 
-//						 }else{
-//   						    $(this).show();
-//						 }
-//					 });
-					 
+					 });				 
 				 }
 				 
 			 });
