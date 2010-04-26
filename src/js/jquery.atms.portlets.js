@@ -214,8 +214,15 @@
 		el.find('.atms-ui-portlet-column-legend .ui-icon-carat-1-n').bind('click', function(){
 			$(this).toggleClass("ui-icon-carat-1-n").toggleClass("ui-icon-carat-1-s");
 			$(this).parents(".atms-ui-portlet-row:first").each(function(){
-				$(this).find(".atms-ui-portlet").toggle();
+				$(this).find(".atms-ui-portlet-column").toggle();
 				refreshHeight($(this));
+				
+				$(this).find(".atms-ui-portlet-column").toggle();
+				$(this).find(".atms-ui-portlet-column, .atms-ui-portlet").toggleClass("ui-state-disabled");
+				
+				$(this).find(".atms-ui-portlet-column").bind("click", function(event){
+					
+				});
 			});
 		});
 
