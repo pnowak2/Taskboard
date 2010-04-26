@@ -21,7 +21,7 @@
 		 handlePortletContextMenu(this, config);
 		 handleStyles(this);
 		 handleSortable(this);
-		 handleEvents(this);
+		 handleEvents(this, config);
 		 handleTooltips(this);
 		 
 		 $(this).find(".atms-ui-portlet-row").each(function(){
@@ -88,6 +88,7 @@
 		 * Handles portlet over another column
 		 */
 		function overMethod(event, ui) { 
+			
 			$(jQuery.data(ui.item, "last-selected-column")).removeClass("ui-state-focus");
 			jQuery.data(ui.item, "last-selected-column", ui.placeholder.parent());
 			
@@ -106,6 +107,10 @@
 		}
 		
 		function receiveMethod(event, ui){
+			if($(ui.item.parents(".atms-ui-portlet-row:first")).hasClass("ui-state-disabled")){
+				$(ui.sender).sortable('cancel');
+				return;
+			}
 			config.update(ui.item, ui.item.parents(".atms-ui-portlet-column:first"), ui.sender, ui.item.parents(".atms-ui-portlet-row:first"));
 		}
 		
@@ -149,24 +154,29 @@
 	 * Recalculates heights
 	 */
 	function refreshHeight(el){
-		var totalHeight = 0;
-		el.find(".atms-ui-portlet-column").each(function(){
-			var portletHeights = 0;
-			$(this).find(".atms-ui-portlet:visible").each(function(){
-				portletHeights+=$(this).outerHeight(true);
+		
+			var totalHeight = 0;
+			el.find(".atms-ui-portlet-column").each(function(){
+				var portletHeights = 0;
+				
+				if(!$(el).hasClass("ui-state-disabled")){
+					$(this).find(".atms-ui-portlet:visible").each(function(){
+						portletHeights+=$(this).outerHeight(true);
+					});
+				}
+				if(portletHeights>totalHeight){
+					totalHeight = portletHeights;
+				 }
 			});
-			if(portletHeights>totalHeight){
-				totalHeight = portletHeights;
-			 }
-		});
+			
+			totalHeight+=15; // 15 for placeholder place
+			
+			/* If row contains headers, they should be calculated into total column height */
+			if(el.find(".atms-ui-portlet-column .atms-ui-portlet-column-header").length>0){
+				totalHeight+= el.find(".atms-ui-portlet-column-header").outerHeight(true);
+			}
+			el.find(".atms-ui-portlet-column, .atms-ui-portlet-column-legend").each(function(){ $(this).height(totalHeight);});
 		
-		totalHeight+=15; // 15 for placeholder place
-		
-		/* If row contains headers, they should be calculated into total column height */
-		if(el.find(".atms-ui-portlet-column .atms-ui-portlet-column-header").length>0){
-			totalHeight+= el.find(".atms-ui-portlet-column-header").outerHeight(true);
-		}
-		el.find(".atms-ui-portlet-column, .atms-ui-portlet-column-legend").each(function(){ $(this).height(totalHeight);});
 	}
 	
 	/*
@@ -205,7 +215,7 @@
 	/*
 	 * Handles events
 	 */
-	function handleEvents(el){
+	function handleEvents(el, config){
 		el.find('.atms-ui-portlets-header .ui-icon-carat-1-n').bind('click', function(){
 			$(this).toggleClass("ui-icon-carat-1-n").toggleClass("ui-icon-carat-1-s");
 			$(this).parents(".atms-ui-portlets-main:first").find('.atms-ui-portlet-rows-container').toggle();
@@ -214,15 +224,16 @@
 		el.find('.atms-ui-portlet-column-legend .ui-icon-carat-1-n').bind('click', function(){
 			$(this).toggleClass("ui-icon-carat-1-n").toggleClass("ui-icon-carat-1-s");
 			$(this).parents(".atms-ui-portlet-row:first").each(function(){
-				$(this).find(".atms-ui-portlet-column").toggle();
-				refreshHeight($(this));
+				$(this).toggleClass("ui-state-disabled");
 				
-				$(this).find(".atms-ui-portlet-column").toggle();
-				$(this).find(".atms-ui-portlet-column, .atms-ui-portlet").toggleClass("ui-state-disabled");
-				
-				$(this).find(".atms-ui-portlet-column").bind("click", function(event){
-					
-				});
+				if($(this).hasClass("ui-state-disabled")){
+					$(this).find(".atms-ui-portlet").hide();
+					refreshHeight($(this));
+					$(this).find(".atms-ui-portlet").show();
+				}else{
+					$(this).find(".atms-ui-portlet").show();
+					refreshHeight($(this));
+				}
 			});
 		});
 
