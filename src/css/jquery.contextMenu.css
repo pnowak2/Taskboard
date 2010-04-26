@@ -1,13 +1,18 @@
 /* Generic context menu styles */
 .contextMenu {
 	position: absolute;
-	width: 120px;
+	max-width: 18em;
+	min-width: 10em;
 	z-index: 99999;
 	border: solid 1px #CCC;
 	background: #EEE;
 	padding: 0px;
 	margin: 0px;
 	display: none;
+}
+
+ul.contextMenu {
+	width: 100%;	
 }
 
 .contextMenu LI {
