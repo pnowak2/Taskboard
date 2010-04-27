@@ -154,7 +154,7 @@
 		var totalHeight = 0;
 		el.find(".atms-ui-portlet-column").each(function(){
 			var portletHeights = 0;
-			$(this).find(".atms-ui-portlet").each(function(){
+			$(this).find(".atms-ui-portlet:visible").each(function(){
 				portletHeights+=$(this).outerHeight(true);
 			});
 			if(portletHeights>totalHeight){
