@@ -112,7 +112,7 @@
 	      $.expr[":"].containsNoCase = function(el, i, m) {
 	         var search = m[3];
 	         if (!search) return false;
-	         return eval("/" + search + "/i").test($(el).text());
+	         return new RegExp(search,"i").test($(el).text());
 	      };  
 		}
 		
