@@ -272,6 +272,14 @@
 	 */
 	function handleTooltips(el){
 		 
+		 el.find(".atms-ui-portlet-column-legend:has(.atms-ui-portlet-tooltip)").tooltip({
+				id: "atms-ui-tooltip-id",
+				extraClass: "ui-state-default ui-corner-all",
+				bodyHandler: function() {
+		        	return $(this).find(".atms-ui-portlet-tooltip").html(); 
+		    	}
+		 });
+		
 		 el.find(".atms-ui-portlet-content:has(.atms-ui-portlet-tooltip)").tooltip({
 				id: "atms-ui-tooltip-id",
 				extraClass: "ui-state-default ui-corner-all",
