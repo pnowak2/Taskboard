@@ -5,6 +5,7 @@
 	     var config = {  
 	    		 	   element: $(this),
 					   data: null,
+					   showQuickSearch: false,
 					   portletsHeaderContextMenuId: null,
 					   portletsHeaderContextMenuAction: function(action, header){},
 					   legendContextMenuId: null,
@@ -23,6 +24,7 @@
 		 handleSortable(this);
 		 handleEvents(this);
 		 handleTooltips(this);
+		 handleQuickSearch(this, config);
 		 
 		 $(this).find(".atms-ui-portlet-row").each(function(){
 		 	refreshHeight($(this));
@@ -32,24 +34,7 @@
 		 $( window ).wresize( refreshWidth );
 		 $(this).css("visibility", "visible");
 		 
-		 $(this).find(".atms-ui-portlets-main").each(function(){
-		     var main = $(this);
-			 $(this).find(".searchBox").bind("keypress", function(event){
-				 if(event.keyCode == 13){
-					 var txt =  $(this).val();
-					 main.find(".atms-ui-portlet").each(function(){
-						 var portlet = $(this);
-						 var found = $(this).find(":contains('" + txt + "')").length;
-						 (found>0) ? $(this).show() : $(this).hide();
-					 });
-
-					 main.find(".atms-ui-portlet-row").each(function(){
-						 refreshHeight($(this));
-					 });				 
-				 }
-				 
-			 });
-		 });
+		 
 		 
 		 /*
 		  * Handles width resize 
@@ -296,6 +281,26 @@
 		        	return $(this).find(".atms-ui-portlet-tooltip").html(); 
 		    	}
 		 });
+	}
+	
+	function handleQuickSearch(el, config){
+		if(config.showQuickSearch){
+			el.find(".atms-ui-portlets-main").each(function(){
+			     var main = $(this);
+				 $(this).find(".searchBox").bind("keypress", function(event){
+					 if(event.keyCode == 13){
+						 var txt =  $(this).val();
+						 main.find(".atms-ui-portlet-row").each(function(){
+							 var portlet = $(this);
+							 var found = $(this).find(".atms-ui-portlet:contains('" + txt + "')").show().length;
+							 $(this).find(".atms-ui-portlet:not(:contains('" + txt + "'))").hide();
+							 (found>0) ? $(this).show() : $(this).hide();
+							 refreshHeight($(this));
+						 });		 
+					 }
+				 });
+			 });
+		}
 	}
 	
 })(jQuery);
