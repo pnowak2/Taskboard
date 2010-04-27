@@ -16,6 +16,7 @@
 	     }
 	     if (settings) $.extend(config, settings);
 
+	     handleJQueryExtensions();
 		 handleTags(this);
 		 handlePortletsHeaderContextMenu(this, config);
 		 handleLegendContextMenu(this, config);
@@ -84,6 +85,14 @@
 				});
 			});
 
+		}
+		
+		function handleJQueryExtensions(){
+	      $.expr[":"].containsNoCase = function(el, i, m) {
+	         var search = m[3];
+	         if (!search) return false;
+	         return eval("/" + search + "/i").test($(el).text());
+	      };  
 		}
 		
 		/*
@@ -289,12 +298,17 @@
 			     var main = $(this);
 				 $(this).find(".atms-ui-portlet-searchbox").bind("keypress", function(event){
 					 if(event.keyCode == 13){
-						 var txt =  $(this).val();
+						 var txt =  $(this).val().trim();
 						 main.find(".atms-ui-portlet-row").each(function(){
-							 var portlet = $(this);
-							 var found = $(this).find(".atms-ui-portlet:contains('" + txt + "')").show().length;
-							 $(this).find(".atms-ui-portlet:not(:contains('" + txt + "'))").hide();
-							 (found>0) ? $(this).show() : $(this).hide();
+							 if(txt != ""){
+								 var portlet = $(this);
+								 var found = $(this).find(".atms-ui-portlet:containsNoCase('" + txt + "')").show().length;
+								 $(this).find(".atms-ui-portlet:not(:containsNoCase('" + txt + "'))").hide();
+								 (found>0) ? $(this).show() : $(this).hide();
+							 }else{
+								 $(this).find(".atms-ui-portlet").show();
+								 $(this).show();
+							 }
 							 refreshHeight($(this));
 						 });		 
 					 }
