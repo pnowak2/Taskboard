@@ -1,7 +1,22 @@
+/*
+ * jQuery ATMS Portlets plugin
+ * 
+ * This plugin creates simple portlet-like behaviour based on given html markup.
+ *
+ * http://www.alan-systems.com
+ *
+ * Copyright (c) 2010 - Piotr Andrzej Nowak
+ * 
+ * Dual licensed under the MIT and GPL licenses:
+ *   http://www.opensource.org/licenses/mit-license.php
+ *   http://www.gnu.org/licenses/gpl.html
+ */
+
 (function($) {
 	
 	$.fn.portlets = function(settings) {
 		     
+		 // Additional configuration
 	     var config = {  
 	    		 	   element: $(this),
 	    		 	   showQuickSearch: true,
@@ -26,17 +41,17 @@
 		 handleEvents(this);
 		 handleTooltips(this);
 		 handleQuickSearch(this, config);
-		 
-		 $(this).find(".atms-ui-portlet-row").each(function(){
-		 	refreshHeight($(this));
-		 });
-
+		 handleRefreshHeight(this);
 		 refreshWidth();
+
 		 $( window ).wresize( refreshWidth );
 		 $(this).css("visibility", "visible");
 		 
 		 /*
 		  * Handles width resize 
+		  * Calculates overall width of portlet component.
+		  * If there are too many columns to fit into parent, it makes its container bigger and scroll bar
+		  * appears.
 		  */
 		 function refreshWidth(){
 			 var finalWidth = 0;
@@ -61,6 +76,7 @@
 		 
 		/*
 		 * Handles sortables
+		 * Makes any portlet draggable into columns.
 		 */
 		function handleSortable(el){
 			
@@ -87,7 +103,12 @@
 
 		}
 		
+		/*
+		 * Any jquery extensions are meant to be evaluated here
+		 */
 		function handleJQueryExtensions(){
+		  // Extends jquery with containsNoCase predicate which is
+		  // similar to contains, but its case insensitive
 	      $.expr[":"].containsNoCase = function(el, i, m) {
 	         var search = m[3];
 	         if (!search) return false;
@@ -96,7 +117,7 @@
 		}
 		
 		/*
-		 * Handles portlet over another column
+		 * Handles portlet dragged on another column
 		 */
 		function overMethod(event, ui) { 
 			$(jQuery.data(ui.item, "last-selected-column")).removeClass("ui-state-focus");
@@ -108,7 +129,7 @@
 		}
 		
 		/*
-		 * Handles finished update portlet drop on column
+		 * Handles successfull update after dropping portlet on column
 		 */
 		function updateMethod(event, ui) { 
 			ui.item.parent().removeClass("ui-state-focus"); 
@@ -116,12 +137,16 @@
 			refreshHeight($(this).parents(".atms-ui-portlet-row:first"));
 		}
 		
+		/*
+		 * Handles succesfull drop portlet on to column.
+		 * After that it sends event to inform all observables.
+		 */
 		function receiveMethod(event, ui){
 			config.update(ui.item, ui.item.parents(".atms-ui-portlet-column:first"), ui.sender, ui.item.parents(".atms-ui-portlet-row:first"));
 		}
 		
 		/*
-		 * Handles start drag of portlet
+		 * Handles drag start on portlet
 		 */
 		function startMethod(event, ui) {
 			  $(ui.placeholder).addClass("ui-corner-all");
@@ -135,19 +160,22 @@
 			  
 		}
 		
+		/*
+		 * Handles stop dragging portlet.
+		 */
 		function stopMethod(event, ui) {
 			$(this).parents(".atms-ui-portlet-rows-container").find(".atms-ui-portlet-column-pointer").hide();
 		}
 		 
 	     return this;
 	};
-	
-	/* Private functions */
 
 	/*
 	 * Handle Tags
+	 * Any elements created on the fly and attached to DOM.
 	 */
 	function handleTags(el){
+		// Creates column labels for noticing user where the column can be dropped to
 	 	el.find(".atms-ui-portlet-row:first-child .atms-ui-portlet-column").each(function(){
 	 		$("<div/>", {
 				  "class": ("atms-ui-portlet-column-pointer"),
@@ -157,7 +185,16 @@
 	}
 	
 	/*
-	 * Recalculates heights
+	 * Refresh height to fit all portlets into columns and rows
+	 */
+	function handleRefreshHeight(el){
+		el.find(".atms-ui-portlet-row").each(function(){
+			refreshHeight($(this));
+		});
+	}
+	
+	/*
+	 * Recalculates heights based on portlet sizes.
 	 */
 	function refreshHeight(el){
 		var totalHeight = 0;
@@ -181,7 +218,8 @@
 	}
 	
 	/*
-	 * Handles UI tasks
+	 * Handles UI styles
+	 * Any additional styles should be processed here.
 	 */
 	function handleStyles(el){
 		el.addClass("atms-ui-portlet-container");
@@ -215,13 +253,16 @@
 	
 	/*
 	 * Handles events
+	 * Any additional events should be added here.
 	 */
 	function handleEvents(el){
+		// Expand/Collapse entire portlets container headers
 		el.find('.atms-ui-portlets-header .ui-icon-carat-1-n').bind('click', function(){
 			$(this).toggleClass("ui-icon-carat-1-n").toggleClass("ui-icon-carat-1-s");
 			$(this).parents(".atms-ui-portlets-main:first").find('.atms-ui-portlet-rows-container').toggle();
 		});
 
+		// Expand/Collapse portlet headers
 	 	el.find(".atms-ui-portlet-header .ui-icon-carat-1-n").click(function() {
 			$(this).toggleClass("ui-icon-carat-1-n").toggleClass("ui-icon-carat-1-s");
 			$(this).parents(".atms-ui-portlet:first").find(".atms-ui-portlet-content").toggle(0, function(){
@@ -244,6 +285,9 @@
 		}
 	}
 	
+	/*
+	 * Handles context menu for entire portlets container headers
+	 */
 	function handlePortletsHeaderContextMenu(el, config){
 		if(config.portletsHeaderContextMenuId){
 		 	el.find(".atms-ui-portlets-header").contextMenu({
@@ -273,7 +317,7 @@
 	 * Handles tooltips
 	 */
 	function handleTooltips(el){
-		 
+		 // Legend tooltips
 		 el.find(".atms-ui-portlet-column-legend:has(.atms-ui-portlet-tooltip)").tooltip({
 				id: "atms-ui-tooltip-id",
 				extraClass: "ui-state-default ui-corner-all",
@@ -282,6 +326,7 @@
 		    	}
 		 });
 		
+		 // Portlet tooltips
 		 el.find(".atms-ui-portlet-content:has(.atms-ui-portlet-tooltip)").tooltip({
 				id: "atms-ui-tooltip-id",
 				extraClass: "ui-state-default ui-corner-all",
@@ -291,6 +336,9 @@
 		 });
 	}
 	
+	/*
+	 * Handles Quick Search feature for rapid portlet finding.
+	 */
 	function handleQuickSearch(el, config){
 		if(config.showQuickSearch){
 			el.find(".atms-ui-portlets-main").each(function(){
