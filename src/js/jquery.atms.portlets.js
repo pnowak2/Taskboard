@@ -4,6 +4,7 @@
 		     
 	     var config = {  
 	    		 	   element: $(this),
+	    		 	   showQuickSearch: true,
 					   data: null,
 					   portletsHeaderContextMenuId: null,
 					   portletsHeaderContextMenuAction: function(action, header){},
@@ -23,6 +24,7 @@
 		 handleSortable(this);
 		 handleEvents(this);
 		 handleTooltips(this);
+		 handleQuickSearch(this, config);
 		 
 		 $(this).find(".atms-ui-portlet-row").each(function(){
 		 	refreshHeight($(this));
@@ -277,6 +279,27 @@
 		        	return $(this).find(".atms-ui-portlet-tooltip").html(); 
 		    	}
 		 });
+	}
+	
+	function handleQuickSearch(el, config){
+		if(config.showQuickSearch){
+			el.find(".atms-ui-portlets-main").each(function(){
+				 $(this).find(".atms-ui-portlets-header:first").append("<input type='text' class='ui-state-default atms-ui-portlet-searchbox'/>");
+			     var main = $(this);
+				 $(this).find(".atms-ui-portlet-searchbox").bind("keypress", function(event){
+					 if(event.keyCode == 13){
+						 var txt =  $(this).val();
+						 main.find(".atms-ui-portlet-row").each(function(){
+							 var portlet = $(this);
+							 var found = $(this).find(".atms-ui-portlet:contains('" + txt + "')").show().length;
+							 $(this).find(".atms-ui-portlet:not(:contains('" + txt + "'))").hide();
+							 (found>0) ? $(this).show() : $(this).hide();
+							 refreshHeight($(this));
+						 });		 
+					 }
+				 });
+			 });
+		}
 	}
 	
 })(jQuery);

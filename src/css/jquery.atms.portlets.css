@@ -233,3 +233,11 @@ label.atms-ui-portlet-label span.atms-ui-portlet-label-icon {
 }
 
 .atms-ui-state-error-text { color: #cd0a0a; }
+
+.atms-ui-portlet-searchbox  {
+	width: 10em; 
+	font-size: .8em; 
+	padding: 0; 
+	margin: 0; 
+	font-weight: normal;
+}
