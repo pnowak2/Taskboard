@@ -360,7 +360,7 @@
 			     
 			     txtBox.bind("keypress", function(event){
 					 if(event.keyCode == 13){
-						 var txt =  $(this).val().trim();
+						 var txt =  $(this).val();
 						 main.find(".atms-ui-portlet-row").each(function(){
 							 if(txt != ""){
 								 var portlet = $(this);
