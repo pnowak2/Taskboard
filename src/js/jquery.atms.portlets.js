@@ -257,13 +257,6 @@
 				function(action, el, pos) {
 					config.legendContextMenuAction(action, el);
 			});
-		 	
-		 	el.find(".atms-ui-portlet-row").contextMenu({
-				menu: config.legendContextMenuId
-			},
-				function(action, el, pos) {
-					config.legendContextMenuAction(action, el.find(".atms-ui-portlet-column-legend:first"));
-			});
 		}
 	}
 	
