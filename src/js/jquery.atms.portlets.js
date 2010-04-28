@@ -32,18 +32,9 @@
 	     }
 	     if (settings) $.extend(config, settings);
 
-	     handleJQueryExtensions();
-		 handleTags(this);
-		 handlePortletsHeaderContextMenu(this, config);
-		 handleLegendContextMenu(this, config);
-		 handlePortletContextMenu(this, config);
+
 		 handleStyles(this);
-		 handleSortable(this);
-		 handleEvents(this);
-		 handleTooltips(this);
-		 handleQuickSearch(this, config);
-		 handleRefreshHeight(this);
-		 refreshWidth();
+
 
 		 $( window ).wresize( refreshWidth );
 		 $(this).css("visibility", "visible");
@@ -199,24 +190,7 @@
 	 * Recalculates heights based on portlet sizes.
 	 */
 	function refreshHeight(el){
-		var totalHeight = 0;
-		el.find(".atms-ui-portlet-column").each(function(){
-			var portletHeights = 0;
-			$(this).find(".atms-ui-portlet:visible").each(function(){
-				portletHeights+=$(this).outerHeight(true);
-			});
-			if(portletHeights>totalHeight){
-				totalHeight = portletHeights;
-			 }
-		});
-		
-		//totalHeight+=15; // 15 for placeholder place
-		
-		/* If row contains headers, they should be calculated into total column height */
-		if(el.find(".atms-ui-portlet-column .atms-ui-portlet-column-header").length>0){
-			totalHeight+= el.find(".atms-ui-portlet-column-header").outerHeight(true);
-		}
-		el.find(".atms-ui-portlet-column, .atms-ui-portlet-column-legend").each(function(){ $(this).height(totalHeight);});
+
 	}
 	
 	/*
