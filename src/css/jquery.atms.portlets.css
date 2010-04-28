@@ -19,7 +19,6 @@ body {
 }
 
 .atms-ui-portlet-column, .atms-ui-portlet-column-legend {
-	width: 15em;
 	float: left;
 	padding-bottom: .3em;
 	margin-right: .3em;
@@ -28,6 +27,9 @@ body {
 	min-height: 16em;
 }
 
+.atms-ui-portlet-column {
+	width: 15em;	
+}
 .atms-ui-portlet-column-legend {
 	font-weight: bold;	
 	margin-left: 0;
