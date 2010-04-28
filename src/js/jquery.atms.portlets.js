@@ -32,9 +32,18 @@
 	     }
 	     if (settings) $.extend(config, settings);
 
-
+	     handleJQueryExtensions();
+		 handleTags(this);
+		 handlePortletsHeaderContextMenu(this, config);
+		 handleLegendContextMenu(this, config);
+		 handlePortletContextMenu(this, config);
 		 handleStyles(this);
-
+		 handleSortable(this);
+		 handleEvents(this);
+		 handleTooltips(this);
+		 handleQuickSearch(this, config);
+		 handleRefreshHeight(this);
+		 refreshWidth();
 
 		 $( window ).wresize( refreshWidth );
 		 $(this).css("visibility", "visible");
