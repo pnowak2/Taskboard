@@ -18,7 +18,7 @@ body {
 	margin-top: .3em;
 }
 
-.atms-ui-portlet-column, .atms-ui-portlet-column-legend {
+.atms-ui-portlet-column, .atms-ui-portlet-column-legend, .atms-ui-portlet-column-legend-header {
 	float: left;
 	padding-bottom: .3em;
 	margin-right: .3em;
@@ -30,10 +30,19 @@ body {
 .atms-ui-portlet-column {
 	width: 15em;	
 }
-.atms-ui-portlet-column-legend {
+.atms-ui-portlet-column-legend, .atms-ui-portlet-column-legend-header {
 	font-weight: bold;	
 	margin-left: 0;
 	width: 20em;
+}
+
+.atms-ui-portlet-column-legend-header {
+	min-height: 0;
+}
+
+.atms-ui-portlet-column-legend-header .atms-ui-portlet-column-header{
+	margin-bottom: 0; 
+	padding-top: .6em;	
 }
 
 .atms-ui-portlet-column-legend .ui-icon {
@@ -143,7 +152,7 @@ div#switcher {
 }
 
 
-.atms-ui-portlet-row .atms-ui-portlet-column-legend {
+.atms-ui-portlet-row .atms-ui-portlet-column-legend, .atms-ui-portlet-row .atms-ui-portlet-column-legend-header {
 	margin-top: 0;
 	margin-bottom: 0;
 	margin-left: .3em;
