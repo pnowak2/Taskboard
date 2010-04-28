@@ -210,7 +210,7 @@
 			 }
 		});
 		
-		totalHeight+=15; // 15 for placeholder place
+		//totalHeight+=15; // 15 for placeholder place
 		
 		/* If row contains headers, they should be calculated into total column height */
 		if(el.find(".atms-ui-portlet-column .atms-ui-portlet-column-header").length>0){
