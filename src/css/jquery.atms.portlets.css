@@ -243,3 +243,7 @@ input.atms-ui-portlet-searchbox  {
 	font-weight: normal;
 	padding: 0 0 0 .2em;
 }
+
+.atms-ui-portlet-label-header {
+	font-weight: bold;	
+}
