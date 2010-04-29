@@ -28,8 +28,7 @@ body {
 }
 
 .atms-ui-portlet-column {
-	width: 15em;	
-	
+	width: 15em;		
 }
 .atms-ui-portlet-column-legend, .atms-ui-portlet-column-legend-header {
 	font-weight: bold;	
