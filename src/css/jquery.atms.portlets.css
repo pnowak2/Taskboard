@@ -21,7 +21,8 @@ body {
 .atms-ui-portlet-column, .atms-ui-portlet-column-legend {
 	float: left;
 	padding-bottom: .3em;
-	margin-right: .3em;
+	margin-left: .3em;
+	margin-right: 0;
 	margin-top: 0;
 	overflow: hidden;
 	min-height: 16em;
@@ -135,6 +136,7 @@ div#switcher {
 	margin-bottom: .3em;
 	padding-top: .3em;
 	padding-bottom: .3em;
+	padding-left: 0;
 }
 
 .atms-ui-portlet-row > .atms-ui-portlet-column-legend, .atms-ui-portlet-row > .atms-ui-portlet-column {
@@ -146,7 +148,7 @@ div#switcher {
 .atms-ui-portlet-row .atms-ui-portlet-column-legend {
 	margin-top: 0;
 	margin-bottom: 0;
-	margin-left: .3em;
+	margin-left: 0.3em;
 }
 
 .atms-ui-portlets-main {
