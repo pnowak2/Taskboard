@@ -317,7 +317,7 @@
 			menu: config.portletsHeaderContextMenuId
 		},
 			function(action, el, pos) {
-				config.portletsHeaderContextMenuAction(action, el);
+				contextMenuAction(action, el, config);
 		});
 	}
 	
@@ -329,7 +329,7 @@
 			menu: config.legendContextMenuId
 		},
 			function(action, el, pos) {
-				config.legendContextMenuAction(action, el);
+				contextMenuAction(action, el, config);
 		});
 	}
 	
@@ -341,8 +341,23 @@
 			menu: config.portletContextMenuId
 		},
 			function(action, el, pos) {
-				config.portletContextMenuAction(action, el);
+				contextMenuAction(action, el, config);
 		});
+	}
+	
+	/*
+	 * Handles all context menu actions
+	 */
+	function contextMenuAction(action, el, config){
+		if(el.hasClass("atms-ui-portlets-header")){
+			config.portletsHeaderContextMenuAction(action, el);
+		}
+		if(el.hasClass("atms-ui-portlet-column-legend")){
+			config.legendContextMenuAction(action, el);
+		}
+		if(el.hasClass("atms-ui-portlet")){
+			config.portletContextMenuAction(action, el);
+		}
 	}
 	
 	/*
