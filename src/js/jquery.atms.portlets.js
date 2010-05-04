@@ -20,7 +20,7 @@
 	     var config = {  
 	    		 	   element: $(this),
 	    		 	   showQuickSearch: true,
-	    		 	   quickSearchText: "Search...",
+	    		 	   quickSearchLabel: "Search...",
 					   data: null,
 					   contextMenuCollapseAllLabel: "Collapse all",
 					   portletsHeaderContextMenuId: null,
@@ -389,18 +389,18 @@
 	function handleQuickSearch(el, config){
 		if(config.showQuickSearch){
 			el.find(".atms-ui-portlets-main").each(function(){
-				 $(this).find(".atms-ui-portlets-header:first").append("<input type='text' class='ui-state-default atms-ui-portlet-searchbox' value='" + config.quickSearchText + "'/>");
+				 $(this).find(".atms-ui-portlets-header:first").append("<input type='text' class='ui-state-default atms-ui-portlet-searchbox' value='" + config.quickSearchLabel + "'/>");
 			     var main = $(this);
 			     var txtBox = $(this).find(".atms-ui-portlet-searchbox");
 			     
 			     txtBox.focus(function(){
-			    	 if(txtBox.val() == config.quickSearchText){
+			    	 if(txtBox.val() == config.quickSearchLabel){
 			    		 $(this).val("");
 			    	 }
 			     });
 			     txtBox.blur(function(){
-			    	 if(txtBox.val() == config.quickSearchText || txtBox.val() == ""){
-			    		 $(this).val(config.quickSearchText);
+			    	 if(txtBox.val() == config.quickSearchLabel || txtBox.val() == ""){
+			    		 $(this).val(config.quickSearchLabel);
 			    	 }
 			     });
 			     
