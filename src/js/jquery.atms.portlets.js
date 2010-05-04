@@ -22,6 +22,7 @@
 	    		 	   showQuickSearch: true,
 	    		 	   quickSearchText: "Search...",
 					   data: null,
+					   contextMenuCollapseAllLabel: "Collapse all",
 					   portletsHeaderContextMenuId: null,
 					   portletsHeaderContextMenuAction: function(action, header){},
 					   legendContextMenuId: null,
@@ -34,6 +35,7 @@
 
 	     handleJQueryExtensions();
 		 handleTags(this);
+		 handleDefaultContextMenu(this, config);
 		 handlePortletsHeaderContextMenu(this, config);
 		 handleLegendContextMenu(this, config);
 		 handlePortletContextMenu(this, config);
@@ -281,45 +283,66 @@
 	}
 	
 	/*
-	 * Handles context menu for portlets
+	 * Handles default context menu
 	 */
-	function handlePortletContextMenu(el, config) {
-		if(config.portletContextMenuId){
-		 	el.find("div.atms-ui-portlet").contextMenu({
-				menu: config.portletContextMenuId
-			},
-				function(action, el, pos) {
-					config.portletContextMenuAction(action, el);
-			});
+	function handleDefaultContextMenu(el, config){
+		if(!config.portletsHeaderContextMenuId){
+			if(!config.portletsHeaderContextMenuId) {
+				config.portletsHeaderContextMenuId = el.attr('id') + 'PortletsHeaderContextMenu';
+				el.append('<ul id="' + config.portletsHeaderContextMenuId + '" class="contextMenu ui-widget-content">');
+			}
+			if(!config.legendContextMenuId) {
+				config.legendContextMenuId = el.attr('id') + 'LegendContextMenu';
+				el.append('<ul id="' + config.legendContextMenuId + '" class="contextMenu ui-widget-content">');
+			}
+			if(!config.portletContextMenuId) {
+				config.portletContextMenuId = el.attr('id') + 'PortletContextMenu';
+				el.append('<ul id="' + config.portletContextMenuId + '" class="contextMenu ui-widget-content">');
+			}
+			
 		}
+		
+		// Append default menu actions
+		var collapseAll = '<li class="add separator"><a href="#collapse_all">' + config.contextMenuCollapseAllLabel + '</a></li>';
+		
+		$("#"+config.portletsHeaderContextMenuId).append(collapseAll);
+		$("#"+config.legendContextMenuId).append(collapseAll);		
 	}
 	
 	/*
 	 * Handles context menu for entire portlets container headers
 	 */
 	function handlePortletsHeaderContextMenu(el, config){
-		if(config.portletsHeaderContextMenuId){
-		 	el.find(".atms-ui-portlets-header").contextMenu({
-				menu: config.portletsHeaderContextMenuId
-			},
-				function(action, el, pos) {
-					config.portletsHeaderContextMenuAction(action, el);
-			});
-		}
+	 	el.find(".atms-ui-portlets-header").contextMenu({
+			menu: config.portletsHeaderContextMenuId
+		},
+			function(action, el, pos) {
+				config.portletsHeaderContextMenuAction(action, el);
+		});
 	}
 	
 	/*
 	 * Handles context menu for legends
 	 */
 	function handleLegendContextMenu(el, config) {
-		if(config.legendContextMenuId){
-		 	el.find(".atms-ui-portlet-column-legend").contextMenu({
-				menu: config.legendContextMenuId
-			},
-				function(action, el, pos) {
-					config.legendContextMenuAction(action, el);
-			});
-		}
+	 	el.find(".atms-ui-portlet-column-legend").contextMenu({
+			menu: config.legendContextMenuId
+		},
+			function(action, el, pos) {
+				config.legendContextMenuAction(action, el);
+		});
+	}
+	
+	/*
+	 * Handles context menu for portlets
+	 */
+	function handlePortletContextMenu(el, config) {
+	 	el.find("div.atms-ui-portlet").contextMenu({
+			menu: config.portletContextMenuId
+		},
+			function(action, el, pos) {
+				config.portletContextMenuAction(action, el);
+		});
 	}
 	
 	/*
