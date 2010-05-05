@@ -353,6 +353,9 @@
 	 * Handles all context menu actions
 	 */
 	function contextMenuAction(action, el, config){
+		
+		action = action.substring(action.lastIndexOf("#")+1, action.length);
+		
 		if(el.hasClass("atms-ui-portlets-header")){
 			switch(action){
 			case "collapse-all":
