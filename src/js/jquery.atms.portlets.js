@@ -304,7 +304,7 @@
 		}
 		
 		// Append default menu actions
-		var collapseAll = '<li class="arrow-in separator"><a href="#collapse-all">' + config.contextMenuCollapseAllLabel + '</a></li>';
+		var collapseAll = '<li class="arrow-in ui-widget-content separator"><a href="#collapse-all">' + config.contextMenuCollapseAllLabel + '</a></li>';
 		var expandAll = '<li class="arrow-out"><a href="#expand-all">' + config.contextMenuExpandAllLabel + '</a></li>';
 		
 		$("#"+config.portletsHeaderContextMenuId).append(collapseAll);

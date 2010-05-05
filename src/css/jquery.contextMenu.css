@@ -46,7 +46,10 @@ ul.contextMenu {
 }
 
 .contextMenu LI.separator {
-	border-top: solid 1px #CCC;
+	border-left: none;
+	border-right: none;
+	border-bottom: none;
+	background: none;
 }
 
 /*
@@ -63,6 +66,8 @@ ul.contextMenu {
 .contextMenu LI.table A { background-image: url(img/table.png); }
 .contextMenu LI.arrow-divide A { background-image: url(img/arrow_divide.png); }
 .contextMenu LI.add A { background-image: url(img/add.png); }
+.contextMenu LI.group-go A { background-image: url(img/group_go.png); }
+.contextMenu LI.clock-error A { background-image: url(img/clock_error.png); }
 .contextMenu LI.arrow-out A { background-image: url(img/arrow_out.png); }
 .contextMenu LI.arrow-in A { background-image: url(img/arrow_in.png); }
 
