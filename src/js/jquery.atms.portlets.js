@@ -24,6 +24,7 @@
 					   data: null,
 					   contextMenuCollapseAllLabel: "Collapse all",
 					   contextMenuExpandAllLabel: "Expand all",
+					   contextMenuRestoreExpandsLabel: "Restore default",
 					   portletsHeaderContextMenuId: null,
 					   portletsHeaderContextMenuAction: function(action, header){},
 					   legendContextMenuId: null,
@@ -306,11 +307,15 @@
 		// Append default menu actions
 		var collapseAll = '<li class="arrow-in ui-widget-content separator"><a href="#collapse-all">' + config.contextMenuCollapseAllLabel + '</a></li>';
 		var expandAll = '<li class="arrow-out"><a href="#expand-all">' + config.contextMenuExpandAllLabel + '</a></li>';
+		var restoreDefault = '<li class="arrow-switch"><a href="#restore-default">' + config.contextMenuRestoreExpandsLabel + '</a></li>';
+			
 		
 		$("#"+config.portletsHeaderContextMenuId).append(collapseAll);
 		$("#"+config.portletsHeaderContextMenuId).append(expandAll);
+		$("#"+config.portletsHeaderContextMenuId).append(restoreDefault);
 		$("#"+config.legendContextMenuId).append(collapseAll);
-		$("#"+config.legendContextMenuId).append(expandAll);		
+		$("#"+config.legendContextMenuId).append(expandAll);
+		$("#"+config.legendContextMenuId).append(restoreDefault);	
 	}
 	
 	/*
@@ -364,6 +369,9 @@
 			case "expand-all":
 				expandAll(el.parents(".atms-ui-portlets-main:first"));
 				break;
+			case "restore-default":
+				restoreExpands(el.parents(".atms-ui-portlets-main:first"));
+				break;
 			}
 			
 			config.portletsHeaderContextMenuAction(action, el);
@@ -375,6 +383,9 @@
 				break;
 			case "expand-all":
 				expandAll(el.parents(".atms-ui-portlet-row:first"));
+				break;
+			case "restore-default":
+				restoreExpands(el.parents(".atms-ui-portlet-row:first"));
 				break;
 			}
 			
@@ -404,6 +415,20 @@
 	 */
 	function expandAll(el){
 		el.find(".atms-ui-portlet-content").show();
+		if(el.hasClass("atms-ui-portlet-row")){
+			refreshHeight(el);
+		}else{
+			el.find(".atms-ui-portlet-row").each(function(){
+				refreshHeight($(this));
+			});
+		}
+	}
+	
+	function restoreExpands(el){
+		el.find(".atms-ui-portlet-content:not(.atms-ui-portlet-collapsed)").show();
+		el.find(".atms-ui-portlet-collapsed").each(function(){
+			$(this).find(".atms-ui-portlet-content").hide();
+		});
 		if(el.hasClass("atms-ui-portlet-row")){
 			refreshHeight(el);
 		}else{

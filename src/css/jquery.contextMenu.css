@@ -70,5 +70,6 @@ ul.contextMenu {
 .contextMenu LI.clock-error A { background-image: url(img/clock_error.png); }
 .contextMenu LI.arrow-out A { background-image: url(img/arrow_out.png); }
 .contextMenu LI.arrow-in A { background-image: url(img/arrow_in.png); }
+.contextMenu LI.arrow-switch A { background-image: url(img/arrow_switch.png); }
 
 
