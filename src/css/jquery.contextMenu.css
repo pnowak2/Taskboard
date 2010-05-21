@@ -72,5 +72,8 @@ ul.contextMenu {
 .contextMenu LI.arrow-out A { background-image: url(img/arrow_out.png); }
 .contextMenu LI.arrow-in A { background-image: url(img/arrow_in.png); }
 .contextMenu LI.arrow-switch A { background-image: url(img/arrow_switch.png); }
-
+.contextMenu LI.report A { background-image: url(img/report.png); }
+.contextMenu LI.report-link A { background-image: url(img/report_link.png); }
+.contextMenu LI.report-picture A { background-image: url(img/report_picture.png); }
+.contextMenu LI.report-user A { background-image: url(img/report_user.png); }
 
