@@ -1,0 +1,21 @@
+﻿body {
+	font-size: 11px;
+}
+
+body ul.cm_blue, body ul.cm_blue ul
+{
+	/* Required settings */
+	top:-1000px; left:-1000px; position:absolute; z-index:999; 
+	margin: 0; padding:0;
+}
+body ul.cm_blue li
+{
+	/* Required settings */
+	width:200px; list-style:none none outside;
+	padding: 2px;
+}
+body ul.cm_blue li span.submenu{display:block; width:4px; height:12px; float:right; background:url(images/submenu.gif) no-repeat 0 5px}
+body ul.cm_blue li.hover{background-color:#a4c5e9}
+
+
+
