@@ -13,7 +13,7 @@ body ul.cm_default,body ul.cm_default ul { /* Required settings */
 }
 
 body ul.cm_default li { /* Required settings */
-	width: 162px;
+	width: 168px;
 	list-style: none none outside;
 	/* Possibly inherited values overrides */
 	float: none;
@@ -33,22 +33,21 @@ body ul.cm_default li { /* Required settings */
 	/* Additional settings */
 	overflow: hidden;
 	cursor: default;
-	padding: 5px 5px 5px 31px;
+	padding: 5px 5px 5px 25px;
 }
 
 body ul.cm_default li.separator {
-	width: 198px;
-	height: 12px;
-	padding: 0
+
 }
 
 /* IE 6/7 hack */
 body ul.cm_default li.separator { *
-	margin: -1px 0 -5px 0
+	border: 0;
+	border-top: inherit;
 }
 
 body ul.cm_default li.disabled {
-	color: #999
+	color: #999;
 }
 
 body ul.cm_default li span.submenu {
@@ -64,13 +63,9 @@ body ul.cm_default li.disabled span.submenu {
 }
 
 body ul.cm_default li.hover {
-	background-color: #d4dde6;
+	background-color: #3399FF;
 }
 
-/* no hover effects on separators*/
-body ul.cm_default li.hover.separator {
-	background-color: #e6e6e6;
-}
 
 /*icons*/
 body ul.cm_default li.icon {
