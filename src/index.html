@@ -21,8 +21,6 @@
 		<script type="text/javascript">
 		
 			$(function(){
-
-				$('.context').jeegoocontext('menu');
 				
 				$('.result').ajaxError(function(e, xhr, settings, exception) {
 					$(this).text('Triggered ajaxError handler. ' + settings.url);
@@ -56,10 +54,6 @@
 		
 	</head>
 	<body>
-	
-	    <p class="context">
-	       Right-click this area to open a basic context menu.
-	    </p> 
 	
 		<div class="result"></div>
 		<div id="switcher" style="position: absolute; right: 0;"></div>
@@ -516,37 +510,6 @@
 		<ul id="portletsHeaderMenu" class="contextMenu ui-widget-content">
 			<li class="add"><a href="#new-requirement">New requirement</a></li>
 		</ul>
-		
-       
-    <!--  Context menu 1 -->
-    <ul id="menu" class="jeegoocontext cm_default ui-widget-content">
-        <li>
-            Font-style
-            <ul class="ui-widget-content">
-                <li id="style_italic">Italic</li>
-                <li id="style_normal">Normal</li>
-                <li id="style_normal">Normal</li>
-                <li id="style_normal">Normal</li>
-            </ul>
-
-        </li>
-        <li>
-            Font-weight
-            <ul class="ui-widget-content">
-                <li id="weight_bold">Bold</li>
-                <li id="weight_normal">Normal</li>
-            </ul>
-        </li>
-
-        <li>
-            Font-size
-            <ul class="ui-widget-content">
-                <li id="size_large">Large</li>
-                <li id="size_normal">Normal</li>
-            </ul>
-        </li>
-    </ul>
-
 
 	</body>
 </html>

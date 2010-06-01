@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Taskboard</title>
+		
+		<link rel="stylesheet" href="css/jquery.contextMenu.css" type="text/css" />
+		<link rel="stylesheet" href="css/cm_default/style.css" type="text/css" />	
+		<link rel="stylesheet" href="css/base.css" type="text/css" media="all" />
+		<link type="text/css" href="css/overcast/jquery-ui-1.8.custom.css" rel="stylesheet" />
+		<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-1.8.custom.min.js"></script>
+		<script type="text/javascript" src="js/jquery.jeegoocontext.js"></script>
+
+		<script type="text/javascript">
+		
+			$(function(){
+				$('.context').jeegoocontext('menu');
+			})
+		</script>
+		
+	</head>
+	<body>
+	
+    <p class="context">
+       Right-click this area to open a basic context menu.
+    </p> 
+			
+       
+    <!--  Context menu 1 -->
+    <ul id="menu" class="jeegoocontext cm_default ui-widget-content">
+        <li>
+            Font-style
+            <ul class="ui-widget-content">
+                <li id="style_italic">Italic</li>
+                <li id="style_normal">Normal</li>
+                <li id="style_normal">Normal</li>
+                <li id="style_normal">Normal</li>
+            </ul>
+
+        </li>
+        <li>
+            Font-weight
+            <ul class="ui-widget-content">
+                <li id="weight_bold">Bold</li>
+                <li id="weight_normal">Normal</li>
+            </ul>
+        </li>
+
+        <li>
+            Font-size
+            <ul class="ui-widget-content">
+                <li id="size_large">Large</li>
+                <li id="size_normal">Normal</li>
+            </ul>
+        </li>
+    </ul>
+
+
+	</body>
+</html>
+
+
