@@ -5,7 +5,6 @@
 		<title>Taskboard</title>
 		
 		<link rel="stylesheet" href="css/jquery.contextMenu.css" type="text/css" />
-		<link rel="stylesheet" href="css/cm_default/style.css" type="text/css" />	
 		<link rel="stylesheet" href="css/base.css" type="text/css" media="all" />
 		<link type="text/css" href="css/overcast/jquery-ui-1.8.custom.css" rel="stylesheet" />
 		<link type="text/css" href="css/jquery.tooltip.css" rel="stylesheet" />		
@@ -13,7 +12,6 @@
 		<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 		<script type="text/javascript" src="js/jquery-ui-1.8.custom.min.js"></script>
 		<script type="text/javascript" src="js/jquery.contextMenu.js"></script>
-		<script type="text/javascript" src="js/jquery.jeegoocontext.js"></script>
 		<script type="text/javascript" src="js/jquery.tooltip.js"></script>
 		<script type="text/javascript" src="js/jquery.wresize.js"></script>
 		<script type="text/javascript" src="js/jquery.atms.portlets.js"></script>
@@ -21,9 +19,6 @@
 		<script type="text/javascript">
 		
 			$(function(){
-
-				$('.context').jeegoocontext('menu');
-				
 				$('.result').ajaxError(function(e, xhr, settings, exception) {
 					$(this).text('Triggered ajaxError handler. ' + settings.url);
 				});
@@ -56,11 +51,6 @@
 		
 	</head>
 	<body>
-	
-	    <p class="context">
-	       Right-click this area to open a basic context menu.
-	    </p> 
-	
 		<div class="result"></div>
 		<div id="switcher" style="position: absolute; right: 0;"></div>
 		
@@ -516,35 +506,6 @@
 		<ul id="portletsHeaderMenu" class="contextMenu ui-widget-content">
 			<li class="add"><a href="#new-requirement">New requirement</a></li>
 		</ul>
-		
-       
-    <!--  Context menu 1 -->
-    <ul id="menu" class="jeegoocontext cm_default">
-        <li>
-            Font-style
-            <ul>
-                <li id="style_italic">Italic</li>
-                <li id="style_normal">Normal</li>
-            </ul>
-
-        </li>
-        <li>
-            Font-weight
-            <ul>
-                <li id="weight_bold">Bold</li>
-                <li id="weight_normal">Normal</li>
-            </ul>
-        </li>
-
-        <li>
-            Font-size
-            <ul>
-                <li id="size_large">Large</li>
-                <li id="size_normal">Normal</li>
-            </ul>
-        </li>
-    </ul>
-
 
 	</body>
 </html>
