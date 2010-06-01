@@ -81,29 +81,29 @@ body ul.cm_default li.icon {
 body ul.cm_default span.icon {
 	display: block;
 	float: left;
-	width: 26px;
+	width: 20px;
 	height: 16px;
-	background-repeat: no-repeat
+	background-repeat: no-repeat;
 }
 
 body ul.cm_default span.icon.hover {
-	background-position: 0 -16px
+	
 }
 
 body ul.cm_default span.disk {
-	background-image: url(images/icons/disk.gif)
+	background-image: url(../img/user.png)
 }
 
 body ul.cm_default span.drive {
-	background-image: url(images/icons/drive.gif)
+	background-image: url(../img/add.png)
 }
 
 body ul.cm_default span.folder {
-	background-image: url(images/icons/folders.gif)
+	background-image: url(../img/arrow_divide.png)
 }
 
 body ul.cm_default span.file {
-	background-image: url(images/icons/file.gif)
+	background-image: url(../img/report.png)
 }
 
 body ul.cm_default span.ok {
