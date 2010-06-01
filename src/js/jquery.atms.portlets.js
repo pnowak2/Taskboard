@@ -49,7 +49,7 @@
 		 handleSortable(this);
 		 handleEvents(this, config);
 		 
-		 $(this).find(".atms-ui-portlet-row").selectable({filter: ".atms-ui-portlet"});
+		 $(this).find(".atms-ui-portlet-row").selectable({filter: ".atms-ui-portlet", selected: function(event, ui){$(".ui-selected", this).removeClass("ui-selected")}});
 		 
 		 handleTooltips(this);
 		 handleQuickSearch(this, config);
