@@ -1,0 +1,12 @@
+.atms-ui-portlet-header {
+	background-color: #d6ddf1;
+	border-color: #b0b5c6;
+	background-image: none;
+}
+
+.atms-ui-portlet .ui-state-highlight {
+	background-color: #f3efdf;
+	border-color: #b0b5c6;
+	background-image: none;
+}
+
