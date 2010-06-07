@@ -250,7 +250,7 @@
 		el.find(".atms-ui-portlet-column .atms-ui-portlet-column-header").addClass("ui-widget-header");
 	 	el.find(".atms-ui-portlet").addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all")
 		.find(".atms-ui-portlet-header")
-			.addClass("ui-state-default ui-corner-all")
+			.addClass("ui-state-highlight ui-corner-all")
 			.prepend('<span class="ui-icon ui-icon-carat-1-n"></span>')
 			.end()
 		.find(".atms-ui-portlet-content");
