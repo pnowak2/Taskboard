@@ -250,7 +250,7 @@
 		el.find(".atms-ui-portlet-column .atms-ui-portlet-column-header").addClass("ui-widget-header");
 	 	el.find(".atms-ui-portlet").addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all")
 		.find(".atms-ui-portlet-header")
-			.addClass("ui-widget-header ui-corner-all")
+			.addClass("ui-state-default ui-corner-all")
 			.prepend('<span class="ui-icon ui-icon-carat-1-n"></span>')
 			.end()
 		.find(".atms-ui-portlet-content");
@@ -484,7 +484,7 @@
 	function handleQuickSearch(el, config){
 		if(config.showQuickSearch){
 			el.find(".atms-ui-portlets-main").each(function(){
-				 $(this).find(".atms-ui-portlets-header:first").append("<input type='text' class='ui-state-default atms-ui-portlet-searchbox' value='" + config.quickSearchLabel + "'/>");
+				 $(this).find(".atms-ui-portlets-header:first").append("<input type='text' class='ui-widget-content atms-ui-portlet-searchbox' value='" + config.quickSearchLabel + "'/>");
 			     var main = $(this);
 			     var txtBox = $(this).find(".atms-ui-portlet-searchbox");
 			     
