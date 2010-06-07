@@ -60,8 +60,9 @@ ul.contextMenu {
 	classes to the respective LI element(s)
 */
 
+.contextMenu LI.accept A { background-image: url(img/accept.png); }
 .contextMenu LI.edit A { background-image: url(img/page_white_edit.png); }
-.contextMenu LI.user A { background-image: url(img/user.png); }
+.contextMenu LI.user A { background-image: url(img/user3.png); }
 .contextMenu LI.table-go A { background-image: url(img/table_go.png); }
 .contextMenu LI.time A { background-image: url(img/time.png); }
 .contextMenu LI.table A { background-image: url(img/table.png); }
@@ -77,4 +78,6 @@ ul.contextMenu {
 .contextMenu LI.report-picture A { background-image: url(img/report_picture.png); }
 .contextMenu LI.report-user A { background-image: url(img/report_user.png); }
 .contextMenu LI.chart-bar A { background-image: url(img/chart_bar.png); }
+
+
 
