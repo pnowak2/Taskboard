@@ -159,10 +159,11 @@
 		function handleSortable(el){
 			
 			el.find(".atms-ui-portlet-row").each(function(){		
+				var cols = $(this).find(".atms-ui-portlet-column");
 				// Sortables
-				$(this).find(".atms-ui-portlet-column").sortable({
-					connectWith: $(this).find(".atms-ui-portlet-column"),
-					items: '.atms-ui-portlet:not(.ui-state-disabled)',
+				cols.sortable({
+					connectWith: cols,
+					items: '.atms-ui-portlet',
 					handle: 'div.atms-ui-portlet-header',
 					placeholder: 'ui-state-highlight',
 					opacity: 0.7,
@@ -530,7 +531,8 @@
 				id: "atms-ui-tooltip-id",
 				extraClass: "ui-state-default ui-corner-all",
 				bodyHandler: function() {
-		        	return $(this).find(".atms-ui-portlet-tooltip").html(); 
+			 		var tooltip = $(this).find(".atms-ui-portlet-tooltip");
+		        	return tooltip.length > 0 ? tooltip.html() : ""; 
 		    	}
 		 });
 		
@@ -539,7 +541,8 @@
 				id: "atms-ui-tooltip-id",
 				extraClass: "ui-state-default ui-corner-all",
 				bodyHandler: function() {
-		        	return $(this).find(".atms-ui-portlet-tooltip").html(); 
+			 		var tooltip = $(this).find(".atms-ui-portlet-tooltip");
+		        	return tooltip.length > 0 ? tooltip.html() : ""; 
 		    	}
 		 });
 	}
