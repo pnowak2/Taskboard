@@ -536,7 +536,7 @@
 		 });
 		
 		 // Portlet tooltips
-		 el.find(".atms-ui-portlet-content").tooltip({
+		 el.find(".atms-ui-portlet").tooltip({
 				id: "atms-ui-tooltip-id",
 				extraClass: "ui-state-default ui-corner-all",
 				bodyHandler: function() {
