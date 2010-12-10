@@ -266,13 +266,6 @@
 	 */
 	function handleRefreshHeight(el){
 		el.find(".atms-ui-portlet-row").each(function(){
-			// Checks if theres any column legend and sets min height for columns
-			var legend = $(this).find(".atms-ui-portlet-column-legend:first");
-			$(this).find(".atms-ui-portlet-column-legend, .atms-ui-portlet-column-legend-action, .atms-ui-portlet-column").each(function(){
-				$(this).css("min-height", legend ? legend.height() : 0);
-			});
-			
-			
 			refreshHeight($(this));
 		});
 	}
