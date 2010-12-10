@@ -129,21 +129,23 @@
 		  * If there are too many columns to fit into parent, it makes its container bigger and scroll bar
 		  * appears.
 		  */
-		 function refreshWidth(){		 
-			 var finalWidth = 0;
-			 var colWidth = config.element.find(".atms-ui-portlet-column:first").outerWidth(true);
-			 var legendWidth = config.element.find(".atms-ui-portlet-column-legend:first").outerWidth(true);
-			 var legendActionWidth = config.element.find(".atms-ui-portlet-column-legend-action:first").outerWidth(true);
+		 function refreshWidth(){
 			 var cols = 0;
+			 var finalWidth = 5;
+			 var rowChild = null;
+			 var rowChilds = config.element.find(".atms-ui-portlet-row:first-child");
 
-			 config.element.find(".atms-ui-portlet-row:first-child").each(function(){
+			 rowChilds.each(function(){
 				 var localCols = $(this).find(".atms-ui-portlet-column").length;
 				 if(localCols > cols){
 					cols = localCols; 
+					rowChild = $(this);
 				 }
 			 });
-			 
-			 finalWidth = (cols * colWidth) + legendWidth + legendActionWidth + 3
+
+			 rowChild.children().each(function(){
+				 finalWidth += $(this).outerWidth(true);
+			 });
 
 			 if(finalWidth > config.element.parent().width()){
 				 config.element.width(finalWidth);	
