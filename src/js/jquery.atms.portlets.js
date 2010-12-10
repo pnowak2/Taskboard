@@ -305,21 +305,21 @@
 	 * Any additional styles should be processed here.
 	 */
 	function handleStyles(el){
-		el.addClass("atms-ui-portlet-container");
-		el.find(".atms-ui-portlets-header").addClass("ui-widget-header ui-corner-all")
-			.prepend('<span class="ui-icon ui-icon-carat-1-n"></span>');
-		el.find(".atms-ui-portlet-column-legend").addClass(/*ui-widget-header*/"ui-state-default ui-corner-all");
-		el.find(".atms-ui-portlet-column-legend-action").addClass(/*ui-widget-header*/"ui-state-default ui-corner-all");
-		el.find(".atms-ui-portlet-column-header").addClass("ui-corner-all");
+		//el.addClass("atms-ui-portlet-container");
+		//el.find(".atms-ui-portlets-header").addClass("ui-widget-header ui-corner-all")
+		//	.prepend('<span class="ui-icon ui-icon-carat-1-n"></span>');
+		//el.find(".atms-ui-portlet-column-legend").addClass(/*ui-widget-header*/"ui-state-default ui-corner-all");
+		//el.find(".atms-ui-portlet-column-legend-action").addClass(/*ui-widget-header*/"ui-state-default ui-corner-all");
+		//el.find(".atms-ui-portlet-column-header").addClass("ui-corner-all");
 		el.find(".atms-ui-portlet-column-pointer").addClass("ui-state-highlight ui-corner-all");
-		el.find(".atms-ui-portlet-row").addClass("ui-helper-clearfix ui-corner-all ui-widget-content");
-		el.find(".atms-ui-portlet-column .atms-ui-portlet-column-header").addClass("ui-widget-header");
-	 	el.find(".atms-ui-portlet").addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all")
-		.find(".atms-ui-portlet-header")
-			.addClass("ui-state-highlight ui-corner-all")
-			.prepend('<span class="ui-icon ui-icon-carat-1-n"></span>')
-			.end()
-		.find(".atms-ui-portlet-content");
+		//el.find(".atms-ui-portlet-row").addClass("ui-helper-clearfix ui-corner-all ui-widget-content");
+		//el.find(".atms-ui-portlet-column .atms-ui-portlet-column-header").addClass("ui-widget-header");
+//	 	el.find(".atms-ui-portlet")
+//		.find(".atms-ui-portlet-header")
+//			.addClass("ui-state-highlight ui-corner-all")
+//			.prepend('<span class="ui-icon ui-icon-carat-1-n"></span>')
+//			.end()
+//		.find(".atms-ui-portlet-content");
 	 	
 	 	el.find(".atms-ui-portlet-collapsed .atms-ui-portlet-content").each(function(){
 	 		$(this).hide();
