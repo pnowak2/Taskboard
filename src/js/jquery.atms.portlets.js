@@ -39,23 +39,84 @@
 	     }
 	     if (settings) $.extend(config, settings);
 
+	     var startTime = new Date().getTime();
+	     
 	     handleJQueryExtensions();
+	     
+	     var extensionsTime = new Date().getTime();
+	     
 		 handleTags(this);
+		 
+		 var tagsTime = new Date().getTime();
+		 
 		 handleDefaultContextMenu(this, config);
+		 
+		 var defContextMenuTime = new Date().getTime();
+		 
 		 handlePortletsHeaderContextMenu(this, config);
+		 
+		 var portHeaderContextMenuTime = new Date().getTime();
+		 
 		 handleLegendContextMenu(this, config);
+		 
+		 var legendContextMenuTime = new Date().getTime();
+		 
 		 handlePortletContextMenu(this, config);
+		 
+		 var portletContextmenuTime = new Date().getTime();
+		 
 		 handleStyles(this);
+		 
+		 var stylesTime = new Date().getTime();
+		 
 		 handleSortable(this);
+		 
+		 var sortableTime = new Date().getTime();
+		 
 		 handleEvents(this, config);
 		 
+		 var eventsTime = new Date().getTime();
+		 
 		 handleTooltips(this);
+		 
+		 var tooltipsTime = new Date().getTime();
+		 
 		 handleQuickSearch(this, config);
+		 
+		 var quickSearchTime = new Date().getTime();
+		 
 		 handleRefreshHeight(this);
+		 
+		 var refreshHeightTime = new Date().getTime();
+		 
 		 refreshWidth();
 
 		 $( window ).wresize( refreshWidth );
 		 $(this).css("visibility", "visible");
+		 
+		 alert("tags: " + (tagsTime - extensionsTime) + "\n" +
+			   "defContextMenu: " + (defContextMenuTime - tagsTime) + "\n" +
+			   "portHeaderContextMenu: " + (portHeaderContextMenuTime-defContextMenuTime) + "\n" +
+			   "legendContextMenuTime: " + (legendContextMenuTime - portHeaderContextMenuTime) + "\n" +
+			   "portletContextmenuTime: " + (portletContextmenuTime - legendContextMenuTime) + "\n" +
+			   "stylesTime: " + (stylesTime - portletContextmenuTime) + "\n" +
+			   "sortableTime: " + (sortableTime - stylesTime) + "\n" +
+			   "eventsTime: " + (eventsTime - sortableTime)  + "\n" +
+			   "tooltipsTime: " + (tooltipsTime - eventsTime) + "\n" +
+			   "quickSearchTime: " + (quickSearchTime - tooltipsTime) + "\n" +
+			   "refreshHeightTime: " + (refreshHeightTime - quickSearchTime) + "\n" +
+			   "OVERALL: " + (parseInt(tagsTime - extensionsTime) + 
+					   	      parseInt(defContextMenuTime - tagsTime) + 
+					   	      parseInt(portHeaderContextMenuTime-defContextMenuTime) + 
+					   	      parseInt(legendContextMenuTime - portHeaderContextMenuTime) + 
+					   	      parseInt(portletContextmenuTime - legendContextMenuTime) + 
+					   	      parseInt(stylesTime - portletContextmenuTime) + 
+					   	      parseInt(sortableTime - stylesTime) + 
+					   	      parseInt(eventsTime - sortableTime) + 
+					   	      parseInt(tooltipsTime - eventsTime) + 
+					   	      parseInt(quickSearchTime - tooltipsTime) + 
+					   	      parseInt(refreshHeightTime - quickSearchTime))
+			   );
 		 
 		 /*
 		  * Handles width resize 
