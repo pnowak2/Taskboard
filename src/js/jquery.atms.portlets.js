@@ -275,7 +275,8 @@
 	 */
 	function refreshHeight(el){		
 		var totalHeight = 0;
-		el.find(".atms-ui-portlet-column").each(function(){
+		var cols = el.find(".atms-ui-portlet-column");
+		cols.each(function(){
 			var portletHeights = 0;
 			$(this).find(".atms-ui-portlet:visible").each(function(){
 				portletHeights+=$(this).outerHeight(true);
@@ -288,8 +289,9 @@
 		totalHeight+=15; // 15 for placeholder place
 		
 		/* If row contains headers, they should be calculated into total column height */
-		if(el.find(".atms-ui-portlet-column .atms-ui-portlet-column-header").length>0){
-			totalHeight+= el.find(".atms-ui-portlet-column-header").outerHeight(true);
+		var headers = cols.find(".atms-ui-portlet-column-header");
+		if(headers.length>0){
+			totalHeight+= headers.outerHeight(true);
 		}
 		el.find(".atms-ui-portlet-column, .atms-ui-portlet-column-legend, .atms-ui-portlet-column-legend-action").each(function(){ $(this).height(totalHeight);});
 	}
