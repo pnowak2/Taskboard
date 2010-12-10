@@ -131,9 +131,9 @@
 		  */
 		 function refreshWidth(){		 
 			 var finalWidth = 0;
-			 var colWidth = config.element.find(".atms-ui-portlet-column:visible:first").outerWidth(true);
-			 var legendWidth = config.element.find(".atms-ui-portlet-column-legend:visible:first").outerWidth(true);
-			 var legendActionWidth = config.element.find(".atms-ui-portlet-column-legend-action:visible:first").outerWidth(true);
+			 var colWidth = config.element.find(".atms-ui-portlet-column:first").outerWidth(true);
+			 var legendWidth = config.element.find(".atms-ui-portlet-column-legend:first").outerWidth(true);
+			 var legendActionWidth = config.element.find(".atms-ui-portlet-column-legend-action:first").outerWidth(true);
 			 var cols = 0;
 
 			 config.element.find(".atms-ui-portlet-row:first-child").each(function(){
