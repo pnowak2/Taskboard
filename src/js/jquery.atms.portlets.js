@@ -293,7 +293,7 @@
 		if(headers.length>0){
 			totalHeight+= headers.outerHeight(true);
 		}
-		el.find(".atms-ui-portlet-column, .atms-ui-portlet-column-legend, .atms-ui-portlet-column-legend-action").each(function(){ $(this).height(totalHeight);});
+		el.children().each(function(){ $(this).height(totalHeight);});
 	}
 	
 	/*
