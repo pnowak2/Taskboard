@@ -90,6 +90,8 @@
 		 var refreshHeightTime = new Date().getTime();
 		 
 		 refreshWidth();
+		 
+		 var refreshWidthTime = new Date().getTime();
 
 		 $( window ).wresize( refreshWidth );
 		 $(this).css("visibility", "visible");
@@ -105,6 +107,7 @@
 			   "tooltipsTime: " + (tooltipsTime - eventsTime) + "\n" +
 			   "quickSearchTime: " + (quickSearchTime - tooltipsTime) + "\n" +
 			   "refreshHeightTime: " + (refreshHeightTime - quickSearchTime) + "\n" +
+			   "refreshWidthTime: " + (refreshWidthTime - refreshHeightTime) + "\n" +
 			   "OVERALL: " + (parseInt(tagsTime - extensionsTime) + 
 					   	      parseInt(defContextMenuTime - tagsTime) + 
 					   	      parseInt(portHeaderContextMenuTime-defContextMenuTime) + 
@@ -115,7 +118,9 @@
 					   	      parseInt(eventsTime - sortableTime) + 
 					   	      parseInt(tooltipsTime - eventsTime) + 
 					   	      parseInt(quickSearchTime - tooltipsTime) + 
-					   	      parseInt(refreshHeightTime - quickSearchTime))
+					   	      parseInt(refreshHeightTime - quickSearchTime) +
+					   	      parseInt(refreshWidthTime - refreshHeightTime)
+				 )
 			   );
 		 
 		 /*
@@ -124,9 +129,7 @@
 		  * If there are too many columns to fit into parent, it makes its container bigger and scroll bar
 		  * appears.
 		  */
-		 function refreshWidth(){
-			 var refreshWidthStartTime = new Date().getTime();
-			 
+		 function refreshWidth(){		 
 			 var finalWidth = 0;
 			 var colWidth = config.element.find(".atms-ui-portlet-column:visible:first").outerWidth(true);
 			 var legendWidth = config.element.find(".atms-ui-portlet-column-legend:visible:first").outerWidth(true);
@@ -147,9 +150,6 @@
 			 }else{
 				 config.element.width(config.element.parent().width());
 			 }
-			 
-			 var refreshWidthEndTime = new Date().getTime();
-			 alert("refreshwidth: " + (refreshWidthEndTime-refreshWidthStartTime));
 		}
 		 
 		/*
