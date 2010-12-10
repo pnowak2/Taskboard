@@ -125,6 +125,8 @@
 		  * appears.
 		  */
 		 function refreshWidth(){
+			 var refreshWidthStartTime = new Date().getTime();
+			 
 			 var finalWidth = 0;
 			 var colWidth = config.element.find(".atms-ui-portlet-column:visible:first").outerWidth(true);
 			 var legendWidth = config.element.find(".atms-ui-portlet-column-legend:visible:first").outerWidth(true);
@@ -145,6 +147,9 @@
 			 }else{
 				 config.element.width(config.element.parent().width());
 			 }
+			 
+			 var refreshWidthEndTime = new Date().getTime();
+			 alert("refreshwidth: " + (refreshWidthEndTime-refreshWidthStartTime));
 		}
 		 
 		/*
