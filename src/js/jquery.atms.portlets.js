@@ -526,7 +526,7 @@
 	 */
 	function handleTooltips(el){
 		 // Legend tooltips
-		 el.find(".atms-ui-portlet-column-legend:has(.atms-ui-portlet-tooltip)").tooltip({
+		 el.find(".atms-ui-portlet-column-legend").tooltip({
 				id: "atms-ui-tooltip-id",
 				extraClass: "ui-state-default ui-corner-all",
 				bodyHandler: function() {
@@ -535,7 +535,7 @@
 		 });
 		
 		 // Portlet tooltips
-		 el.find(".atms-ui-portlet-content:has(.atms-ui-portlet-tooltip)").tooltip({
+		 el.find(".atms-ui-portlet-content").tooltip({
 				id: "atms-ui-tooltip-id",
 				extraClass: "ui-state-default ui-corner-all",
 				bodyHandler: function() {
