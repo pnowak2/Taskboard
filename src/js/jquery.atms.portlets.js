@@ -143,14 +143,16 @@
 				 }
 			 });
 
-			 rowChild.children().each(function(){
-				 finalWidth += $(this).outerWidth(true);
-			 });
-
-			 if(finalWidth > config.element.parent().width()){
-				 config.element.width(finalWidth);	
-			 }else{
-				 config.element.width(config.element.parent().width());
+			 if(rowChild != null){
+				 rowChild.children().each(function(){
+					 finalWidth += $(this).outerWidth(true);
+				 });
+	
+				 if(finalWidth > config.element.parent().width()){
+					 config.element.width(finalWidth);	
+				 }else{
+					 config.element.width(config.element.parent().width());
+				 }
 			 }
 		}
 		 
