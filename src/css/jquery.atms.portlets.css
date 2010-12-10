@@ -306,5 +306,5 @@ input.atms-ui-portlet-searchbox  {
 }
 
 .atms-ui-portlet-column-legend, .atms-ui-portlet-column-legend-action, .atms-ui-portlet-column {
-	min-height: 10em;
+	min-height: 12em;
 }
