@@ -96,32 +96,32 @@
 		 $( window ).wresize( refreshWidth );
 		 $(this).css("visibility", "visible");
 		 
-		 alert("tags: " + (tagsTime - extensionsTime) + "\n" +
-			   "defContextMenu: " + (defContextMenuTime - tagsTime) + "\n" +
-			   "portHeaderContextMenu: " + (portHeaderContextMenuTime-defContextMenuTime) + "\n" +
-			   "legendContextMenuTime: " + (legendContextMenuTime - portHeaderContextMenuTime) + "\n" +
-			   "portletContextmenuTime: " + (portletContextmenuTime - legendContextMenuTime) + "\n" +
-			   "stylesTime: " + (stylesTime - portletContextmenuTime) + "\n" +
-			   "sortableTime: " + (sortableTime - stylesTime) + "\n" +
-			   "eventsTime: " + (eventsTime - sortableTime)  + "\n" +
-			   "tooltipsTime: " + (tooltipsTime - eventsTime) + "\n" +
-			   "quickSearchTime: " + (quickSearchTime - tooltipsTime) + "\n" +
-			   "refreshHeightTime: " + (refreshHeightTime - quickSearchTime) + "\n" +
-			   "refreshWidthTime: " + (refreshWidthTime - refreshHeightTime) + "\n" +
-			   "OVERALL: " + (parseInt(tagsTime - extensionsTime) + 
-					   	      parseInt(defContextMenuTime - tagsTime) + 
-					   	      parseInt(portHeaderContextMenuTime-defContextMenuTime) + 
-					   	      parseInt(legendContextMenuTime - portHeaderContextMenuTime) + 
-					   	      parseInt(portletContextmenuTime - legendContextMenuTime) + 
-					   	      parseInt(stylesTime - portletContextmenuTime) + 
-					   	      parseInt(sortableTime - stylesTime) + 
-					   	      parseInt(eventsTime - sortableTime) + 
-					   	      parseInt(tooltipsTime - eventsTime) + 
-					   	      parseInt(quickSearchTime - tooltipsTime) + 
-					   	      parseInt(refreshHeightTime - quickSearchTime) +
-					   	      parseInt(refreshWidthTime - refreshHeightTime)
-				 )
-			   );
+//		 alert("tags: " + (tagsTime - extensionsTime) + "\n" +
+//			   "defContextMenu: " + (defContextMenuTime - tagsTime) + "\n" +
+//			   "portHeaderContextMenu: " + (portHeaderContextMenuTime-defContextMenuTime) + "\n" +
+//			   "legendContextMenuTime: " + (legendContextMenuTime - portHeaderContextMenuTime) + "\n" +
+//			   "portletContextmenuTime: " + (portletContextmenuTime - legendContextMenuTime) + "\n" +
+//			   "stylesTime: " + (stylesTime - portletContextmenuTime) + "\n" +
+//			   "sortableTime: " + (sortableTime - stylesTime) + "\n" +
+//			   "eventsTime: " + (eventsTime - sortableTime)  + "\n" +
+//			   "tooltipsTime: " + (tooltipsTime - eventsTime) + "\n" +
+//			   "quickSearchTime: " + (quickSearchTime - tooltipsTime) + "\n" +
+//			   "refreshHeightTime: " + (refreshHeightTime - quickSearchTime) + "\n" +
+//			   "refreshWidthTime: " + (refreshWidthTime - refreshHeightTime) + "\n" +
+//			   "OVERALL: " + (parseInt(tagsTime - extensionsTime) + 
+//					   	      parseInt(defContextMenuTime - tagsTime) + 
+//					   	      parseInt(portHeaderContextMenuTime-defContextMenuTime) + 
+//					   	      parseInt(legendContextMenuTime - portHeaderContextMenuTime) + 
+//					   	      parseInt(portletContextmenuTime - legendContextMenuTime) + 
+//					   	      parseInt(stylesTime - portletContextmenuTime) + 
+//					   	      parseInt(sortableTime - stylesTime) + 
+//					   	      parseInt(eventsTime - sortableTime) + 
+//					   	      parseInt(tooltipsTime - eventsTime) + 
+//					   	      parseInt(quickSearchTime - tooltipsTime) + 
+//					   	      parseInt(refreshHeightTime - quickSearchTime) +
+//					   	      parseInt(refreshWidthTime - refreshHeightTime)
+//				 )
+//			   );
 		 
 		 /*
 		  * Handles width resize 
